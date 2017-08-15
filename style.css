@@ -1,0 +1,106 @@
+/*
+Theme Name: Wordpress Boiler Theme
+Theme URI:
+Author: Karl Chvojka
+Author URI: http://karlchvojka.com
+Version: 1.0
+License: GNU General Public License
+*/
+
+/* ------------------------------------------- */
+/* GLOBAL STYLES */
+/* ------------------------------------------- */
+
+html {
+	}
+
+body {
+	}
+
+/* GLOBAL TEXT STYLES */
+
+h1 {
+	}
+
+h2 {
+	}
+
+h3 {
+	}
+
+h4 {
+	}
+
+h5 {
+	}
+
+h6 {
+	}
+
+p {
+	}
+
+/* END GLOBAL TEXT STYLES */
+
+/* GLOBAL LINK STYLES */
+
+a:link, a:visited {
+	}
+	a:hover {
+		}
+/* END GLOBAL LINK STYLES */
+
+/* GLOBAL LIST STYLES */
+ul {
+	}
+	li {
+		}
+/* END GLOBAL LIST STYLES */
+
+/* ------------------------------------------- */
+
+/* ------------------------------------------- */
+/* LAYOUT STYLES */
+/* ------------------------------------------- */
+
+div#site_wrap {
+	}
+
+	/* HEADER STYLES */
+	div#header_wrap {
+		}
+	/* END HEADER STYLES */
+
+	/* CONTENT STYLES */
+	div#content_wrap {
+		}
+	/* END CONTENT STYLES */
+
+	/* FOOTER STYLES */
+	div#footer_wrap {
+		}
+	/* END FOOTER STYLES */
+
+/* ------------------------------------------- */
+
+/* ------------------------------------------- */
+/* MODIFIERS */
+/* ------------------------------------------- */
+.left {
+	float:left;
+	}
+
+.right {
+	float:right;
+	}
+
+.center {
+	}
+
+.nineSixty {
+	}
+.clear {
+	float:none;
+	clear:both;
+	}
+/* ------------------------------------------- */
