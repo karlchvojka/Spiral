@@ -14,6 +14,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="<?php bloginfo('template_url')?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="https://use.fontawesome.com/c674cc7c17.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/form.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
 <!-- END CSS INCLUDES -->
 
 <!-- JS INCLUDES -->
