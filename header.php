@@ -5,7 +5,7 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Bootstrap 101 Template</title>
+  <title><?php bloginfo('name');?></title>
 <!-- CSS INCLUDES -->
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/bootstrap.css" />
@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="<?php bloginfo('template_url')?>/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://use.fontawesome.com/c674cc7c17.js"></script>
 <!-- END CSS INCLUDES -->
 
 <!-- JS INCLUDES -->
@@ -35,7 +36,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                  <?php bloginfo('name'); ?>
+                  <img src="<?php bloginfo('template_url'); ?>/images/logo.jpg" />
               </a>
       </div>
       <?php /* Primary navigation */
