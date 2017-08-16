@@ -12,169 +12,281 @@ if ( isset( $_POST['submit'] ) ) {
 }
 get_header();
 ?>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
-<style type="text/css">
-#new_post fieldset:not(:first-of-type) {
-display: none;
-}
-</style>
 
-<div class="container">
+<!-- WIZARD WRAP -->
+<div id="rootwizard" class="container">
+  <?php /* The loop */ ?>
+  <?php while ( have_posts() ) : the_post(); ?>
+    <h1><?php the_title(); ?></h1>
+  <?php endwhile; ?>
+  <?php wp_reset_query(); ?>
+  <!-- WIZARD TABS -->
+  <!-- NOTE: WIZARD TABS ARE POSITIONED ABSOLUTE OFF SCREEN FOR UI REASONS -->
+  <div id="pill_nav" class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <ul>
+    	    <li><a href="#tab1" data-toggle="tab"></a></a></li>
+  	      <li><a href="#tab2" data-toggle="tab"></a></li>
+  	      <li><a href="#tab3" data-toggle="tab"></a></li>
+  	      <li><a href="#tab4" data-toggle="tab"></a></li>
+  	      <li><a href="#tab5" data-toggle="tab"></a></li>
+  	      <li><a href="#tab6" data-toggle="tab"></a></li>
+  	      <li><a href="#tab7" data-toggle="tab"></a></li>
+          <li><a href="#tab8" data-toggle="tab"></a></li>
+          <li><a href="#tab9" data-toggle="tab"></a></li>
+          <li><a href="#tab10" data-toggle="tab"></a></li>
+          <li><a href="#tab11" data-toggle="tab"></a></li>
+          <li><a href="#tab12" data-toggle="tab"></a></li>
+          <li><a href="#tab13" data-toggle="tab"></a></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- END WIZIARD TABS -->
+
+  <!-- START PROGRESS BAR -->
+  <div id="bar" class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+  </div>
+  <!-- END PROGRESS BAR -->
+
+  <!-- STAGE START -->
+  <div class="tab-content">
+    <!-- START TAB ONE -->
+    <div class="tab-pane row" id="tab1">
+      <?php while ( have_posts() ) : the_post(); ?>
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_1_title'); ?></h2>
+      </div>
+
+      <div class="left_panel col-md-6">
+
+        <div class="embed-container">
+        <?php the_field('step_1_video'); ?>
+        </div>
+      </div>
+      <div class="right_panel col-md-6">
+        <p><?php the_field('step_1_ques_1'); ?></p>
+				<input type="text" id="step_1_answ_1" value="" tabindex="1" size="20" name="step_1_answ_1" />
+
+        <p><?php the_field('step_1_ques_2'); ?></p>
+        <input type="text" id="step_1_answ_2" value="" tabindex="1" size="20" name="step_1_answ_2" />
+
+        <p><?php the_field('step_1_ques_3'); ?></p>
+        <input type="text" id="step_1_answ_3" value="" tabindex="1" size="20" name="step_1_answ_3" />
 
 
-		<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+      </div>
+      <div class="ask_moses col-md-12">
 
-				<h1><?php the_title(); ?></h1>
-			<?php endwhile; ?>
-			<?php wp_reset_query(); ?>
+      </div>
+    </div>
+    <!-- END TAB ONE -->
 
-         <div class="alert alert-success hide"></div>
-				<form id="new_post" name="new_post" method="post" action="">
-					<fieldset>
-						<div class="left_panel col-md-6">
-              <?php while ( have_posts() ) : the_post(); ?>
-        				<h2><?php the_field('step_1_title'); ?></h2>
-                <?php the_field('step_1_description'); ?>
-                <div class="embed-container">
-                <?php the_field('step_1_video'); ?>
-              </div>
-        			<?php endwhile; ?>
-              <?php wp_reset_query(); ?>
-						</div>
-						<div class="right_panel col-md-6">
-              <?php while ( have_posts() ) : the_post(); ?>
-                <p><?php the_field('question_1'); ?></p>
-              <?php endwhile; ?>
-              <?php wp_reset_query(); ?>
-							<input type="text" id="title" value="" tabindex="1" size="20" name="title" />
-              <?php while ( have_posts() ) : the_post(); ?>
-                <p><?php the_field('question_2'); ?></p>
-              <?php endwhile; ?>
-              <?php wp_reset_query(); ?>
-                <input type="text" id="project_name" value="" tabindex="1" size="20" name="project_name" />
+    <!-- START TAB TWO -->
+    <div class="tab-pane row" id="tab2">
 
-						</div>
-            <input type="button" class="next-form btn btn-info pull-right" value="Next" />
-			    </fieldset>
-
-					<fieldset>
-						<div class="left_panel col-md-6">
-              <?php while ( have_posts() ) : the_post(); ?>
-                <h2><?php the_field('step_2_title'); ?>V1</h2>
-                <?php the_field('step_2_description'); ?>
+      	<div class="left_panel col-md-12">
+          <!-- START PLAYLIST -->
+            <!-- START PLAYLIST ITEM -->
+            <div class="playlist_item row">
+              <div class="video col-md-5">
                 <div class="embed-container">
                 <?php the_field('step_2_video_1'); ?>
                 </div>
-              <?php endwhile; ?>
-              <?php wp_reset_query(); ?>
               </div>
-
-            <div class="right_panel col-md-6">
+              <div class="desc col-md-7">
+                <h3><?php the_field('step_2_vid_desc_1');?></h3>
+                <p>
+                  NOTE: Add more content about these videos?
+                </p>
+              </div>
             </div>
-						<input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
-			      <input type="button" name="next" class="next-form btn btn-info pull-right" value="Next" />
-			    </fieldset>
+            <!-- END PLAYLIST ITEM -->
 
-          <fieldset>
-						<div class="left_panel col-md-6">
-              <?php while ( have_posts() ) : the_post(); ?>
-                <h2><?php the_field('step_2_title'); ?>V2</h2>
-                <?php the_field('step_2_description'); ?>
+            <!-- START PLAYLIST ITEM -->
+            <div class="playlist_item row">
+              <div class="video col-md-5">
                 <div class="embed-container">
                 <?php the_field('step_2_video_2'); ?>
                 </div>
-              <?php endwhile; ?>
-              <?php wp_reset_query(); ?>
               </div>
-
-            <div class="right_panel col-md-6">
+              <div class="desc col-md-7">
+                <h3><?php the_field('step_2_vid_desc_2');?></h3>
+                <p>
+                  NOTE: Add more content about these videos?
+                </p>
+              </div>
             </div>
-						<input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
-			      <input type="button" name="next" class="next-form btn btn-info pull-right" value="Next" />
-			    </fieldset>
+            <!-- END PLAYLIST ITEM -->
 
-          <fieldset>
-						<div class="left_panel col-md-6">
-              <?php while ( have_posts() ) : the_post(); ?>
-                <h2><?php the_field('step_2_title'); ?>V3</h2>
-                <?php the_field('step_2_description'); ?>
+            <!-- START PLAYLIST ITEM -->
+            <div class="playlist_item row">
+              <div class="video col-md-5">
                 <div class="embed-container">
                 <?php the_field('step_2_video_3'); ?>
                 </div>
-              <?php endwhile; ?>
-              <?php wp_reset_query(); ?>
               </div>
+              <div class="desc col-md-7">
+                <h3><?php the_field('step_2_vid_desc_3');?></h3>
+                <p>
+                  NOTE: Add more content about these videos?
+                </p>
+              </div>
+            </div>
+            <!-- END PLAYLIST ITEM -->
 
-            <div class="right_panel col-md-6">
-            </div>
-						<input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
-			      <input type="button" name="next" class="next-form btn btn-info pull-right" value="Next" />
-			    </fieldset>
+          <!-- END PLAYLIST -->
+        </div>
 
-          <fieldset>
-            <div class="left_panel col-md-6">
-              <?php while ( have_posts() ) : the_post(); ?>
-                <h2><?php the_field('step_3_title'); ?></h2>
-                <?php the_field('step_3_description'); ?>
-                <div class="embed-container">
-                  <?php the_field('step_3_video'); ?>
-                </div>
-              <?php endwhile; ?>
-              <?php wp_reset_query(); ?>
-            </div>
-            <div class="right_panel col-md-6">
-              <?php while ( have_posts() ) : the_post(); ?>
-                <p><?php the_field('question_3'); ?></p>
-              <?php endwhile; ?>
-              <?php wp_reset_query(); ?>
-              <input type="text" id="title" value="" tabindex="1" size="20" name="title" />
-              <?php while ( have_posts() ) : the_post(); ?>
-                <p><?php the_field('question_4'); ?></p>
-              <?php endwhile; ?>
-              <?php wp_reset_query(); ?>
-              <input type="text" id="title" value="" tabindex="1" size="20" name="title" />
-              <input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
-  			      <input type="button" name="next" class="next-form btn btn-info pull-right" value="Next" />
-            </div>
-          </fieldset>
+    </div>
+    <!-- END TAB TWO -->
 
-          <fieldset>
-            <div class="left_panel col-md-6">
-              <?php while ( have_posts() ) : the_post(); ?>
-                <h2><?php the_field('step_4_title'); ?></h2>
-              <?php endwhile; ?>
-              <?php wp_reset_query(); ?>
-            </div>
-            <div class="right_panel col-md-6">
-              <?php while ( have_posts() ) : the_post(); ?>
-                <p><?php the_field('question_5'); ?></p>
-              <?php endwhile; ?>
-              <?php wp_reset_query(); ?>
-              <input type="text" id="title" value="" tabindex="1" size="20" name="title" />
-              <?php while ( have_posts() ) : the_post(); ?>
-                <p><?php the_field('question_6'); ?></p>
-              <?php endwhile; ?>
-              <?php wp_reset_query(); ?>
-              <input type="text" id="title" value="" tabindex="1" size="20" name="title" />
-            </div>
-            <input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
-            <input type="button" name="next" class="next-form btn btn-info pull-right" value="Next" />
-			    </fieldset>
+    <!-- START TAB THREE -->
+    <div class="tab-pane row" id="tab3">
+      	<div class="left_panel col-md-6">
+          <div class="embed-container">
+          <?php the_field('step_3_video'); ?>
+          </div>
+        </div>
+        <div class="right_panel col-md-6">
+          <p><?php the_field('step_3_ques_1'); ?></p>
+          <input type="text" id="step_3_answ_1" value="" tabindex="1" size="20" name="step_1_answ_1" />
 
-          <fieldset>
-            <div class="left_panel col-md-6">
-            </div>
-            <div class="right_panel col-md-6">
-            </div>
-            <input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
-			      <input type="submit" name="submit" class="submit btn btn-success " value="Submit" />
-          </fieldset>
+          <p><?php the_field('step_3_ques_2'); ?></p>
+          <input type="text" id="step_3_answ_2" value="" tabindex="1" size="20" name="step_1_answ_2" />
+        </div>
+    </div>
+    <!-- END TAB THREE -->
 
-				<input type="hidden" name="action" value="new_post" />
-				<?php wp_nonce_field( 'new-post' ); ?>
-				</form>
-				</div>
+    <!-- START TAB FOUR -->
+    <div class="tab-pane row" id="tab4">
+      	<div class="left_panel col-md-6">
+          <p><?php the_field('step_4_ques_1'); ?></p>
+          <input type="text" id="step_4_answ_1" value="" tabindex="1" size="20" name="step_4_answ_1" />
+          <p><?php the_field('step_4_ques_2'); ?></p>
+          <input type="text" id="step_4_answ_2" value="" tabindex="1" size="20" name="step_4_answ_2" />
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB FOUR -->
+
+    <!-- START TAB FIVE -->
+    <div class="tab-pane row" id="tab5">
+      	<div class="left_panel col-md-6">
+          <p><?php the_field('step_5_ques_1'); ?></p>
+          <input type="text" id="step_5_answ_1" value="" tabindex="1" size="20" name="step_5_answ_1" />
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB FIVE -->
+
+    <!-- START TAB SIX -->
+    <div class="tab-pane row" id="tab6">
+      	<div class="left_panel col-md-6">
+
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB SIX -->
+
+    <!-- START TAB SEVEN -->
+    <div class="tab-pane row" id="tab7">
+      	<div class="left_panel col-md-6">
+
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB SEVEN -->
+
+    <!-- START TAB EIGHT -->
+    <div class="tab-pane row" id="tab8">
+      	<div class="left_panel col-md-6">
+
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB EIGHT -->
+
+    <!-- START TAB NINE -->
+    <div class="tab-pane row" id="tab9">
+      	<div class="left_panel col-md-6">
+
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB NINE -->
+
+    <!-- START TAB TEN -->
+    <div class="tab-pane row" id="tab10">
+      	<div class="left_panel col-md-6">
+
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB TEN -->
+
+    <!-- START TAB ELEVEN -->
+    <div class="tab-pane row" id="ta11">
+      	<div class="left_panel col-md-6">
+
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB ELEVEN -->
+
+    <!-- START TAB TWELVE -->
+    <div class="tab-pane row"  id="tab12">
+      	<div class="left_panel col-md-6">
+
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB TWELVE -->
+
+    <!-- START TAB THIRTEEN -->
+    <div class="tab-pane row" id="tab13">
+      	<div class="left_panel col-md-6">
+
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB THIRTEEN -->
+
+  <?php endwhile; ?>
+  <?php wp_reset_query(); ?>
+  	<ul class="pager wizard col-width-12">
+  		<li class="previous first" style="display:none;"><a class="btn" href="#">First</a></li>
+  		<li class="previous"><a class="btn" href="#">Previous</a></li>
+  		<li class="next last" style="display:none;"><a class="btn" href="#">Last</a></li>
+  	  <li class="next"><a class="btn" href="#">Next</a></li>
+  	</ul>
+  </div>
+  <!-- END TAB WRAP -->
+</div>
+<!-- WIZARD WRAP -->
+
 				<?php
 
 				if( isset($_POST['submit']) ){
@@ -211,6 +323,31 @@ display: none;
 
 </div>
 
+<!-- FORM JS STUFFS -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="<?php bloginfo('template_url');?>/js/bootstrap.min.js"></script>
+<script src="<?php bloginfo('template_url');?>/js/jquery.bootstrap.wizard.js"></script>
+<script src="<?php bloginfo('template_url');?>/js/prettify.js"></script>
+<script>
+$(document).ready(function() {
+  	$('#rootwizard').bootstrapWizard({onNext: function(tab, navigation, index) {
+			if(index==1) {
+				// Make sure we entered the name
+				if(!$('#step_1_answ_1').val()) {
+					alert('You must enter your name');
+					$('#step_1_answ_1').focus();
+					return false;
+				}
+			}
+
+
+		}, onTabShow: function(tab, navigation, index) {
+			var $total = navigation.find('li').length;
+			var $current = index+1;
+			var $percent = ($current/$total) * 100;
+			$('#rootwizard .progress-bar').css({width:$percent+'%'});
+		}});
+});</script>
 
 
 <?php get_footer(); ?>
