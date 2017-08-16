@@ -28,38 +28,148 @@ display: none;
 				<h1><?php the_title(); ?></h1>
 			<?php endwhile; ?>
 			<?php wp_reset_query(); ?>
-					<div class="row">
-						<div class="col-md-6">
 
-						</div>
-					  <div class="progress col-md-6">
-					    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-					  </div>
-				  <div class="alert alert-success hide"></div>
-					</div>
-
+         <div class="alert alert-success hide"></div>
 				<form id="new_post" name="new_post" method="post" action="">
 					<fieldset>
-						<div class="col-md-6">
+						<div class="left_panel col-md-6">
+              <?php while ( have_posts() ) : the_post(); ?>
+        				<h2><?php the_field('step_1_title'); ?></h2>
+                <?php the_field('step_1_description'); ?>
+                <div class="embed-container">
+                <?php the_field('step_1_video'); ?>
+              </div>
+        			<?php endwhile; ?>
+              <?php wp_reset_query(); ?>
 						</div>
-						<div class="col-md-6">
+						<div class="right_panel col-md-6">
+              <?php while ( have_posts() ) : the_post(); ?>
+                <p><?php the_field('question_1'); ?></p>
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
 							<input type="text" id="title" value="" tabindex="1" size="20" name="title" />
-							<input type="text" id="project_name" value="" tabindex="1" size="20" name="project_name" />
-							</p>
+              <?php while ( have_posts() ) : the_post(); ?>
+                <p><?php the_field('question_2'); ?></p>
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
+                <input type="text" id="project_name" value="" tabindex="1" size="20" name="project_name" />
+
 						</div>
-							<input type="button" class="next-form btn btn-info" value="Next" />
-			    </fieldset>
-					<fieldset>
-						part 2
-						<input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
-			      <input type="button" name="next" class="next-form btn btn-info" value="Next" />
-			    </fieldset>
-					<fieldset>
-						part 2
-						<input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
-			      <input type="submit" name="submit" class="submit btn btn-success" value="Submit" />
+            <input type="button" class="next-form btn btn-info pull-right" value="Next" />
 			    </fieldset>
 
+					<fieldset>
+						<div class="left_panel col-md-6">
+              <?php while ( have_posts() ) : the_post(); ?>
+                <h2><?php the_field('step_2_title'); ?>V1</h2>
+                <?php the_field('step_2_description'); ?>
+                <div class="embed-container">
+                <?php the_field('step_2_video_1'); ?>
+                </div>
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
+              </div>
+
+            <div class="right_panel col-md-6">
+            </div>
+						<input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
+			      <input type="button" name="next" class="next-form btn btn-info pull-right" value="Next" />
+			    </fieldset>
+
+          <fieldset>
+						<div class="left_panel col-md-6">
+              <?php while ( have_posts() ) : the_post(); ?>
+                <h2><?php the_field('step_2_title'); ?>V2</h2>
+                <?php the_field('step_2_description'); ?>
+                <div class="embed-container">
+                <?php the_field('step_2_video_2'); ?>
+                </div>
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
+              </div>
+
+            <div class="right_panel col-md-6">
+            </div>
+						<input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
+			      <input type="button" name="next" class="next-form btn btn-info pull-right" value="Next" />
+			    </fieldset>
+
+          <fieldset>
+						<div class="left_panel col-md-6">
+              <?php while ( have_posts() ) : the_post(); ?>
+                <h2><?php the_field('step_2_title'); ?>V3</h2>
+                <?php the_field('step_2_description'); ?>
+                <div class="embed-container">
+                <?php the_field('step_2_video_3'); ?>
+                </div>
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
+              </div>
+
+            <div class="right_panel col-md-6">
+            </div>
+						<input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
+			      <input type="button" name="next" class="next-form btn btn-info pull-right" value="Next" />
+			    </fieldset>
+
+          <fieldset>
+            <div class="left_panel col-md-6">
+              <?php while ( have_posts() ) : the_post(); ?>
+                <h2><?php the_field('step_3_title'); ?></h2>
+                <?php the_field('step_3_description'); ?>
+                <div class="embed-container">
+                  <?php the_field('step_3_video'); ?>
+                </div>
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
+            </div>
+            <div class="right_panel col-md-6">
+              <?php while ( have_posts() ) : the_post(); ?>
+                <p><?php the_field('question_3'); ?></p>
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
+              <input type="text" id="title" value="" tabindex="1" size="20" name="title" />
+              <?php while ( have_posts() ) : the_post(); ?>
+                <p><?php the_field('question_4'); ?></p>
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
+              <input type="text" id="title" value="" tabindex="1" size="20" name="title" />
+              <input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
+  			      <input type="button" name="next" class="next-form btn btn-info pull-right" value="Next" />
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <div class="left_panel col-md-6">
+              <?php while ( have_posts() ) : the_post(); ?>
+                <h2><?php the_field('step_4_title'); ?></h2>
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
+            </div>
+            <div class="right_panel col-md-6">
+              <?php while ( have_posts() ) : the_post(); ?>
+                <p><?php the_field('question_5'); ?></p>
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
+              <input type="text" id="title" value="" tabindex="1" size="20" name="title" />
+              <?php while ( have_posts() ) : the_post(); ?>
+                <p><?php the_field('question_6'); ?></p>
+              <?php endwhile; ?>
+              <?php wp_reset_query(); ?>
+              <input type="text" id="title" value="" tabindex="1" size="20" name="title" />
+            </div>
+            <input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
+            <input type="button" name="next" class="next-form btn btn-info pull-right" value="Next" />
+			    </fieldset>
+
+          <fieldset>
+            <div class="left_panel col-md-6">
+            </div>
+            <div class="right_panel col-md-6">
+            </div>
+            <input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
+			      <input type="submit" name="submit" class="submit btn btn-success " value="Submit" />
+          </fieldset>
 
 				<input type="hidden" name="action" value="new_post" />
 				<?php wp_nonce_field( 'new-post' ); ?>
