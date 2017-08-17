@@ -86,7 +86,9 @@ get_header();
 
     <!-- START TAB TWO -->
     <div class="tab-pane row" id="tab2">
-
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_2_title'); ?></h2>
+      </div>
       	<div class="left_panel col-md-12">
           <!-- START PLAYLIST -->
             <!-- START PLAYLIST ITEM -->
@@ -145,6 +147,9 @@ get_header();
 
     <!-- START TAB THREE -->
     <div class="tab-pane row" id="tab3">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_3_title'); ?></h2>
+      </div>
       	<div class="left_panel col-md-6">
           <div class="embed-container">
           <?php the_field('step_3_video'); ?>
@@ -162,6 +167,9 @@ get_header();
 
     <!-- START TAB FOUR -->
     <div class="tab-pane row" id="tab4">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_4_title'); ?></h2>
+      </div>
       	<div class="left_panel col-md-6">
           <p><?php the_field('step_4_ques_1'); ?></p>
           <input type="text" id="step_4_answ_1" value="" tabindex="1" size="20" name="step_4_answ_1" />
@@ -176,6 +184,9 @@ get_header();
 
     <!-- START TAB FIVE -->
     <div class="tab-pane row" id="tab5">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_5_title'); ?></h2>
+      </div>
       	<div class="left_panel col-md-6">
           <p><?php the_field('step_5_ques_1'); ?></p>
           <input type="text" id="step_5_answ_1" value="" tabindex="1" size="20" name="step_5_answ_1" />
@@ -188,6 +199,9 @@ get_header();
 
     <!-- START TAB SIX -->
     <div class="tab-pane row" id="tab6">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_6_title'); ?></h2>
+      </div>
       	<div class="left_panel col-md-6">
           <p><?php the_field('step_6_ques_1'); ?></p>
           <input type="text" id="step_6_answ_1" value="" tabindex="1" size="20" name="step_6_answ_1" />
@@ -203,6 +217,9 @@ get_header();
 
     <!-- START TAB SEVEN -->
     <div class="tab-pane row" id="tab7">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_7_title'); ?></h2>
+      </div>
       	<div class="left_panel col-md-6">
           <p><?php the_field('step_7_ques_1'); ?></p>
           <input type="text" id="step_7_answ_1" value="" tabindex="1" size="20" name="step_7_answ_1" />
@@ -218,8 +235,10 @@ get_header();
 
     <!-- START TAB EIGHT -->
     <div class="tab-pane row" id="tab8">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_8_title'); ?></h2>
+      </div>
       	<div class="left_panel col-md-6">
-          <h2><?php the_field('step_8_title'); ?></h2>
           <p><?php the_field('step_8_ques_1'); ?></p>
           <input type="text" id="step_8_answ_1" value="" tabindex="1" size="20" name="step_8_answ_1" />
           <p><?php the_field('step_8_ques_2'); ?></p>
@@ -233,8 +252,10 @@ get_header();
 
     <!-- START TAB NINE -->
     <div class="tab-pane row" id="tab9">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_9_title'); ?></h2>
+      </div>
       	<div class="left_panel col-md-6">
-          <h2><?php the_field('step_9_title'); ?></h2>
           <!-- START PLAYLIST ITEM -->
           <div class="playlist_item row">
             <div class="video col-md-5">
@@ -279,10 +300,10 @@ get_header();
 
     <!-- START TAB TEN -->
     <div class="tab-pane row" id="tab10">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_10_title'); ?></h2>
+      </div>
       	<div class="left_panel col-md-6">
-          <h2><?php the_field('step_10_title'); ?></h2>
-        </div>
-        <div class="right_panel col-md-6">
           <p><?php the_field('step_10_ques_1'); ?></p>
           <input type="text" id="step_10_answ_1" value="" tabindex="1" size="20" name="step_10_answ_1" />
           <p><?php the_field('step_10_ques_2'); ?></p>
@@ -290,13 +311,18 @@ get_header();
           <p><?php the_field('step_10_ques_3'); ?></p>
           <input type="text" id="step_10_answ_3" value="" tabindex="1" size="20" name="step_10_answ_3" />
         </div>
+        <div class="right_panel col-md-6">
+
+        </div>
     </div>
     <!-- END TAB TEN -->
 
     <!-- START TAB ELEVEN -->
     <div class="tab-pane row" id="ta11">
-      	<div class="left_panel col-md-6">
+        <div class="panel_title col-md-12">
           <h2><?php the_field('step_11_title'); ?></h2>
+        </div>
+      	<div class="left_panel col-md-6">
             <?php the_field('step_11_video_1'); ?>
         </div>
         <div class="right_panel col-md-6">
@@ -307,6 +333,9 @@ get_header();
 
     <!-- START TAB TWELVE -->
     <div class="tab-pane row"  id="tab12">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_12_title'); ?></h2>
+      </div>
       	<div class="left_panel col-md-6">
           <p><?php the_field('step_12_ques_1'); ?></p>
           <input type="text" id="step_12_answ_1" value="" tabindex="1" size="20" name="step_12_answ_1" />
@@ -319,8 +348,10 @@ get_header();
 
     <!-- START TAB THIRTEEN -->
     <div class="tab-pane row" id="tab13">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_13_title'); ?></h2>
+      </div>
       	<div class="left_panel col-md-6">
-          <h2><?php the_field('step_13_title'); ?></h2>
         </div>
         <div class="right_panel col-md-6">
           <p><?php the_field('step_13_ques_1'); ?></p>
