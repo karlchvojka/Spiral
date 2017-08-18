@@ -352,12 +352,13 @@ get_header();
         <h2><?php the_field('step_13_title'); ?></h2>
       </div>
       	<div class="left_panel col-md-6">
-        </div>
-        <div class="right_panel col-md-6">
           <p><?php the_field('step_13_ques_1'); ?></p>
           <input type="text" id="step_13_answ_1" value="" tabindex="1" size="20" name="step_13_answ_1" />
           <p><?php the_field('step_13_ques_2'); ?></p>
           <input type="text" id="step_13_answ_2" value="" tabindex="1" size="20" name="step_13_answ_2" />
+        </div>
+        <div class="right_panel col-md-6">
+
         </div>
     </div>
     <!-- END TAB THIRTEEN -->
