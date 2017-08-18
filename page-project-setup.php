@@ -383,7 +383,7 @@ get_header();
 				    if (isset ($_POST['title'])) {
 				        $title =  $_POST['title'];
 				    } else {
-				        echo 'Please enter a  title';
+				        echo 'Please enter a project title';
 				    }
 
 				    // Add the content of the form to $post as an array
