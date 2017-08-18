@@ -147,12 +147,12 @@ ul {
     background-color:#ffffff;
     }
 
-  .right_panel p {
+  .right_panel p, .left_panel p {
     font-size:17px;
     color:#353641;
     margin-bottom:15px;
     }
-  .right_panel input {
+  .right_panel input, .left_panel input {
     padding:15px;
     width:100%;
     border-radius:4px;
