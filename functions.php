@@ -114,53 +114,316 @@ function settings_screen( $group_id = NULL ) {
     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
   </div>
 	<div class="tab-content">
-		<div class="tab-pane row" id="tab1">
+		<!-- START TAB ONE -->
+    <div class="tab-pane row" id="tab1">
+      <?php while ( have_posts() ) : the_post(); ?>
       <div class="panel_title col-md-12">
-        <h2>tab1</h2>
+        <h2><?php the_field('step_1_title'); ?></h2>
+      </div>
+
+      <div class="left_panel col-md-6">
+
+        <div class="embed-container">
+        <?php the_field('step_1_video'); ?>
+        </div>
+      </div>
+      <div class="right_panel col-md-6">
+        <p><?php the_field('step_1_ques_1'); ?></p>
+				<input type="text" id="step_1_answ_1" value="" tabindex="1" size="20" name="step_1_answ_1" />
+
+        <p><?php the_field('step_1_ques_2'); ?></p>
+        <input type="text" id="step_1_answ_2" value="" tabindex="1" size="20" name="step_1_answ_2" />
+
+        <p><?php the_field('step_1_ques_3'); ?></p>
+        <input type="text" id="step_1_answ_3" value="" tabindex="1" size="20" name="step_1_answ_3" />
+
+
+      </div>
+      <div class="ask_moses col-md-12">
+
+      </div>
+    </div>
+    <!-- END TAB ONE -->
+
+    <!-- START TAB TWO -->
+    <div class="tab-pane row" id="tab2">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_2_title'); ?></h2>
+      </div>
+      	<div class="left_panel col-md-12">
+          <!-- START PLAYLIST -->
+            <!-- START PLAYLIST ITEM -->
+            <div class="playlist_item row">
+              <div class="video col-md-5">
+                <div class="embed-container">
+                <?php the_field('step_2_video_1'); ?>
+                </div>
+              </div>
+              <div class="desc col-md-7">
+                <h3><?php the_field('step_2_vid_desc_1');?></h3>
+                <p>
+                  NOTE: Add more content about these videos?
+                </p>
+              </div>
+            </div>
+            <!-- END PLAYLIST ITEM -->
+
+            <!-- START PLAYLIST ITEM -->
+            <div class="playlist_item row">
+              <div class="video col-md-5">
+                <div class="embed-container">
+                <?php the_field('step_2_video_2'); ?>
+                </div>
+              </div>
+              <div class="desc col-md-7">
+                <h3><?php the_field('step_2_vid_desc_2');?></h3>
+                <p>
+                  NOTE: Add more content about these videos?
+                </p>
+              </div>
+            </div>
+            <!-- END PLAYLIST ITEM -->
+
+            <!-- START PLAYLIST ITEM -->
+            <div class="playlist_item row">
+              <div class="video col-md-5">
+                <div class="embed-container">
+                <?php the_field('step_2_video_3'); ?>
+                </div>
+              </div>
+              <div class="desc col-md-7">
+                <h3><?php the_field('step_2_vid_desc_3');?></h3>
+                <p>
+                  NOTE: Add more content about these videos?
+                </p>
+              </div>
+            </div>
+            <!-- END PLAYLIST ITEM -->
+
+          <!-- END PLAYLIST -->
+        </div>
+
+    </div>
+    <!-- END TAB TWO -->
+
+    <!-- START TAB THREE -->
+    <div class="tab-pane row" id="tab3">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_3_title'); ?></h2>
       </div>
       	<div class="left_panel col-md-6">
-					<p><?php the_field('step_1_ques_1'); ?></p>
-					<input type="text" id="step_1_answ_1" value="" tabindex="1" size="20" name="step_1_answ_1" />
+          <div class="embed-container">
+          <?php the_field('step_3_video'); ?>
+          </div>
         </div>
         <div class="right_panel col-md-6">
-					<div>
-					Street Address:<br />
-					<input type="text" name="group_ext_st_address" value="<?php echo $st_address; ?>">
-					</div>
-					<div>
-					Country:<br />
-					<input type="text" name="group_ext_country" value="<?php echo $country; ?>">
-					</div>
-					<div>
+          <p><?php the_field('step_3_ques_1'); ?></p>
+          <input type="text" id="step_3_answ_1" value="" tabindex="1" size="20" name="step_1_answ_1" />
+
+          <p><?php the_field('step_3_ques_2'); ?></p>
+          <input type="text" id="step_3_answ_2" value="" tabindex="1" size="20" name="step_1_answ_2" />
         </div>
     </div>
-	</div>
-		<div class="tab-pane row" id="tab2">
+    <!-- END TAB THREE -->
+
+    <!-- START TAB FOUR -->
+    <div class="tab-pane row" id="tab4">
       <div class="panel_title col-md-12">
-        <h2>tab2</h2>
+        <h2><?php the_field('step_4_title'); ?></h2>
       </div>
       	<div class="left_panel col-md-6">
+          <p><?php the_field('step_4_ques_1'); ?></p>
+          <input type="text" id="step_4_answ_1" value="" tabindex="1" size="20" name="step_4_answ_1" />
+          <p><?php the_field('step_4_ques_2'); ?></p>
+          <input type="text" id="step_4_answ_2" value="" tabindex="1" size="20" name="step_4_answ_2" />
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB FOUR -->
+
+    <!-- START TAB FIVE -->
+    <div class="tab-pane row" id="tab5">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_5_title'); ?></h2>
+      </div>
+      	<div class="left_panel col-md-6">
+          <p><?php the_field('step_5_ques_1'); ?></p>
+          <input type="text" id="step_5_answ_1" value="" tabindex="1" size="20" name="step_5_answ_1" />
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB FIVE -->
+
+    <!-- START TAB SIX -->
+    <div class="tab-pane row" id="tab6">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_6_title'); ?></h2>
+      </div>
+      	<div class="left_panel col-md-6">
+          <p><?php the_field('step_6_ques_1'); ?></p>
+          <input type="text" id="step_6_answ_1" value="" tabindex="1" size="20" name="step_6_answ_1" />
+          <p><?php the_field('step_6_ques_2'); ?></p>
+          <input type="text" id="step_6_answ_2" value="" tabindex="1" size="20" name="step_6_answ_2" />
 
         </div>
         <div class="right_panel col-md-6">
-					<div>
-					Mobile:<br />
-					<input type="text" name="group_ext_mobile" value="<?php echo $mobile; ?>">
-					</div>
-					<div>
-					Phone:<br />
-					<input type="text" name="group_ext_phone" value="<?php echo $phone; ?>">
-					</div>
-					<div>
-					Email:<br />
-					<input type="text" name="group_ext_email" value="<?php echo $email; ?>">
-					</div>
-					<div>
-					Website:<br />
-					<input type="text" name="group_ext_website" value="<?php echo $website; ?>">
-					</div>
+
         </div>
     </div>
+    <!-- END TAB SIX -->
+
+    <!-- START TAB SEVEN -->
+    <div class="tab-pane row" id="tab7">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_7_title'); ?></h2>
+      </div>
+      	<div class="left_panel col-md-6">
+          <p><?php the_field('step_7_ques_1'); ?></p>
+          <input type="text" id="step_7_answ_1" value="" tabindex="1" size="20" name="step_7_answ_1" />
+          <p><?php the_field('step_7_ques_2'); ?></p>
+          <input type="text" id="step_7_answ_2" value="" tabindex="1" size="20" name="step_7_answ_2" />
+
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB SEVEN -->
+
+    <!-- START TAB EIGHT -->
+    <div class="tab-pane row" id="tab8">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_8_title'); ?></h2>
+      </div>
+      	<div class="left_panel col-md-6">
+          <p><?php the_field('step_8_ques_1'); ?></p>
+          <input type="text" id="step_8_answ_1" value="" tabindex="1" size="20" name="step_8_answ_1" />
+          <p><?php the_field('step_8_ques_2'); ?></p>
+          <input type="text" id="step_8_answ_2" value="" tabindex="1" size="20" name="step_8_answ_2" />
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB EIGHT -->
+
+    <!-- START TAB NINE -->
+    <div class="tab-pane row" id="tab9">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_9_title'); ?></h2>
+      </div>
+      	<div class="left_panel col-md-6">
+          <!-- START PLAYLIST ITEM -->
+          <div class="playlist_item row">
+            <div class="video col-md-5">
+              <div class="embed-container">
+              <?php the_field('step_9_video_1'); ?>
+              </div>
+            </div>
+            <div class="desc col-md-7">
+              <h3><?php the_field('step_9_vid_desc_1');?></h3>
+              <p>
+                NOTE: Add more content about these videos?
+              </p>
+            </div>
+          </div>
+          <!-- END PLAYLIST ITEM -->
+          <!-- START PLAYLIST ITEM -->
+          <div class="playlist_item row">
+            <div class="video col-md-5">
+              <div class="embed-container">
+              <?php the_field('step_9_video_2'); ?>
+              </div>
+            </div>
+            <div class="desc col-md-7">
+              <h3><?php the_field('step_9_vid_desc_2');?></h3>
+              <p>
+                NOTE: Add more content about these videos?
+              </p>
+            </div>
+          </div>
+          <!-- END PLAYLIST ITEM -->
+        </div>
+        <div class="right_panel col-md-6">
+          <p><?php the_field('step_9_ques_1'); ?></p>
+          <input type="text" id="step_9_answ_1" value="" tabindex="1" size="20" name="step_9_answ_1" />
+          <p><?php the_field('step_9_ques_2'); ?></p>
+          <input type="text" id="step_9_answ_2" value="" tabindex="1" size="20" name="step_9_answ_2" />
+          <p><?php the_field('step_9_ques_3'); ?></p>
+          <input type="text" id="step_9_answ_3" value="" tabindex="1" size="20" name="step_9_answ_3" />
+        </div>
+    </div>
+    <!-- END TAB NINE -->
+
+    <!-- START TAB TEN -->
+    <div class="tab-pane row" id="tab10">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_10_title'); ?></h2>
+      </div>
+      	<div class="left_panel col-md-6">
+          <p><?php the_field('step_10_ques_1'); ?></p>
+          <input type="text" id="step_10_answ_1" value="" tabindex="1" size="20" name="step_10_answ_1" />
+          <p><?php the_field('step_10_ques_2'); ?></p>
+          <input type="text" id="step_10_answ_2" value="" tabindex="1" size="20" name="step_10_answ_2" />
+          <p><?php the_field('step_10_ques_3'); ?></p>
+          <input type="text" id="step_10_answ_3" value="" tabindex="1" size="20" name="step_10_answ_3" />
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB TEN -->
+
+    <!-- START TAB ELEVEN -->
+    <div class="tab-pane row" id="ta11">
+        <div class="panel_title col-md-12">
+          <h2><?php the_field('step_11_title'); ?></h2>
+        </div>
+      	<div class="left_panel col-md-6">
+            <?php the_field('step_11_video_1'); ?>
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB ELEVEN -->
+
+    <!-- START TAB TWELVE -->
+    <div class="tab-pane row"  id="tab12">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_12_title'); ?></h2>
+      </div>
+      	<div class="left_panel col-md-6">
+          <p><?php the_field('step_12_ques_1'); ?></p>
+          <input type="text" id="step_12_answ_1" value="" tabindex="1" size="20" name="step_12_answ_1" />
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB TWELVE -->
+
+    <!-- START TAB THIRTEEN -->
+    <div class="tab-pane row" id="tab13">
+      <div class="panel_title col-md-12">
+        <h2><?php the_field('step_13_title'); ?></h2>
+      </div>
+      	<div class="left_panel col-md-6">
+          <p><?php the_field('step_13_ques_1'); ?></p>
+          <input type="text" id="step_13_answ_1" value="" tabindex="1" size="20" name="step_13_answ_1" />
+          <p><?php the_field('step_13_ques_2'); ?></p>
+          <input type="text" id="step_13_answ_2" value="" tabindex="1" size="20" name="step_13_answ_2" />
+        </div>
+        <div class="right_panel col-md-6">
+
+        </div>
+    </div>
+    <!-- END TAB THIRTEEN -->
+
 		<ul class="pager wizard col-width-12">
   		<li class="previous first" style="display:none;"><a class="btn" href="#">First</a></li>
   		<li class="previous"><a class="btn" href="#">Previous</a></li>
