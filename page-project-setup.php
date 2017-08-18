@@ -422,7 +422,7 @@ $(document).ready(function() {
 			if(index==1) {
 				// Make sure we entered the name
 				if(!$('#step_1_answ_1').val()) {
-					alert('You must enter your name');
+					alert('You must enter a Project name');
 					$('#step_1_answ_1').focus();
 					return false;
 				}
