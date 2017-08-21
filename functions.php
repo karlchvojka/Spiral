@@ -53,15 +53,15 @@ if ( class_exists( 'BP_Group_Extension' ) ) :
 class Group_Extension_Ville extends BP_Group_Extension {
 function __construct() {
 $args = array(
-'slug' => 'add-contact-info',
-'name' => 'Contact Info',
+'slug' => 'add-inq-form',
+'name' => 'Inquiry',
 'nav_item_position' => 1,
  'screens' => array(
 		 'edit' => array(
-				 'name' => 'GE Example 2',
+				 'name' => 'Inquiry',
 				 // Changes the text of the Submit button
 				 // on the Edit page
-				 'submit_text' => 'Submit, suckaz',
+				 'submit_text' => 'Submit',
 		 ),
 		 'create' => array(
 				 'position' => 1,
@@ -72,35 +72,123 @@ parent::init( $args );
 }
 function display() {
 $group_id = bp_get_group_id();
-$st_address = groups_get_groupmeta( $group_id, 'group_ext_st_address' );
-$country = groups_get_groupmeta( $group_id, 'group_ext_country' );
-$mobile = groups_get_groupmeta( $group_id, 'group_ext_mobile' );
-$phone = groups_get_groupmeta( $group_id, 'group_ext_phone' );
-$email = groups_get_groupmeta( $group_id, 'group_ext_email' );
+$step1ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step1ans1');
+$step1ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step1ans2');
+$step1ans3 = groups_get_groupmeta ( $group_id, 'group_ext_step1ans3');
+$step3ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step3ans1');
+$step3ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step3ans2');
+$step4ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step4ans1');
+$step4ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step4ans2');
+$step5ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step5ans1');
+$step6ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step6ans1');
+$step6ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step6ans2');
+$step7ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step7ans1');
+$step7ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step7ans2');
+$step8ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step8ans1');
+$step8ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step8ans2');
+$step9ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step9ans1');
+$step9ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step9ans2');
+$step9ans3 = groups_get_groupmeta ( $group_id, 'group_ext_step9ans3');
+$step10ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step10ans1');
+$step10ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step10ans2');
+$step10ans3 = groups_get_groupmeta ( $group_id, 'group_ext_step10ans3');
+$step12ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step12ans1');
+$step13ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans1');
+$step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 
-$website = groups_get_groupmeta( $group_id, 'group_ext_website' );
+//Step one
+if($step1ans1)
+echo "<h5>$step1ans1</h5>";
+if($step1ans2)
+echo "<h5>$step1ans2</h5>";
+if($step1ans3)
+echo "<h5>$step1ans3</h5>";
 
-if($st_address)
-echo "<h5>$st_address<h5>";
-if($country)
-echo "<h5>$country<h5>";
-if($mobile)
-echo "<h5>$mobile<h5>";
-if($phone)
-echo "<h5>$phone<h5>";
-if($email)
-echo '<h5><a href="mailto:'.$email.'">'.$email.'<h5>';
+//Step three
+if($step3ans1)
+echo "<h5>$step3ans1</h5>";
+if($step3ans2)
+echo "<h5>$step3ans2</h5>";
 
-if($website)
-echo '<h5><a href="'.$website.'" target="_blank">'.$website.'<h5>';
+//Step Four
+if($step4ans1)
+echo "<h5>$step4ans1</h5>";
+if($step4ans2)
+echo "<h5>$step4ans2</h5>";
+
+//Step Five
+if($step5ans1)
+echo "<h5>$step5ans1</h5>";
+
+//Step Six
+if($step6ans1)
+echo "<h5>$step6ans1</h5>";
+if($step6ans1)
+echo "<h5>$step6ans1</h5>";
+
+//Step Seven
+if($step7ans1)
+echo "<h5>$step7ans1</h5>";
+if($step7ans2)
+echo "<h5>$step7ans2</h5>";
+
+//Step Eight
+if($step8ans1)
+echo "<h5>$step8ans1</h5>";
+if($step8ans2)
+echo "<h5>$step8ans2</h5>";
+
+//Step Nine
+if($step9ans1)
+echo "<h5>$step9ans1</h5>";
+if($step9ans2)
+echo "<h5>$step9ans2</h5>";
+if($step9ans3)
+echo "<h5>$step9ans3</h5>";
+
+//Step Ten
+if($step10ans1)
+echo "<h5>$step10ans1</h5>";
+if($step10ans2)
+echo "<h5>$step10ans2</h5>";
+if($step10ans3)
+echo "<h5>$step10ans3</h5>";
+
+//Step Twelve
+if($step12ans1)
+echo "<h5>$step12ans1</h5>";
+
+//Step Thirteen
+if($step13ans1)
+echo "<h5>$step13ans1</h5>";
+if($step13ans2)
+echo "<h5>$step13ans2</h5>";
+
 }
 function settings_screen( $group_id = NULL ) {
-$st_address = groups_get_groupmeta( $group_id, 'group_ext_st_address' );
-$country = groups_get_groupmeta( $group_id, 'group_ext_country' );
-$mobile = groups_get_groupmeta( $group_id, 'group_ext_mobile' );
-$phone = groups_get_groupmeta( $group_id, 'group_ext_phone' );
-$email = groups_get_groupmeta( $group_id, 'group_ext_email' );
-$website = groups_get_groupmeta( $group_id, 'group_ext_website' );
+	$step1ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step1ans1');
+	$step1ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step1ans2');
+	$step1ans3 = groups_get_groupmeta ( $group_id, 'group_ext_step1ans3');
+	$step3ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step3ans1');
+	$step3ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step3ans2');
+	$step4ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step4ans1');
+	$step4ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step4ans2');
+	$step5ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step5ans1');
+	$step6ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step6ans1');
+	$step6ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step6ans2');
+	$step7ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step7ans1');
+	$step7ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step7ans2');
+	$step8ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step8ans1');
+	$step8ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step8ans2');
+	$step9ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step9ans1');
+	$step9ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step9ans2');
+	$step9ans3 = groups_get_groupmeta ( $group_id, 'group_ext_step9ans3');
+	$step10ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step10ans1');
+	$step10ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step10ans2');
+	$step10ans3 = groups_get_groupmeta ( $group_id, 'group_ext_step10ans3');
+	$step12ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step12ans1');
+	$step13ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans1');
+	$step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 ?>
 <div id="rootwizard" class="container">
 	<!-- WIZARD TABS -->
@@ -136,8 +224,13 @@ $website = groups_get_groupmeta( $group_id, 'group_ext_website' );
 	<!-- STAGE START -->
 	  <div class="tab-content">
 	    <!-- START TAB ONE -->
+			<?php $the_query = new WP_Query( 'page_id=53' ); ?>
+
+<?php while ($the_query -> have_posts()) : $the_query -> the_post();  ?>
+
+
+
 	    <div class="tab-pane row" id="tab1">
-	      <?php while ( have_posts() ) : the_post(); ?>
 	      <div class="panel_title col-md-12">
 	        <h2><?php the_field('step_1_title'); ?></h2>
 	      </div>
@@ -150,14 +243,15 @@ $website = groups_get_groupmeta( $group_id, 'group_ext_website' );
 	      </div>
 	      <div class="right_panel col-md-6">
 	        <p><?php the_field('step_1_ques_1'); ?></p>
-					<input type="text" id="step_1_answ_1" value="" tabindex="1" size="20" name="step_1_answ_1" />
+					<?php $group = get_field( 'step_1_ques_1' );
+  				echo $group->step_1_ques_1;?>
+					<input type="text" id="step_1_answ_1" value="<?php echo $step1ans1; ?>" tabindex="1" size="20" name="group_ext_step1ans1" />
 
 	        <p><?php the_field('step_1_ques_2'); ?></p>
-	        <input type="text" id="step_1_answ_2" value="" tabindex="1" size="20" name="step_1_answ_2" />
+	        <input type="text" id="step_1_answ_2" value="<?php echo $step1ans2; ?>" tabindex="1" size="20" name="group_ext_step1ans2" />
 
 	        <p><?php the_field('step_1_ques_3'); ?></p>
-	        <input type="text" id="step_1_answ_3" value="" tabindex="1" size="20" name="step_1_answ_3" />
-
+	        <input type="text" id="step_1_answ_3" value="<?php echo $step1ans3; ?>" tabindex="1" size="20" name="group_ext_step1ans3" />
 
 	      </div>
 	      <div class="ask_moses col-md-12">
@@ -239,10 +333,10 @@ $website = groups_get_groupmeta( $group_id, 'group_ext_website' );
 	        </div>
 	        <div class="right_panel col-md-6">
 	          <p><?php the_field('step_3_ques_1'); ?></p>
-	          <input type="text" id="step_3_answ_1" value="" tabindex="1" size="20" name="step_1_answ_1" />
+	          <input type="text" id="step_3_answ_1" value="" tabindex="1" size="20" name="group_ext_step3ans1" />
 
 	          <p><?php the_field('step_3_ques_2'); ?></p>
-	          <input type="text" id="step_3_answ_2" value="" tabindex="1" size="20" name="step_1_answ_2" />
+	          <input type="text" id="step_3_answ_2" value="" tabindex="1" size="20" name="group_ext_step3ans2" />
 	        </div>
 	    </div>
 	    <!-- END TAB THREE -->
@@ -254,9 +348,9 @@ $website = groups_get_groupmeta( $group_id, 'group_ext_website' );
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_4_ques_1'); ?></p>
-	          <input type="text" id="step_4_answ_1" value="" tabindex="1" size="20" name="step_4_answ_1" />
+	          <input type="text" id="step_4_answ_1" value="" tabindex="1" size="20" name="group_ext_step4ans1" />
 	          <p><?php the_field('step_4_ques_2'); ?></p>
-	          <input type="text" id="step_4_answ_2" value="" tabindex="1" size="20" name="step_4_answ_2" />
+	          <input type="text" id="step_4_answ_2" value="" tabindex="1" size="20" name="group_ext_step4ans2" />
 	        </div>
 	        <div class="right_panel col-md-6">
 
@@ -271,7 +365,7 @@ $website = groups_get_groupmeta( $group_id, 'group_ext_website' );
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_5_ques_1'); ?></p>
-	          <input type="text" id="step_5_answ_1" value="" tabindex="1" size="20" name="step_5_answ_1" />
+	          <input type="text" id="step_5_answ_1" value="" tabindex="1" size="20" name="group_ext_step5ans1" />
 	        </div>
 	        <div class="right_panel col-md-6">
 
@@ -286,9 +380,9 @@ $website = groups_get_groupmeta( $group_id, 'group_ext_website' );
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_6_ques_1'); ?></p>
-	          <input type="text" id="step_6_answ_1" value="" tabindex="1" size="20" name="step_6_answ_1" />
+	          <input type="text" id="step_6_answ_1" value="" tabindex="1" size="20" name="group_ext_step6ans1" />
 	          <p><?php the_field('step_6_ques_2'); ?></p>
-	          <input type="text" id="step_6_answ_2" value="" tabindex="1" size="20" name="step_6_answ_2" />
+	          <input type="text" id="step_6_answ_2" value="" tabindex="1" size="20" name="group_ext_step6ans2" />
 
 	        </div>
 	        <div class="right_panel col-md-6">
@@ -304,9 +398,9 @@ $website = groups_get_groupmeta( $group_id, 'group_ext_website' );
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_7_ques_1'); ?></p>
-	          <input type="text" id="step_7_answ_1" value="" tabindex="1" size="20" name="step_7_answ_1" />
+	          <input type="text" id="step_7_answ_1" value="" tabindex="1" size="20" name="group_ext_step7ans1" />
 	          <p><?php the_field('step_7_ques_2'); ?></p>
-	          <input type="text" id="step_7_answ_2" value="" tabindex="1" size="20" name="step_7_answ_2" />
+	          <input type="text" id="step_7_answ_2" value="" tabindex="1" size="20" name="group_ext_step7ans2" />
 
 	        </div>
 	        <div class="right_panel col-md-6">
@@ -322,9 +416,9 @@ $website = groups_get_groupmeta( $group_id, 'group_ext_website' );
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_8_ques_1'); ?></p>
-	          <input type="text" id="step_8_answ_1" value="" tabindex="1" size="20" name="step_8_answ_1" />
+	          <input type="text" id="step_8_answ_1" value="" tabindex="1" size="20" name="group_ext_step8ans1" />
 	          <p><?php the_field('step_8_ques_2'); ?></p>
-	          <input type="text" id="step_8_answ_2" value="" tabindex="1" size="20" name="step_8_answ_2" />
+	          <input type="text" id="step_8_answ_2" value="" tabindex="1" size="20" name="group_ext_step8ans2" />
 	        </div>
 	        <div class="right_panel col-md-6">
 
@@ -371,11 +465,11 @@ $website = groups_get_groupmeta( $group_id, 'group_ext_website' );
 	        </div>
 	        <div class="right_panel col-md-6">
 	          <p><?php the_field('step_9_ques_1'); ?></p>
-	          <input type="text" id="step_9_answ_1" value="" tabindex="1" size="20" name="step_9_answ_1" />
+	          <input type="text" id="step_9_answ_1" value="" tabindex="1" size="20" name="group_ext_step9ans1" />
 	          <p><?php the_field('step_9_ques_2'); ?></p>
-	          <input type="text" id="step_9_answ_2" value="" tabindex="1" size="20" name="step_9_answ_2" />
+	          <input type="text" id="step_9_answ_2" value="" tabindex="1" size="20" name="group_ext_step9ans2" />
 	          <p><?php the_field('step_9_ques_3'); ?></p>
-	          <input type="text" id="step_9_answ_3" value="" tabindex="1" size="20" name="step_9_answ_3" />
+	          <input type="text" id="step_9_answ_3" value="" tabindex="1" size="20" name="group_ext_step9ans3" />
 	        </div>
 	    </div>
 	    <!-- END TAB NINE -->
@@ -387,11 +481,11 @@ $website = groups_get_groupmeta( $group_id, 'group_ext_website' );
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_10_ques_1'); ?></p>
-	          <input type="text" id="step_10_answ_1" value="" tabindex="1" size="20" name="step_10_answ_1" />
+	          <input type="text" id="step_10_answ_1" value="" tabindex="1" size="20" name="group_ext_step10ans1" />
 	          <p><?php the_field('step_10_ques_2'); ?></p>
-	          <input type="text" id="step_10_answ_2" value="" tabindex="1" size="20" name="step_10_answ_2" />
+	          <input type="text" id="step_10_answ_2" value="" tabindex="1" size="20" name="group_ext_step10ans2" />
 	          <p><?php the_field('step_10_ques_3'); ?></p>
-	          <input type="text" id="step_10_answ_3" value="" tabindex="1" size="20" name="step_10_answ_3" />
+	          <input type="text" id="step_10_answ_3" value="" tabindex="1" size="20" name="group_ext_step10ans3" />
 	        </div>
 	        <div class="right_panel col-md-6">
 
@@ -420,7 +514,7 @@ $website = groups_get_groupmeta( $group_id, 'group_ext_website' );
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_12_ques_1'); ?></p>
-	          <input type="text" id="step_12_answ_1" value="" tabindex="1" size="20" name="step_12_answ_1" />
+	          <input type="text" id="step_12_answ_1" value="" tabindex="1" size="20" name="group_ext_step12ans1" />
 	        </div>
 	        <div class="right_panel col-md-6">
 
@@ -435,18 +529,16 @@ $website = groups_get_groupmeta( $group_id, 'group_ext_website' );
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_13_ques_1'); ?></p>
-	          <input type="text" id="step_13_answ_1" value="" tabindex="1" size="20" name="step_13_answ_1" />
+	          <input type="text" id="step_13_answ_1" value="" tabindex="1" size="20" name="group_ext_step13ans1" />
 	          <p><?php the_field('step_13_ques_2'); ?></p>
-	          <input type="text" id="step_13_answ_2" value="" tabindex="1" size="20" name="step_13_answ_2" />
+	          <input type="text" id="step_13_answ_2" value="" tabindex="1" size="20" name="group_ext_step13ans2" />
 	        </div>
 	        <div class="right_panel col-md-6">
 
 	        </div>
 	    </div>
 	    <!-- END TAB THIRTEEN -->
-
-	  <?php endwhile; ?>
-	  <?php wp_reset_query(); ?>
+			  <?php endwhile; ?>
 	  	<ul class="pager wizard col-width-12">
 	  		<li class="previous first" style="display:none;"><a class="btn" href="#">First</a></li>
 	  		<li class="previous"><a class="btn" href="#">Previous</a></li>
@@ -460,23 +552,75 @@ $website = groups_get_groupmeta( $group_id, 'group_ext_website' );
 <?php
 }
 function settings_screen_save( $group_id = NULL ) {
-if ( isset( $_POST['group_ext_st_address'] ) ) {
-groups_update_groupmeta( $group_id, 'group_ext_st_address', sanitize_text_field($_POST['group_ext_st_address']) );
+
+if ( isset( $_POST['group_ext_step1ans1'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step1ans1', sanitize_text_field($_POST['group_ext_step1ans1']) );
 }
-if ( isset( $_POST['group_ext_country'] ) ) {
-groups_update_groupmeta( $group_id, 'group_ext_country', sanitize_text_field($_POST['group_ext_country']) );
+if ( isset( $_POST['group_ext_step1ans2'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step1ans2', sanitize_text_field($_POST['group_ext_step1ans2']) );
 }
-if ( isset( $_POST['group_ext_mobile'] ) ) {
-groups_update_groupmeta( $group_id, 'group_ext_mobile', sanitize_text_field($_POST['group_ext_mobile']) );
+if ( isset( $_POST['group_ext_step1ans3'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step1ans3', sanitize_text_field($_POST['group_ext_step1ans3']) );
 }
-if ( isset( $_POST['group_ext_phone'] ) ) {
-groups_update_groupmeta( $group_id, 'group_ext_phone', sanitize_text_field($_POST['group_ext_phone']) );
+if ( isset( $_POST['group_ext_step3ans1'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step3ans1', sanitize_text_field($_POST['group_ext_step3ans1']) );
 }
-if ( isset( $_POST['group_ext_email'] ) ) {
-groups_update_groupmeta( $group_id, 'group_ext_email', sanitize_text_field($_POST['group_ext_email']) );
+if ( isset( $_POST['group_ext_step3ans2'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step3ans2', sanitize_text_field($_POST['group_ext_step3ans2']) );
 }
-if ( isset( $_POST['group_ext_website'] ) ) {
-groups_update_groupmeta( $group_id, 'group_ext_website', sanitize_text_field($_POST['group_ext_website']) );
+if ( isset( $_POST['group_ext_step4ans1'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step4ans1', sanitize_text_field($_POST['group_ext_step4ans1']) );
+}
+if ( isset( $_POST['group_ext_step4ans2'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step4ans2', sanitize_text_field($_POST['group_ext_step4ans2']) );
+}
+if ( isset( $_POST['group_ext_step5ans1'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step5ans1', sanitize_text_field($_POST['group_ext_step5ans1']) );
+}
+if ( isset( $_POST['group_ext_step6ans1'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step6ans1', sanitize_text_field($_POST['group_ext_step6ans1']) );
+}
+if ( isset( $_POST['group_ext_step6ans2'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step6ans2', sanitize_text_field($_POST['group_ext_step6ans2']) );
+}
+if ( isset( $_POST['group_ext_step7ans1'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step7ans1', sanitize_text_field($_POST['group_ext_step7ans1']) );
+}
+if ( isset( $_POST['group_ext_step7ans2'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step7ans2', sanitize_text_field($_POST['group_ext_step7ans2']) );
+}
+if ( isset( $_POST['group_ext_step8ans1'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step8ans1', sanitize_text_field($_POST['group_ext_step8ans1']) );
+}
+if ( isset( $_POST['group_ext_step8ans2'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step8ans2', sanitize_text_field($_POST['group_ext_step8ans2']) );
+}
+if ( isset( $_POST['group_ext_step9ans1'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step9ans1', sanitize_text_field($_POST['group_ext_step9ans1']) );
+}
+if ( isset( $_POST['group_ext_step9ans2'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step9ans2', sanitize_text_field($_POST['group_ext_step9ans2']) );
+}
+if ( isset( $_POST['group_ext_step9ans3'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step9ans3', sanitize_text_field($_POST['group_ext_step9ans3']) );
+}
+if ( isset( $_POST['group_ext_step10ans1'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step10ans2', sanitize_text_field($_POST['group_ext_step10ans1']) );
+}
+if ( isset( $_POST['group_ext_step10ans2'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step10ans2', sanitize_text_field($_POST['group_ext_step10ans2']) );
+}
+if ( isset( $_POST['group_ext_step10ans3'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step10ans2', sanitize_text_field($_POST['group_ext_step10ans3']) );
+}
+if ( isset( $_POST['group_ext_step12ans1'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step12ans1', sanitize_text_field($_POST['group_ext_step12ans1']) );
+}
+if ( isset( $_POST['group_ext_step13ans1'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step13ans1', sanitize_text_field($_POST['group_ext_step13ans1']) );
+}
+if ( isset( $_POST['group_ext_step13ans2'] ) ) {
+groups_update_groupmeta( $group_id, 'group_ext_step13ans2', sanitize_text_field($_POST['group_ext_step13ans2']) );
 }
 }
 }
