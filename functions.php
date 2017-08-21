@@ -98,71 +98,71 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 
 //Step one
 if($step1ans1)
-echo "<h5>$step1ans1</h5>";
+echo "<h5>Step 1 - 1: $step1ans1</h5>";
 if($step1ans2)
-echo "<h5>$step1ans2</h5>";
+echo "<h5>Step 1 - 2: $step1ans2</h5>";
 if($step1ans3)
-echo "<h5>$step1ans3</h5>";
+echo "<h5>Step 1 - 3: $step1ans3</h5>";
 
 //Step three
 if($step3ans1)
-echo "<h5>$step3ans1</h5>";
+echo "<h5>Step 3 - 1: $step3ans1</h5>";
 if($step3ans2)
-echo "<h5>$step3ans2</h5>";
+echo "<h5>Step 3 - 2: $step3ans2</h5>";
 
 //Step Four
 if($step4ans1)
-echo "<h5>$step4ans1</h5>";
+echo "<h5>Step 4 - 1: $step4ans1</h5>";
 if($step4ans2)
-echo "<h5>$step4ans2</h5>";
+echo "<h5>Step 4 - 2: $step4ans2</h5>";
 
 //Step Five
 if($step5ans1)
-echo "<h5>$step5ans1</h5>";
+echo "<h5>Step 5 - 1: $step5ans1</h5>";
 
 //Step Six
 if($step6ans1)
-echo "<h5>$step6ans1</h5>";
+echo "<h5>Step 6 - 1: $step6ans1</h5>";
 if($step6ans1)
-echo "<h5>$step6ans1</h5>";
+echo "<h5>Step 6 - 2: $step6ans2</h5>";
 
 //Step Seven
 if($step7ans1)
-echo "<h5>$step7ans1</h5>";
+echo "<h5>Step 7 - 1: $step7ans1</h5>";
 if($step7ans2)
-echo "<h5>$step7ans2</h5>";
+echo "<h5>Step 7 - 2: $step7ans2</h5>";
 
 //Step Eight
 if($step8ans1)
-echo "<h5>$step8ans1</h5>";
+echo "<h5>Step 8 - 1: $step8ans1</h5>";
 if($step8ans2)
-echo "<h5>$step8ans2</h5>";
+echo "<h5>Step 8 - 2: $step8ans2</h5>";
 
 //Step Nine
 if($step9ans1)
-echo "<h5>$step9ans1</h5>";
+echo "<h5>Step 9 - 1: $step9ans1</h5>";
 if($step9ans2)
-echo "<h5>$step9ans2</h5>";
+echo "<h5>Step 9 - 2: $step9ans2</h5>";
 if($step9ans3)
-echo "<h5>$step9ans3</h5>";
+echo "<h5>Step 9 - 3: $step9ans3</h5>";
 
 //Step Ten
 if($step10ans1)
-echo "<h5>$step10ans1</h5>";
+echo "<h5>Step 10 - 1: $step10ans1</h5>";
 if($step10ans2)
-echo "<h5>$step10ans2</h5>";
+echo "<h5>Step 10 - 2: $step10ans2</h5>";
 if($step10ans3)
-echo "<h5>$step10ans3</h5>";
+echo "<h5>Step 10 - 3: $step10ans3</h5>";
 
 //Step Twelve
 if($step12ans1)
-echo "<h5>$step12ans1</h5>";
+echo "<h5>Step 12 - 1: $step12ans1</h5>";
 
 //Step Thirteen
 if($step13ans1)
-echo "<h5>$step13ans1</h5>";
+echo "<h5>Step 13 - 1: $step13ans1</h5>";
 if($step13ans2)
-echo "<h5>$step13ans2</h5>";
+echo "<h5>Step 13 - 2: $step13ans2</h5>";
 
 }
 function settings_screen( $group_id = NULL ) {
@@ -333,10 +333,10 @@ function settings_screen( $group_id = NULL ) {
 	        </div>
 	        <div class="right_panel col-md-6">
 	          <p><?php the_field('step_3_ques_1'); ?></p>
-	          <input type="text" id="step_3_answ_1" value="" tabindex="1" size="20" name="group_ext_step3ans1" />
+	          <input type="text" id="step_3_answ_1" value="<?php echo $step3ans1; ?>" tabindex="1" size="20" name="group_ext_step3ans1" />
 
 	          <p><?php the_field('step_3_ques_2'); ?></p>
-	          <input type="text" id="step_3_answ_2" value="" tabindex="1" size="20" name="group_ext_step3ans2" />
+	          <input type="text" id="step_3_answ_2" value="<?php echo $step3ans2; ?>" tabindex="1" size="20" name="group_ext_step3ans2" />
 	        </div>
 	    </div>
 	    <!-- END TAB THREE -->
@@ -348,9 +348,9 @@ function settings_screen( $group_id = NULL ) {
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_4_ques_1'); ?></p>
-	          <input type="text" id="step_4_answ_1" value="" tabindex="1" size="20" name="group_ext_step4ans1" />
+	          <input type="text" id="step_4_answ_1" value="<?php echo $step4ans1; ?>" tabindex="1" size="20" name="group_ext_step4ans1" />
 	          <p><?php the_field('step_4_ques_2'); ?></p>
-	          <input type="text" id="step_4_answ_2" value="" tabindex="1" size="20" name="group_ext_step4ans2" />
+	          <input type="text" id="step_4_answ_2" value="<?php echo $step4ans2; ?>" tabindex="1" size="20" name="group_ext_step4ans2" />
 	        </div>
 	        <div class="right_panel col-md-6">
 
@@ -365,7 +365,7 @@ function settings_screen( $group_id = NULL ) {
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_5_ques_1'); ?></p>
-	          <input type="text" id="step_5_answ_1" value="" tabindex="1" size="20" name="group_ext_step5ans1" />
+	          <input type="text" id="step_5_answ_1" value="<?php echo $step5ans1; ?>" tabindex="1" size="20" name="group_ext_step5ans1" />
 	        </div>
 	        <div class="right_panel col-md-6">
 
@@ -380,9 +380,9 @@ function settings_screen( $group_id = NULL ) {
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_6_ques_1'); ?></p>
-	          <input type="text" id="step_6_answ_1" value="" tabindex="1" size="20" name="group_ext_step6ans1" />
+	          <input type="text" id="step_6_answ_1" value="<?php echo $step6ans1; ?>" tabindex="1" size="20" name="group_ext_step6ans1" />
 	          <p><?php the_field('step_6_ques_2'); ?></p>
-	          <input type="text" id="step_6_answ_2" value="" tabindex="1" size="20" name="group_ext_step6ans2" />
+	          <input type="text" id="step_6_answ_2" value="<?php echo $step6ans2; ?>" tabindex="1" size="20" name="group_ext_step6ans2" />
 
 	        </div>
 	        <div class="right_panel col-md-6">
@@ -398,9 +398,9 @@ function settings_screen( $group_id = NULL ) {
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_7_ques_1'); ?></p>
-	          <input type="text" id="step_7_answ_1" value="" tabindex="1" size="20" name="group_ext_step7ans1" />
+	          <input type="text" id="step_7_answ_1" value="<?php echo $step7ans1; ?>" tabindex="1" size="20" name="group_ext_step7ans1" />
 	          <p><?php the_field('step_7_ques_2'); ?></p>
-	          <input type="text" id="step_7_answ_2" value="" tabindex="1" size="20" name="group_ext_step7ans2" />
+	          <input type="text" id="step_7_answ_2" value="<?php echo $step7ans2; ?>" tabindex="1" size="20" name="group_ext_step7ans2" />
 
 	        </div>
 	        <div class="right_panel col-md-6">
@@ -416,9 +416,9 @@ function settings_screen( $group_id = NULL ) {
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_8_ques_1'); ?></p>
-	          <input type="text" id="step_8_answ_1" value="" tabindex="1" size="20" name="group_ext_step8ans1" />
+	          <input type="text" id="step_8_answ_1" value="<?php echo $step8ans1; ?>" tabindex="1" size="20" name="group_ext_step8ans1" />
 	          <p><?php the_field('step_8_ques_2'); ?></p>
-	          <input type="text" id="step_8_answ_2" value="" tabindex="1" size="20" name="group_ext_step8ans2" />
+	          <input type="text" id="step_8_answ_2" value="<?php echo $step8ans2; ?>" tabindex="1" size="20" name="group_ext_step8ans2" />
 	        </div>
 	        <div class="right_panel col-md-6">
 
@@ -465,11 +465,11 @@ function settings_screen( $group_id = NULL ) {
 	        </div>
 	        <div class="right_panel col-md-6">
 	          <p><?php the_field('step_9_ques_1'); ?></p>
-	          <input type="text" id="step_9_answ_1" value="" tabindex="1" size="20" name="group_ext_step9ans1" />
+	          <input type="text" id="step_9_answ_1" value="<?php echo $step9ans1; ?>" tabindex="1" size="20" name="group_ext_step9ans1" />
 	          <p><?php the_field('step_9_ques_2'); ?></p>
-	          <input type="text" id="step_9_answ_2" value="" tabindex="1" size="20" name="group_ext_step9ans2" />
+	          <input type="text" id="step_9_answ_2" value="<?php echo $step9ans2; ?>" tabindex="1" size="20" name="group_ext_step9ans2" />
 	          <p><?php the_field('step_9_ques_3'); ?></p>
-	          <input type="text" id="step_9_answ_3" value="" tabindex="1" size="20" name="group_ext_step9ans3" />
+	          <input type="text" id="step_9_answ_3" value="<?php echo $step9ans3; ?>" tabindex="1" size="20" name="group_ext_step9ans3" />
 	        </div>
 	    </div>
 	    <!-- END TAB NINE -->
@@ -481,11 +481,11 @@ function settings_screen( $group_id = NULL ) {
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_10_ques_1'); ?></p>
-	          <input type="text" id="step_10_answ_1" value="" tabindex="1" size="20" name="group_ext_step10ans1" />
+	          <input type="text" id="step_10_answ_1" value="<?php echo $step10ans1; ?>" tabindex="1" size="20" name="group_ext_step10ans1" />
 	          <p><?php the_field('step_10_ques_2'); ?></p>
-	          <input type="text" id="step_10_answ_2" value="" tabindex="1" size="20" name="group_ext_step10ans2" />
+	          <input type="text" id="step_10_answ_2" value="<?php echo $step10ans2; ?>" tabindex="1" size="20" name="group_ext_step10ans2" />
 	          <p><?php the_field('step_10_ques_3'); ?></p>
-	          <input type="text" id="step_10_answ_3" value="" tabindex="1" size="20" name="group_ext_step10ans3" />
+	          <input type="text" id="step_10_answ_3" value="<?php echo $step10ans3; ?>" tabindex="1" size="20" name="group_ext_step10ans3" />
 	        </div>
 	        <div class="right_panel col-md-6">
 
@@ -514,7 +514,7 @@ function settings_screen( $group_id = NULL ) {
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_12_ques_1'); ?></p>
-	          <input type="text" id="step_12_answ_1" value="" tabindex="1" size="20" name="group_ext_step12ans1" />
+	          <input type="text" id="step_12_answ_1" value="<?php echo $step12ans1; ?>" tabindex="1" size="20" name="group_ext_step12ans1" />
 	        </div>
 	        <div class="right_panel col-md-6">
 
@@ -529,9 +529,9 @@ function settings_screen( $group_id = NULL ) {
 	      </div>
 	      	<div class="left_panel col-md-6">
 	          <p><?php the_field('step_13_ques_1'); ?></p>
-	          <input type="text" id="step_13_answ_1" value="" tabindex="1" size="20" name="group_ext_step13ans1" />
+	          <input type="text" id="step_13_answ_1" value="<?php echo $step13ans1; ?>" tabindex="1" size="20" name="group_ext_step13ans1" />
 	          <p><?php the_field('step_13_ques_2'); ?></p>
-	          <input type="text" id="step_13_answ_2" value="" tabindex="1" size="20" name="group_ext_step13ans2" />
+	          <input type="text" id="step_13_answ_2" value="<?php echo $step13ans2; ?>" tabindex="1" size="20" name="group_ext_step13ans2" />
 	        </div>
 	        <div class="right_panel col-md-6">
 
@@ -605,13 +605,13 @@ if ( isset( $_POST['group_ext_step9ans3'] ) ) {
 groups_update_groupmeta( $group_id, 'group_ext_step9ans3', sanitize_text_field($_POST['group_ext_step9ans3']) );
 }
 if ( isset( $_POST['group_ext_step10ans1'] ) ) {
-groups_update_groupmeta( $group_id, 'group_ext_step10ans2', sanitize_text_field($_POST['group_ext_step10ans1']) );
+groups_update_groupmeta( $group_id, 'group_ext_step10ans1', sanitize_text_field($_POST['group_ext_step10ans1']) );
 }
 if ( isset( $_POST['group_ext_step10ans2'] ) ) {
 groups_update_groupmeta( $group_id, 'group_ext_step10ans2', sanitize_text_field($_POST['group_ext_step10ans2']) );
 }
 if ( isset( $_POST['group_ext_step10ans3'] ) ) {
-groups_update_groupmeta( $group_id, 'group_ext_step10ans2', sanitize_text_field($_POST['group_ext_step10ans3']) );
+groups_update_groupmeta( $group_id, 'group_ext_step10ans3', sanitize_text_field($_POST['group_ext_step10ans3']) );
 }
 if ( isset( $_POST['group_ext_step12ans1'] ) ) {
 groups_update_groupmeta( $group_id, 'group_ext_step12ans1', sanitize_text_field($_POST['group_ext_step12ans1']) );
