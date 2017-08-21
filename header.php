@@ -1,3 +1,16 @@
+<?php
+$postTitleError = '';
+
+if ( isset( $_POST['submit'] ) ) {
+
+    if ( trim( $_POST['title'] ) === '' ) {
+        $postTitleError = 'Please enter a title.';
+        $hasError = true;
+    }
+
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -17,6 +30,33 @@
 <script src="https://use.fontawesome.com/c674cc7c17.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/form.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+
+<!-- FORM JS STUFFS -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="<?php bloginfo('template_url');?>/js/bootstrap.min.js"></script>
+<script src="<?php bloginfo('template_url');?>/js/jquery.bootstrap.wizard.js"></script>
+<script src="<?php bloginfo('template_url');?>/js/prettify.js"></script>
+<script>
+$(document).ready(function() {
+  	$('#rootwizard').bootstrapWizard({onNext: function(tab, navigation, index) {
+			if(index==1) {
+				// Make sure we entered the name
+				if(!$('#step_1_answ_1').val()) {
+					alert('You must enter a Project name');
+					$('#step_1_answ_1').focus();
+					return false;
+				}
+			}
+
+
+		}, onTabShow: function(tab, navigation, index) {
+			var $total = navigation.find('li').length;
+			var $current = index+1;
+			var $percent = ($current/$total) * 100;
+			$('#rootwizard .progress-bar').css({width:$percent+'%'});
+		}});
+});</script>
+
 <!-- END CSS INCLUDES -->
 
 <!-- JS INCLUDES -->
