@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Home Page
+Template Name: Dashboard Page
 */
 get_header(); ?>
 
@@ -11,17 +11,19 @@ get_header(); ?>
 		<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 		<div class="container">
 		  <div class="row">
-		    <div class="col-md-12">
+		    <div class="col-md-8">
+					<?php
+						$current_user = wp_get_current_user();
+						if (0 == $current_user->ID) {
+							//not logged in
+						} else {
+							echo '<h1>Welcome ' . $current_user->user_firstname . '</h1>';
+						}
+					?>
   				<p><?php the_content(); ?></p>
 		    </div>
-		  </div>
-			<div class="row">
-				<div class="col-md-6">
-					<a class="btn reg-button" href="<?php echo site_url('/wp-login.php?action=register');?>">Signup</a>
-				</div>
-				<div class="col-md-6">
-					<a class="btn login-button" href="<?php echo wp_login_url(); ?>" title="Login">Login</a>
-				</div>
+			<div class="col-md-4">
+				<?php get_sidebar('sidebar-1'); ?>
 			</div>
 		</div>
 
