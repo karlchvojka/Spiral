@@ -147,6 +147,16 @@ list-style-type: none;
     margin:10px auto;
     display:block;
   }
+
+  div.header_wrap {
+    background-color:#ffffff;
+    height:100px;
+    margin:0;
+    width:100%;
+    }
+    div.header_wrap a.home_logo img{
+      margin-top:16px;
+    }
 /* END HOMEPAGE STYLES */
 
 /* DASHBOARD STYLES */
