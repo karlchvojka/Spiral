@@ -124,6 +124,8 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 
 <div id="inq_wrapper">
 	<h2 id="inq_page">Collaborative Inquiry Stages</h2>
+	<button class="print_button" onclick="printreportbutton()">Print this page</button>
+
 	<div id="accordion" role="tablist" aria-multiselectable="true">
 		<!-- CARD ONE -->
 	  <div class="card">
