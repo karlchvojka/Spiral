@@ -57,14 +57,8 @@ $(document).ready(function() {
 			var $percent = ($current/$total) * 100;
 			$('#rootwizard .progress-bar').css({width:$percent+'%'});
 		}});
-});</script>
-<style type="text/css">
-    /* show the move cursor as the user moves the mouse over the panel header.*/
-    #draggablePanelList .panel-heading {
-        cursor: move;
-    }
-</style>
-<script>
+});
+
 jQuery(function($) {
         var panelList = $('#accordion');
         panelList.sortable({
@@ -81,7 +75,18 @@ jQuery(function($) {
             }
         });
     });
+
+function printreportbutton() {
+    window.print();
+}
 </script>
+<style type="text/css">
+    /* show the move cursor as the user moves the mouse over the panel header.*/
+    #draggablePanelList .panel-heading {
+        cursor: move;
+    }
+</style>
+
 
 <!-- END CSS INCLUDES -->
 

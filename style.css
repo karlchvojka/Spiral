@@ -231,7 +231,7 @@ list-style-type: none;
     .pager {
       display:block;
     }
-    .pager li.next a.btn:visited, .pager li.next a.btn:link  {
+    .pager li.next a.btn:visited, .pager li.next a.btn:link, .print_button, .print_button  {
       border-radius: 3px;
       background-color:#fd5842;
       color:#ffffff;
@@ -239,7 +239,7 @@ list-style-type: none;
       font-size:16px;
       font-weight:bold;
       }
-      .pager li.next a.btn:hover {
+      .pager li.next a.btn:hover, .print_button:hover {
       background: #bd3001;
       color:#ffffff;
       font-size:16px;
@@ -269,8 +269,15 @@ list-style-type: none;
         -o-transition: background 0.25s ease-in;
         transition: background 0.25s ease-in;
       }
+
+    .print_button {
+      border:1px solid;
+      margin-bottom:20px;
+    }
     /* End Button styles */
+
   /* End Global Styles */
+
   /* Makes videos responsive */
   .embed-container {
   	position: relative;
@@ -323,11 +330,25 @@ list-style-type: none;
 /* End Tab Structure Styles */
 
 /* BP GROUPS CUSTOM STYLES */
+div#item-header {
+  background-color:#ffffff;
+  border-radius:5px;
+  border:1px solid #c7bfd8;
+  margin-bottom:15px;
+  padding-top: 15px;
+  padding-right: 15px;
+}
+div#item-header-content div#item-buttons div.group-button {
+  clear:both;
+  float:none;
+}
 #inq_wrapper {
   margin-top:20px;
 }
-  div#accordion {
+.print_button {
 
+}
+  div#accordion {
   }
   div#accordion .card {
       background-color:#ffffff;
@@ -344,18 +365,27 @@ list-style-type: none;
       margin-bottom:0px;
       }
       div#accordion .card h4 {
-        font-size:14px;
-        color:#4d3d6b;
+        font-size:19px;
+        color:#fd5842;
         font-weight:900;
-        text-transform:uppercase;
       }
       div#accordion .card p {
-        font-size:17px;
+        font-size:15px;
         color:#4d3d6b;
         }
       .card-block:last-child p {
         margin-bottom:0px;
       }
+  div#accordion div.card .collapse {
+    margin-top:20px;
+  }
+#buddypress div.item-list-tabs {
+  margin-bottom:20px;
+}
+#buddypress div.item-list-tabs ul li a {
+  background-color:#ffffff;
+  border:1px solid #beb8c9;
+}
 /* END BP GROUPS CUSTOM STYLES */
 
 /* ------------------------------------------- */

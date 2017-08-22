@@ -81,31 +81,8 @@ do_action( 'bp_before_group_header' );
 
 	<div id="item-meta">
 
-		<?php bp_group_description(); ?>
+		
 
-		<?php bp_group_type_list(); ?>
-
-		<div id="item-buttons">
-
-			<?php
-
-			/**
-			 * Fires in the group header actions section.
-			 *
-			 * @since 1.2.6
-			 */
-			do_action( 'bp_group_header_actions' ); ?>
-
-		</div><!-- #item-buttons -->
-
-		<?php
-
-		/**
-		 * Fires after the group header actions section.
-		 *
-		 * @since 1.2.0
-		 */
-		do_action( 'bp_group_header_meta' ); ?>
 
 	</div>
 </div><!-- #item-header-content -->
