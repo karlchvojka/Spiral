@@ -59,26 +59,10 @@ add_filter( 'show_admin_bar' , 'my_function_admin_bar');
  // Register custom navigation walker
 require_once('wp_bootstrap_navwalker.php');
 
-function bpdev_redirect_to_profile( $redirect_to_calculated, $redirect_url_specified, $user ) {
-
-	if ( ! $user || is_wp_error( $user ) ) {
-		return $redirect_to_calculated;
-	}
-	//If the redirect is not specified, assume it to be dashboard
-	if ( empty( $redirect_to_calculated ) ) {
-		$redirect_to_calculated = admin_url();
-	}
-
-	// if the user is not site admin, redirect to his/her profile
-	if ( ! is_super_admin( $user->ID ) ) {
-		return bp_core_get_user_domain( $user->ID );
-	} else {
-		//if site admin or not logged in, do not do anything much
-		return $redirect_to_calculated;
-	}
+function login_redirect( $redirect_to, $request, $user ){
+    return home_url('dashboard-2');
 }
-
-add_filter( 'login_redirect', 'bpdev_redirect_to_profile', 100, 3 );
+add_filter( 'login_redirect', 'login_redirect', 10, 3 );
 /* ------------------------------------------------------------
 :: ADD GROUPS EXTENSIONS
 --------------------------------------------------------------- */
