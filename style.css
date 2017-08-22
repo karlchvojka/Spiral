@@ -70,6 +70,7 @@ p {
 
 a:link, a:visited {
 	background-color:#ffffff;
+  color:#4d3d6b;
 	}
 	a:hover {
 		}
@@ -259,6 +260,42 @@ ul {
 
 
 /* End Tab Structure Styles */
+
+/* BP GROUPS CUSTOM STYLES */
+#inq_wrapper {
+  margin-top:20px;
+}
+  div#accordion {
+
+  }
+  div#accordion .card {
+      background-color:#ffffff;
+      padding:20px;
+      border-radius:3px;
+      border:1px solid #c7bfd8;
+      margin-bottom:15px;
+    }
+    div#accordion .card h3 {
+      font-size:20px;
+      color:#4d3d6b;
+      font-weight:900;
+      margin-top:0px;
+      margin-bottom:0px;
+      }
+      div#accordion .card h4 {
+        font-size:14px;
+        color:#4d3d6b;
+        font-weight:900;
+        text-transform:uppercase;
+      }
+      div#accordion .card p {
+        font-size:17px;
+        color:#4d3d6b;
+        }
+      .card-block:last-child p {
+        margin-bottom:0px;
+      }
+/* END BP GROUPS CUSTOM STYLES */
 
 /* ------------------------------------------- */
 
