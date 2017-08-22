@@ -157,6 +157,9 @@ list-style-type: none;
     div.header_wrap a.home_logo img{
       margin-top:16px;
     }
+  div#sidebar {
+    margin-top:25px;
+  }
 /* END HOMEPAGE STYLES */
 
 /* DASHBOARD STYLES */

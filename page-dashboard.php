@@ -21,6 +21,7 @@ get_header(); ?>
 						}
 					?>
   				<p><?php the_content(); ?></p>
+					<?php the_field('video_link'); ?>
 		    </div>
 			<div class="col-md-4">
 				<?php get_sidebar('sidebar-1'); ?>
