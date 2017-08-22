@@ -35,6 +35,21 @@ if ( function_exists( 'register_nav_menus' ) ) {
 	);
 }
 
+// SIDEBAR REGISTRATION
+add_action( 'widgets_init', 'theme_slug_widgets_init' );
+function theme_slug_widgets_init() {
+  register_sidebar( array(
+    'name' => __( 'Main Sidebar', 'theme-slug' ),
+    'id' => 'sidebar-1',
+    'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
+    'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2 class="widgettitle">',
+		'after_title'   => '</h2>',
+  ) );
+}
+
+
 // DELETE ADMIN BAR!!!!!!!!!
 function my_function_admin_bar(){
 return false;
@@ -122,6 +137,7 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 
 <?php while ($the_query -> have_posts()) : $the_query -> the_post();?>
 
+
 <div id="inq_wrapper">
 	<h2 id="inq_page">Collaborative Inquiry Stages</h2>
 	<div id="accordion" role="tablist" aria-multiselectable="true">
@@ -162,7 +178,7 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 	    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
 	      <div class="card-block">
 					<?php
-					//Step three
+					//Step threes
 					if($step3ans1)
 					echo "<h4>" . get_field('step_3_ques_1') . "</h4><p>$step3ans1</p>";
 					if($step3ans2)
