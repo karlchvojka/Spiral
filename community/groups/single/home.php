@@ -20,7 +20,8 @@
 	 */
 	do_action( 'bp_before_group_home_content' ); ?>
 
-	<div id="item-header" role="complementary">
+	<div id="item-header" class="container" role="complementary">
+		<div class="row">
 
 		<?php
 		/**
@@ -32,10 +33,11 @@
 			bp_get_template_part( 'groups/single/group-header' );
 		endif;
 		?>
-
+	</div>
 	</div><!-- #item-header -->
 
-	<div id="item-nav">
+	<div id="item-nav" class="container">
+		<div class="row">
 		<div class="item-list-tabs no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Group primary navigation', 'buddypress' ); ?>" role="navigation">
 			<ul>
 
@@ -52,10 +54,11 @@
 
 			</ul>
 		</div>
+	</div>
 	</div><!-- #item-nav -->
 
 	<div id="item-body">
-
+		<div class="container">
 		<?php
 
 		/**
@@ -138,7 +141,7 @@
 		 * @since 1.2.0
 		 */
 		do_action( 'bp_after_group_body' ); ?>
-
+	</div>
 	</div><!-- #item-body -->
 
 	<?php

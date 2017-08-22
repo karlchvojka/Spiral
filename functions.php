@@ -97,73 +97,221 @@ $step13ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans1');
 $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 
 //Step one
-if($step1ans1)
-echo "<h5>Step 1 - 1: $step1ans1</h5>";
-if($step1ans2)
-echo "<h5>Step 1 - 2: $step1ans2</h5>";
-if($step1ans3)
-echo "<h5>Step 1 - 3: $step1ans3</h5>";
+?>
 
-//Step three
-if($step3ans1)
-echo "<h5>Step 3 - 1: $step3ans1</h5>";
-if($step3ans2)
-echo "<h5>Step 3 - 2: $step3ans2</h5>";
+<?php $the_query = new WP_Query( 'page_id=53' ); ?>
 
-//Step Four
-if($step4ans1)
-echo "<h5>Step 4 - 1: $step4ans1</h5>";
-if($step4ans2)
-echo "<h5>Step 4 - 2: $step4ans2</h5>";
+<?php while ($the_query -> have_posts()) : $the_query -> the_post();?>
 
-//Step Five
-if($step5ans1)
-echo "<h5>Step 5 - 1: $step5ans1</h5>";
+<div id="inq_wrapper">
+	<h2 id="inq_page">Collaborative Inquiry Stages</h2>
+	<div id="accordion" role="tablist" aria-multiselectable="true">
+		<!-- CARD ONE -->
+	  <div class="card">
+	    <div class="card-header" role="tab" id="headingOne">
+	      <h3 class="mb-0">
+	        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	          Stage 1 - Team Setup
+	        </a>
+	      </h3>
+	    </div>
 
-//Step Six
-if($step6ans1)
-echo "<h5>Step 6 - 1: $step6ans1</h5>";
-if($step6ans1)
-echo "<h5>Step 6 - 2: $step6ans2</h5>";
+	    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+	      <div class="card-block">
+					<?php
+					if($step1ans1)
+					echo "<h4>" . get_field('step_1_ques_1') . "</h4><p>$step1ans1</p>";
+					if($step1ans2)
+					echo "<h4>" . get_field('step_1_ques_2') . "</h4><p>$step1ans2</p>";
+					if($step1ans3)
+					echo "<h4>" . get_field('step_1_ques_3') . "</h4><p>$step1ans3</p>";
+					?>
+	      </div>
+	    </div>
+	  </div>
+		<!-- END CARD ONE -->
 
-//Step Seven
-if($step7ans1)
-echo "<h5>Step 7 - 1: $step7ans1</h5>";
-if($step7ans2)
-echo "<h5>Step 7 - 2: $step7ans2</h5>";
+		<!-- START CARD TWO -->
+	  <div class="card">
+	    <div class="card-header" role="tab" id="headingTwo">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	          Stage 1 - Plan : Determine a Focus
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+	      <div class="card-block">
+					<?php
+					//Step three
+					if($step3ans1)
+					echo "<h4>" . get_field('step_3_ques_1') . "</h4><p>$step3ans1</p>";
+					if($step3ans2)
+					echo "<h4>" . get_field('step_3_ques_2') . "</h4><p>$step3ans2</p>";
+					//Step Four
+					if($step4ans1)
+					echo "<h4>" . get_field('step_4_ques_1') . "</h4><p>$step4ans1</p>";
+					if($step4ans2)
+					echo "<h4>" . get_field('step_4_ques_2') . "</h4><p>$step4ans2</p>";
+					?>
+				</div>
+	    </div>
+	  </div>
+		<!-- END CARD TWO -->
 
-//Step Eight
-if($step8ans1)
-echo "<h5>Step 8 - 1: $step8ans1</h5>";
-if($step8ans2)
-echo "<h5>Step 8 - 2: $step8ans2</h5>";
+		<!-- START CARD THREE -->
+	  <div class="card">
+	    <div class="card-header" role="tab" id="headingThree">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+	          Stage 1 - Plan: Action Planning
 
-//Step Nine
-if($step9ans1)
-echo "<h5>Step 9 - 1: $step9ans1</h5>";
-if($step9ans2)
-echo "<h5>Step 9 - 2: $step9ans2</h5>";
-if($step9ans3)
-echo "<h5>Step 9 - 3: $step9ans3</h5>";
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+	      <div class="card-block">
+					<?php
+					//Step Five
+					if($step5ans1)
+					echo "<h4>" . get_field('step_5_ques_1') . "</h4><p>$step5ans1</p>";
+					if($step6ans1)
+					echo "<h4>" . get_field('step_6_ques_1') . "</h4><p>$step6ans1</p>";
+					if($step6ans1)
+					echo "<h4>" . get_field('step_6_ques_2') . "</h4><p>$step6ans2</p>";
+					if($step7ans1)
+					echo "<h4>" . get_field('step_7_ques_1') . "</h4><p>$step7ans1</p>";
+					if($step7ans2)
+					echo "<h4>" . get_field('step_7_ques_2') . "</h4><p>$step7ans2</p>";
+					?>      </div>
+	    </div>
+	  </div>
+		<!-- END CARD THREE -->
 
-//Step Ten
-if($step10ans1)
-echo "<h5>Step 10 - 1: $step10ans1</h5>";
-if($step10ans2)
-echo "<h5>Step 10 - 2: $step10ans2</h5>";
-if($step10ans3)
-echo "<h5>Step 10 - 3: $step10ans3</h5>";
+		<!-- START CARD FOUR -->
+		<div class="card">
+	    <div class="card-header" role="tab" id="headingFour">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+	          Stage 1 - Plan: Professional Learning And Resources
 
-//Step Twelve
-if($step12ans1)
-echo "<h5>Step 12 - 1: $step12ans1</h5>";
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+	      <div class="card-block">
+					<?php
+					//Step Eight
+					if($step8ans1)
+					echo "<h4>" . get_field('step_8_ques_1') . "</h4><p>$step8ans1</p>";
+					if($step8ans2)
+					echo "<h4>" . get_field('step_8_ques_2') . "</h4><p>$step8ans2</p>";
+					?>
+				</div>
+	    </div>
+	  </div>
+		<!-- END CARD FOUR -->
 
-//Step Thirteen
-if($step13ans1)
-echo "<h5>Step 13 - 1: $step13ans1</h5>";
-if($step13ans2)
-echo "<h5>Step 13 - 2: $step13ans2</h5>";
+		<!-- START CARD FIVE -->
+		<div class="card">
+	    <div class="card-header" role="tab" id="headingFive">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+	          Stage 1 - Plan: Planning for collecting data and looking for evidence
 
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+	      <div class="card-block">
+					<?php
+					//Step Nine
+					if($step9ans1)
+					echo "<h4>" . get_field('step_9_ques_1') . "</h4><p>$step9ans1</p>";
+					if($step9ans2)
+					echo "<h4>" . get_field('step_9_ques_2') . "</h4><p>$step9ans2</p>";
+					if($step9ans3)
+					echo "<h4>" . get_field('step_9_ques_3') . "</h4><p>$step9ans4</p>";
+					?>
+				</div>
+	    </div>
+	  </div>
+		<!-- END CARD FIVE -->
+
+		<!-- START CARD SIX -->
+		<div class="card">
+	    <div class="card-header" role="tab" id="headingSix">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+	          Stage 1 - Plan: Format
+
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+	      <div class="card-block">
+					<?php
+					//Step Ten
+					if($step10ans1)
+					echo "<h4>" . get_field('step_10_ques_1') . "</h4><p>$step10ans1</p>";
+					if($step10ans2)
+					echo "<h4>" . get_field('step_10_ques_2') . "</h4><p>$step10ans2</p>";
+					if($step10ans3)
+					echo "<h4>" . get_field('step_10_ques_3') . "</h4><p>$step10ans3</p>";
+					?>
+				</div>
+	    </div>
+	  </div>
+		<!-- END CARD SIX -->
+
+		<!-- START CARD Seven -->
+		<div class="card">
+	    <div class="card-header" role="tab" id="headingSeven">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+	          Stage 1 - Plan: Instructional Change
+
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
+	      <div class="card-block">
+					<?php
+					//Step Twelve
+					if($step12ans1)
+					echo "<h4>" . get_field('step_12_ques_1') . "</h4><p>$step10ans3</p>";
+					?>
+				</div>
+	    </div>
+	  </div>
+		<!-- END CARD SEVEN -->
+		<!-- START CARD EIGHT -->
+		<div class="card">
+	    <div class="card-header" role="tab" id="headingEight">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+	          Stage 1 - Plan: Logistics
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight">
+	      <div class="card-block">
+					<?php
+					//Step Thirteen
+					if($step13ans1)
+					echo "<h4>" . get_field('step_13_ques_1') . "</h4><p>$step10ans3</p>";
+					if($step13ans2)
+					echo "<h4>" . get_field('step_13_ques_2') . "</h4><p>$step10ans3</p>";
+					?>
+				</div>
+	    </div>
+	  </div>
+		<!-- END CARD EIGHT -->
+	</div>
+</div>
+<?php endwhile; ?>
+
+<?php
 }
 function settings_screen( $group_id = NULL ) {
 	$step1ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step1ans1');
@@ -243,8 +391,7 @@ function settings_screen( $group_id = NULL ) {
 	      </div>
 	      <div class="right_panel col-md-6">
 	        <p><?php the_field('step_1_ques_1'); ?></p>
-					<?php $group = get_field( 'step_1_ques_1' );
-  				echo $group->step_1_ques_1;?>
+
 					<input type="text" id="step_1_answ_1" value="<?php echo $step1ans1; ?>" tabindex="1" size="20" name="group_ext_step1ans1" />
 
 	        <p><?php the_field('step_1_ques_2'); ?></p>
