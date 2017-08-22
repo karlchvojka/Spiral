@@ -11,14 +11,18 @@ get_header(); ?>
 		<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 		<div class="container">
 		  <div class="row">
-		    <div class="col">
-					<h1><?php the_title(); ?></h1>
+		    <div class="col-md-12">
   				<p><?php the_content(); ?></p>
 		    </div>
-		    <div class="col">
-		      2 of 2
-		    </div>
 		  </div>
+			<div class="row">
+				<div class="col-md-6">
+					<a class="btn reg-button" href="<?php echo site_url('/wp-login.php?action=register');?>">Signup</a>
+				</div>
+				<div class="col-md-6">
+					<a class="btn login-button" href="<?php echo wp_login_url(); ?>" title="Login">Login</a>
+				</div>
+			</div>
 		</div>
 
 
