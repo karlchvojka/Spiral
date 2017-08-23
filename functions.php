@@ -76,10 +76,11 @@ $args = array(
 'nav_item_position' => 1,
  'screens' => array(
 		 'edit' => array(
-				 'name' => 'Inquiry',
+				 'name' => 'Edit Inquiry',
 				 // Changes the text of the Submit button
 				 // on the Edit page
 				 'submit_text' => 'Submit',
+				 'position' => 1
 		 ),
 		 'create' => array(
 				 'position' => 1,
@@ -122,9 +123,18 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 <?php while ($the_query -> have_posts()) : $the_query -> the_post();?>
 
 
-<div id="inq_wrapper">
-	<h2 id="inq_page">Collaborative Inquiry Stages</h2>
-	<button class="print_button" onclick="printreportbutton()">Print this page</button>
+<div id="inq_wrapper" class="container">
+
+	<div class="button_class clear row" style="height:60px;">
+		<div class="col-md-6">
+			<h2 id="inq_page">Collaborative Inquiry Stages</h2>
+		</div>
+		<div class="col-md-6">
+
+<button class="print_button pull-right" onclick="printreportbutton()"><i class="fa fa-print" aria-hidden="true"></i> Print Report</button>
+
+		</div>
+	</div>
 
 	<div id="accordion" role="tablist" aria-multiselectable="true">
 		<!-- CARD ONE -->
@@ -132,7 +142,7 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 	    <div class="card-header" role="tab" id="headingOne">
 	      <h3 class="mb-0">
 	        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-	          Stage 1 - Team Setup
+	          Team Setup
 	        </a>
 	      </h3>
 	    </div>
@@ -157,7 +167,7 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 	    <div class="card-header" role="tab" id="headingTwo">
 	      <h3 class="mb-0">
 	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-	          Stage 1 - Plan : Determine a Focus
+	          Plan : Determine a Focus
 	        </a>
 	      </h3>
 	    </div>
@@ -185,7 +195,7 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 	    <div class="card-header" role="tab" id="headingThree">
 	      <h3 class="mb-0">
 	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-	          Stage 1 - Plan: Action Planning
+	          Plan: Action Planning
 
 	        </a>
 	      </h3>
@@ -214,7 +224,7 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 	    <div class="card-header" role="tab" id="headingFour">
 	      <h3 class="mb-0">
 	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-	          Stage 1 - Plan: Professional Learning And Resources
+	          Plan: Professional Learning And Resources
 
 	        </a>
 	      </h3>
@@ -238,7 +248,7 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 	    <div class="card-header" role="tab" id="headingFive">
 	      <h3 class="mb-0">
 	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-	          Stage 1 - Plan: Planning for collecting data and looking for evidence
+	         Plan: Planning for collecting data and looking for evidence
 
 	        </a>
 	      </h3>
@@ -264,7 +274,7 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 	    <div class="card-header" role="tab" id="headingSix">
 	      <h3 class="mb-0">
 	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-	          Stage 1 - Plan: Format
+	          Plan: Format
 
 	        </a>
 	      </h3>
@@ -290,7 +300,7 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 	    <div class="card-header" role="tab" id="headingSeven">
 	      <h3 class="mb-0">
 	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-	          Stage 1 - Plan: Instructional Change
+	          Plan: Instructional Change
 
 	        </a>
 	      </h3>
@@ -311,7 +321,7 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 	    <div class="card-header" role="tab" id="headingEight">
 	      <h3 class="mb-0">
 	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-	          Stage 1 - Plan: Logistics
+	          Plan: Logistics
 	        </a>
 	      </h3>
 	    </div>
