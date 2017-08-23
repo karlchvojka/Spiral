@@ -662,12 +662,14 @@ function settings_screen( $group_id = NULL ) {
 	    <!-- END TAB TEN -->
 
 	    <!-- START TAB ELEVEN -->
-	    <div class="tab-pane row" id="ta11">
+	    <div class="tab-pane row" id="tab11">
 	        <div class="panel_title col-md-12">
 	          <h2><?php the_field('step_11_title'); ?></h2>
 	        </div>
 	      	<div class="left_panel col-md-6">
-	            <?php the_field('step_11_video_1'); ?>
+						<div class="embed-container">
+	            <?php the_field('step_11_video'); ?>
+						</div>
 	        </div>
 	        <div class="right_panel col-md-6">
 
