@@ -69,7 +69,7 @@ p {
 /* GLOBAL LINK STYLES */
 
 a:link, a:visited {
-	background-color:#ffffff;
+
   color:#4d3d6b;
 	}
 	a:hover {
@@ -109,6 +109,7 @@ list-style-type: none;
 		      }
 		      .navbar-nav li a {
 		        font-size:12px;
+            background-color:#ffffff;
 		        color:#2a1155;
 		        }
 
@@ -189,6 +190,7 @@ list-style-type: none;
   border:1px solid #beb8c9;
   border-bottom:none;
   padding:10px;
+  margin-bottom:0px;
   }
   .widget.buddypress #groups-list li:last-child {
     border-bottom:1px solid #beb8c9;
@@ -270,6 +272,9 @@ list-style-type: none;
         transition: background 0.25s ease-in;
       }
 
+    .button_class h2 {
+      margin-top:10px;
+    }
     .print_button {
       border:1px solid;
       margin-bottom:20px;
@@ -334,7 +339,7 @@ div#item-header {
   background-color:#ffffff;
   border-radius:5px;
   border:1px solid #c7bfd8;
-  margin-bottom:15px;
+  margin-bottom:20px;
   padding-top: 15px;
   padding-right: 15px;
 }
@@ -365,13 +370,14 @@ div#item-header-content div#item-buttons div.group-button {
       margin-bottom:0px;
       }
       div#accordion .card h4 {
-        font-size:19px;
-        color:#fd5842;
-        font-weight:900;
+        font-size:16px;
+        color:#520051;
+        font-weight:700;
       }
       div#accordion .card p {
-        font-size:15px;
+        font-size:14px;
         color:#4d3d6b;
+        margin-bottom:16px;
         }
       .card-block:last-child p {
         margin-bottom:0px;
@@ -385,7 +391,60 @@ div#item-header-content div#item-buttons div.group-button {
 #buddypress div.item-list-tabs ul li a {
   background-color:#ffffff;
   border:1px solid #beb8c9;
-}
+  }
+  #buddypress div.item-list-tabs#subnav {
+    margin-top:0px;
+    margin-bottom:20px;
+  }
+
+  #buddypress #reply-title small a span, #buddypress a.bp-primary-action span {
+    background-color:#fd5842;
+  }
+  #buddypress div.item-list-tabs ul li.current a, #buddypress div.item-list-tabs ul li.selected a {
+    border-radius:5px;
+    margin:0px 5px;
+    background-color: #fd5942;
+    color:#ffffff;
+    }
+  #buddypress div.item-list-tabs ul li a, #buddypress .comment-reply-link, #buddypress .generic-button a, #buddypress .standard-form button, #buddypress a.button, #buddypress input[type=button], #buddypress input[type=reset], #buddypress input[type=submit], #buddypress ul.button-nav li a, a.bp-title-button {
+    border-radius:5px;
+    border:none;
+    margin:0px 5px;
+    background-color:#a185ad;
+    color:#ffffff;
+    }
+  #buddypress div.item-list-tabs ul li a:hover, #buddypress a.button:hover {
+    background-color:#4d3d6b;
+    color:#ffffff;
+    border:none;
+  }
+  /* GROUP LIST STYLES */
+  #buddypress ul.item-list li {
+    padding:10px;
+    background-color:#ffffff;
+    border-radius:5px;
+    border:1px solid #c7bfd8;
+    margin-bottom: 5px;
+    }
+    #buddypress ul.item-list li div.action {
+      right:15px;
+    }
+  div#groups-dir-list ul#groups-list li {
+    margin-bottom:10px !important;
+  }
+  div#groups-dir-list ul#groups-list li .item .item-title a {
+    font-size:20px;
+    font-weight:700;
+  }
+
+  #buddypress .standard-form input[type=text] {
+    border-radius:5px;
+  }
+
+  #buddypress #item-body {
+    margin-bottom:40px;
+  }
+  /* END GROUP LIST STYLES */
 /* END BP GROUPS CUSTOM STYLES */
 
 /* ------------------------------------------- */
