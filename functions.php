@@ -714,7 +714,6 @@ function settings_screen( $group_id = NULL ) {
 	          <input type="text" id="step_13_answ_2" value="<?php echo $step13ans2; ?>" tabindex="1" size="20" name="group_ext_step13ans2" />
 	        </div>
 	        <div class="right_panel col-md-6">
-
 	        </div>
 	    </div>
 	    <!-- END TAB THIRTEEN -->
