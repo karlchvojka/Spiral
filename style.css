@@ -335,6 +335,9 @@ list-style-type: none;
 /* End Tab Structure Styles */
 
 /* BP GROUPS CUSTOM STYLES */
+#buddypress div.dir-search {
+  margin:0px;
+}
 div#item-header {
   background-color:#ffffff;
   border-radius:5px;
