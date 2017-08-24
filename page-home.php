@@ -3,20 +3,6 @@
 Template Name: Home Page
 */
 ?>
-
-<?php
-$postTitleError = '';
-
-if ( isset( $_POST['submit'] ) ) {
-
-    if ( trim( $_POST['title'] ) === '' ) {
-        $postTitleError = 'Please enter a title.';
-        $hasError = true;
-    }
-
-}
-?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -44,50 +30,8 @@ if ( isset( $_POST['submit'] ) ) {
 <script src="<?php bloginfo('template_url');?>/js/bootstrap.min.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/jquery.bootstrap.wizard.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/prettify.js"></script>
-<script>
-$(document).ready(function() {
-  	$('#rootwizard').bootstrapWizard({onNext: function(tab, navigation, index) {
-			if(index==1) {
-				// Make sure we entered the name
-				if(!$('#step_1_answ_1').val()) {
-					alert('You must enter a Project name');
-					$('#step_1_answ_1').focus();
-					return false;
-				}
-			}
 
 
-		}, onTabShow: function(tab, navigation, index) {
-			var $total = navigation.find('li').length;
-			var $current = index+1;
-			var $percent = ($current/$total) * 100;
-			$('#rootwizard .progress-bar').css({width:$percent+'%'});
-		}});
-});</script>
-<style type="text/css">
-    /* show the move cursor as the user moves the mouse over the panel header.*/
-    #draggablePanelList .panel-heading {
-        cursor: move;
-    }
-</style>
-<script>
-jQuery(function($) {
-        var panelList = $('#accordion');
-        panelList.sortable({
-            // Only make the .panel-heading child elements support dragging.
-            // Omit this to make then entire <li>...</li> draggable.
-            handle: '.card-header',
-            update: function() {
-                $('.card', panelList).each(function(index, elem) {
-                     var $listItem = $(elem),
-                         newIndex = $listItem.index();
-
-                     // Persist the new indices.
-                });
-            }
-        });
-    });
-</script>
 
 <!-- END CSS INCLUDES -->
 

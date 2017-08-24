@@ -1,7 +1,5 @@
 <?php
-/*
-Template Name: Home Page
-*/
+
 get_header(); ?>
 
 <!-- WRAP SITE -->
@@ -15,7 +13,7 @@ get_header(); ?>
 					<h1><?php the_title(); ?></h1>
   				<p><?php the_content(); ?></p>
 		    </div>
-		    <div class="col">		    </div>
+		    <div class="col"> </div>
 		  </div>
 		</div>
 
