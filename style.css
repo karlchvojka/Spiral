@@ -341,11 +341,15 @@ div#item-header {
   border:1px solid #c7bfd8;
   margin-bottom:20px;
   padding-top: 15px;
-  padding-right: 15px;
+  padding-left:0px;
+  padding-right:0px;
 }
 div#item-header-content div#item-buttons div.group-button {
   clear:both;
   float:none;
+}
+div#item-header-content h1.page-title {
+  margin-top:0px;
 }
 #inq_wrapper {
   margin-top:20px;
@@ -385,15 +389,13 @@ div#item-header-content div#item-buttons div.group-button {
   div#accordion div.card .collapse {
     margin-top:20px;
   }
-#buddypress div.item-list-tabs {
-  margin-bottom:20px;
-}
+
 #buddypress div.item-list-tabs ul li a {
   background-color:#ffffff;
   border:1px solid #beb8c9;
   }
   #buddypress div.item-list-tabs#subnav {
-    margin-top:0px;
+    margin-top:10px;
     margin-bottom:20px;
   }
 
@@ -445,6 +447,19 @@ div#item-header-content div#item-buttons div.group-button {
     margin-bottom:40px;
   }
   /* END GROUP LIST STYLES */
+  #buddypress div#item-header div#item-actions, #buddypress div#item-header div#item-header-content {
+    float:none;
+  }
+  #buddypress div#item-header div#item-actions {
+    width:100%;
+  }
+  #buddypress div#item-header div#item-actions a {
+    display:block;
+  }
+  #buddypress div#item-header div#item-actions {
+    text-align:left;
+    margin:0px;
+  }
 /* END BP GROUPS CUSTOM STYLES */
 
 /* ------------------------------------------- */

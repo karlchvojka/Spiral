@@ -15,77 +15,88 @@ do_action( 'bp_before_group_header' );
 
 ?>
 
-<div id="item-actions">
+<div id="item-actions" class="row">
+	<div class="col-md-2">
+		<?php if ( ! bp_disable_group_avatar_uploads() ) : ?>
+			<div id="item-header-avatar">
+				<a href="<?php echo esc_url( bp_get_group_permalink() ); ?>" class="bp-tooltip" data-bp-tooltip="<?php echo esc_attr( bp_get_group_name() ); ?>">
 
-	<?php if ( bp_group_is_visible() ) : ?>
+					<?php bp_group_avatar(); ?>
 
-		<h2><?php _e( 'Group Admins', 'buddypress' ); ?></h2>
+				</a>
+			</div><!-- #item-header-avatar -->
+		<?php endif; ?>
+	</div>
+	<div class="col-md-8">
+		<div id="item-header-content">
+			<h1 class="page-title"><?php the_title();?></h1>
+			<span class="highlight"><?php bp_group_type(); ?></span><br/>
 
-		<?php bp_group_list_admins();
+			<span class="activity" data-livestamp="<?php bp_core_iso8601_date( bp_get_group_last_active( 0, array( 'relative' => false ) ) ); ?>"><?php printf( __( 'active %s', 'buddypress' ), bp_get_group_last_active() ); ?></span>
 
-		/**
-		 * Fires after the display of the group's administrators.
-		 *
-		 * @since 1.1.0
-		 */
-		do_action( 'bp_after_group_menu_admins' );
-
-		if ( bp_group_has_moderators() ) :
+			<?php
 
 			/**
-			 * Fires before the display of the group's moderators, if there are any.
+			 * Fires before the display of the group's header meta.
+			 *
+			 * @since 1.2.0
+			 */
+			do_action( 'bp_before_group_header_meta' ); ?>
+
+			<div id="item-meta">
+
+
+
+
+			</div>
+		</div><!-- #item-header-content -->
+	</div>
+	<div class="col-md-2">
+		<?php if ( bp_group_is_visible() ) : ?>
+
+			<h2><?php _e( 'Group Admins', 'buddypress' ); ?></h2>
+
+			<?php bp_group_list_admins();
+
+			/**
+			 * Fires after the display of the group's administrators.
 			 *
 			 * @since 1.1.0
 			 */
-			do_action( 'bp_before_group_menu_mods' ); ?>
+			do_action( 'bp_after_group_menu_admins' );
 
-			<h2><?php _e( 'Group Mods' , 'buddypress' ); ?></h2>
+			if ( bp_group_has_moderators() ) :
 
-			<?php bp_group_list_mods();
+				/**
+				 * Fires before the display of the group's moderators, if there are any.
+				 *
+				 * @since 1.1.0
+				 */
+				do_action( 'bp_before_group_menu_mods' ); ?>
 
-			/**
-			 * Fires after the display of the group's moderators, if there are any.
-			 *
-			 * @since 1.1.0
-			 */
-			do_action( 'bp_after_group_menu_mods' );
+				<h2><?php _e( 'Group Mods' , 'buddypress' ); ?></h2>
 
-		endif;
+				<?php bp_group_list_mods();
 
-	endif; ?>
+				/**
+				 * Fires after the display of the group's moderators, if there are any.
+				 *
+				 * @since 1.1.0
+				 */
+				do_action( 'bp_after_group_menu_mods' );
+
+			endif;
+
+		endif; ?>
+	</div>
+
+
 
 </div><!-- #item-actions -->
 
-<?php if ( ! bp_disable_group_avatar_uploads() ) : ?>
-	<div id="item-header-avatar">
-		<a href="<?php echo esc_url( bp_get_group_permalink() ); ?>" class="bp-tooltip" data-bp-tooltip="<?php echo esc_attr( bp_get_group_name() ); ?>">
-
-			<?php bp_group_avatar(); ?>
-
-		</a>
-	</div><!-- #item-header-avatar -->
-<?php endif; ?>
-
-<div id="item-header-content">
-	<span class="highlight"><?php bp_group_type(); ?></span>
-	<span class="activity" data-livestamp="<?php bp_core_iso8601_date( bp_get_group_last_active( 0, array( 'relative' => false ) ) ); ?>"><?php printf( __( 'active %s', 'buddypress' ), bp_get_group_last_active() ); ?></span>
-
-	<?php
-
-	/**
-	 * Fires before the display of the group's header meta.
-	 *
-	 * @since 1.2.0
-	 */
-	do_action( 'bp_before_group_header_meta' ); ?>
-
-	<div id="item-meta">
-
-		
 
 
-	</div>
-</div><!-- #item-header-content -->
+
 
 <?php
 
