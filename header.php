@@ -86,7 +86,11 @@ function printreportbutton() {
         cursor: move;
     }
 </style>
-
+<script>
+$(document).on('click',function(){
+$('.collapse').collapse('hide');
+})
+</script> 
 
 <!-- END CSS INCLUDES -->
 

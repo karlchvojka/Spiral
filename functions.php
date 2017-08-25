@@ -136,12 +136,14 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 		</div>
 	</div>
 
+
+
 	<div id="accordion" role="tablist" aria-multiselectable="true">
 		<!-- CARD ONE -->
 	  <div class="card">
 	    <div class="card-header" role="tab" id="headingOne">
 	      <h3 class="mb-0">
-	        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 	          Team Setup
 	        </a>
 					<i class="fa fa-angle-up fa-lg" aria-hidden="true"></i>
