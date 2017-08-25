@@ -225,7 +225,10 @@ list-style-type: none;
     border-radius:4px;
     margin-bottom:20px;
     border:1px solid #e2e2e2;
-  }
+    }
+    .right_panel, .left_panel {
+      min-height:20px;
+    }
   .panel_title > h2 {
   }
 

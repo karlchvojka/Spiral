@@ -144,6 +144,7 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 	        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 	          Team Setup
 	        </a>
+					<i class="fa fa-angle-up fa-lg" aria-hidden="true"></i>
 	      </h3>
 	    </div>
 
@@ -525,13 +526,13 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_4_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_4_ques_1'); ?></p>
+
+	        </div>
+	        <div class="right_panel col-md-6">
+						<p><?php the_field('step_4_ques_1'); ?></p>
 	          <input type="text" id="step_4_answ_1" value="<?php echo $step4ans1; ?>" tabindex="1" size="20" name="group_ext_step4ans1" />
 	          <p><?php the_field('step_4_ques_2'); ?></p>
 	          <input type="text" id="step_4_answ_2" value="<?php echo $step4ans2; ?>" tabindex="1" size="20" name="group_ext_step4ans2" />
-	        </div>
-	        <div class="right_panel col-md-6">
-
 	        </div>
 	    </div>
 	    <!-- END TAB FOUR -->
@@ -542,11 +543,11 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_5_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_5_ques_1'); ?></p>
-	          <input type="text" id="step_5_answ_1" value="<?php echo $step5ans1; ?>" tabindex="1" size="20" name="group_ext_step5ans1" />
+
 	        </div>
 	        <div class="right_panel col-md-6">
-
+						<p><?php the_field('step_5_ques_1'); ?></p>
+	          <input type="text" id="step_5_answ_1" value="<?php echo $step5ans1; ?>" tabindex="1" size="20" name="group_ext_step5ans1" />
 	        </div>
 	    </div>
 	    <!-- END TAB FIVE -->
@@ -557,13 +558,13 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_6_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_6_ques_1'); ?></p>
-	          <input type="text" id="step_6_answ_1" value="<?php echo $step6ans1; ?>" tabindex="1" size="20" name="group_ext_step6ans1" />
-	          <p><?php the_field('step_6_ques_2'); ?></p>
-	          <input type="text" id="step_6_answ_2" value="<?php echo $step6ans2; ?>" tabindex="1" size="20" name="group_ext_step6ans2" />
 
 	        </div>
 	        <div class="right_panel col-md-6">
+						<p><?php the_field('step_6_ques_1'); ?></p>
+					 <input type="text" id="step_6_answ_1" value="<?php echo $step6ans1; ?>" tabindex="1" size="20" name="group_ext_step6ans1" />
+					 <p><?php the_field('step_6_ques_2'); ?></p>
+					 <input type="text" id="step_6_answ_2" value="<?php echo $step6ans2; ?>" tabindex="1" size="20" name="group_ext_step6ans2" />
 
 	        </div>
 	    </div>
@@ -575,13 +576,13 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_7_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_7_ques_1'); ?></p>
-	          <input type="text" id="step_7_answ_1" value="<?php echo $step7ans1; ?>" tabindex="1" size="20" name="group_ext_step7ans1" />
-	          <p><?php the_field('step_7_ques_2'); ?></p>
-	          <input type="text" id="step_7_answ_2" value="<?php echo $step7ans2; ?>" tabindex="1" size="20" name="group_ext_step7ans2" />
 
 	        </div>
 	        <div class="right_panel col-md-6">
+						<p><?php the_field('step_7_ques_1'); ?></p>
+	          <input type="text" id="step_7_answ_1" value="<?php echo $step7ans1; ?>" tabindex="1" size="20" name="group_ext_step7ans1" />
+	          <p><?php the_field('step_7_ques_2'); ?></p>
+	          <input type="text" id="step_7_answ_2" value="<?php echo $step7ans2; ?>" tabindex="1" size="20" name="group_ext_step7ans2" />
 
 	        </div>
 	    </div>
@@ -593,13 +594,13 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_8_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_8_ques_1'); ?></p>
-	          <input type="text" id="step_8_answ_1" value="<?php echo $step8ans1; ?>" tabindex="1" size="20" name="group_ext_step8ans1" />
-	          <p><?php the_field('step_8_ques_2'); ?></p>
-	          <input type="text" id="step_8_answ_2" value="<?php echo $step8ans2; ?>" tabindex="1" size="20" name="group_ext_step8ans2" />
+
 	        </div>
 	        <div class="right_panel col-md-6">
-
+						<p><?php the_field('step_8_ques_1'); ?></p>
+					 <input type="text" id="step_8_answ_1" value="<?php echo $step8ans1; ?>" tabindex="1" size="20" name="group_ext_step8ans1" />
+					 <p><?php the_field('step_8_ques_2'); ?></p>
+					 <input type="text" id="step_8_answ_2" value="<?php echo $step8ans2; ?>" tabindex="1" size="20" name="group_ext_step8ans2" />
 	        </div>
 	    </div>
 	    <!-- END TAB EIGHT -->
@@ -658,15 +659,15 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_10_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_10_ques_1'); ?></p>
-	          <input type="text" id="step_10_answ_1" value="<?php echo $step10ans1; ?>" tabindex="1" size="20" name="group_ext_step10ans1" />
-	          <p><?php the_field('step_10_ques_2'); ?></p>
-	          <input type="text" id="step_10_answ_2" value="<?php echo $step10ans2; ?>" tabindex="1" size="20" name="group_ext_step10ans2" />
-	          <p><?php the_field('step_10_ques_3'); ?></p>
-	          <input type="text" id="step_10_answ_3" value="<?php echo $step10ans3; ?>" tabindex="1" size="20" name="group_ext_step10ans3" />
+
 	        </div>
 	        <div class="right_panel col-md-6">
-
+						<p><?php the_field('step_10_ques_1'); ?></p>
+					 <input type="text" id="step_10_answ_1" value="<?php echo $step10ans1; ?>" tabindex="1" size="20" name="group_ext_step10ans1" />
+					 <p><?php the_field('step_10_ques_2'); ?></p>
+					 <input type="text" id="step_10_answ_2" value="<?php echo $step10ans2; ?>" tabindex="1" size="20" name="group_ext_step10ans2" />
+					 <p><?php the_field('step_10_ques_3'); ?></p>
+					 <input type="text" id="step_10_answ_3" value="<?php echo $step10ans3; ?>" tabindex="1" size="20" name="group_ext_step10ans3" />
 	        </div>
 	    </div>
 	    <!-- END TAB TEN -->
@@ -693,11 +694,11 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_12_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_12_ques_1'); ?></p>
-	          <input type="text" id="step_12_answ_1" value="<?php echo $step12ans1; ?>" tabindex="1" size="20" name="group_ext_step12ans1" />
+
 	        </div>
 	        <div class="right_panel col-md-6">
-
+						<p><?php the_field('step_12_ques_1'); ?></p>
+						<input type="text" id="step_12_answ_1" value="<?php echo $step12ans1; ?>" tabindex="1" size="20" name="group_ext_step12ans1" />
 	        </div>
 	    </div>
 	    <!-- END TAB TWELVE -->
@@ -708,12 +709,12 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_13_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_13_ques_1'); ?></p>
-	          <input type="text" id="step_13_answ_1" value="<?php echo $step13ans1; ?>" tabindex="1" size="20" name="group_ext_step13ans1" />
-	          <p><?php the_field('step_13_ques_2'); ?></p>
-	          <input type="text" id="step_13_answ_2" value="<?php echo $step13ans2; ?>" tabindex="1" size="20" name="group_ext_step13ans2" />
-	        </div>
+					</div>
 	        <div class="right_panel col-md-6">
+						<p><?php the_field('step_13_ques_1'); ?></p>
+					 <input type="text" id="step_13_answ_1" value="<?php echo $step13ans1; ?>" tabindex="1" size="20" name="group_ext_step13ans1" />
+					 <p><?php the_field('step_13_ques_2'); ?></p>
+					 <input type="text" id="step_13_answ_2" value="<?php echo $step13ans2; ?>" tabindex="1" size="20" name="group_ext_step13ans2" />
 
 	        </div>
 	    </div>
