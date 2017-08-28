@@ -21,7 +21,7 @@ get_header();
   <?php endwhile; ?>
   <?php wp_reset_query(); ?>
   <!-- WIZARD TABS -->
-  <!-- NOTE: WIZARD TABS ARE POSITIONED ABSOLUTE OFF SCREEN FOR UI REASONS -->
+  <!-- NOTE: WIZARD TABS ARE POSITIONED ABSOLUTE OFF SCREEN FOR UI REASONS test -->
   <div id="pill_nav" class="navbar">
     <div class="navbar-inner">
       <div class="container">
