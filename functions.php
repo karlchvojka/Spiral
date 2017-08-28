@@ -63,6 +63,29 @@ function login_redirect( $redirect_to, $request, $user ){
     return home_url('dashboard-2');
 }
 add_filter( 'login_redirect', 'login_redirect', 10, 3 );
+
+/* --------------------------------------- */
+/* -------- CUSTOMIZE LOGIN PAGE --------- */
+/* --------------------------------------- */
+
+function my_custom_login() {
+echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/tlx_login/tlx_login.css" />';
+}
+add_action('login_head', 'my_custom_login');
+
+function my_login_logo_url() {
+return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+return 'Learning Exchange CI Tool';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+/* END LOGIN PAGE FUNCTIONS
+
+
 /* ------------------------------------------------------------
 :: ADD GROUPS EXTENSIONS
 --------------------------------------------------------------- */
@@ -136,12 +159,14 @@ $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 		</div>
 	</div>
 
+
+
 	<div id="accordion" role="tablist" aria-multiselectable="true">
 		<!-- CARD ONE -->
 	  <div class="card">
 	    <div class="card-header" role="tab" id="headingOne">
 	      <h3 class="mb-0">
-	        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 	          Team Setup
 	        </a>
 					<i class="fa fa-angle-up fa-lg" aria-hidden="true"></i>
