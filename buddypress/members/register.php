@@ -19,7 +19,7 @@
 	 */
 	do_action( 'bp_before_register_page' ); ?>
 
-	<div class="page" id="register-page">
+	<div class="page row" id="register-page">
 
 		<form action="" name="signup_form" id="signup_form" class="standard-form" method="post" enctype="multipart/form-data">
 
@@ -63,9 +63,13 @@
 				do_action( 'template_notices' ); ?>
 
 			</div>
-
-			<p><?php _e( 'Registering for this site is easy. Just fill in the fields below, and we\'ll get a new account set up for you in no time.', 'buddypress' ); ?></p>
-
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Register for the TLX Learning Tool</h1>
+					<p><?php _e( 'Registering for this site is easy. Just fill in the fields below, and we\'ll get a new account set up for you in no time.', 'buddypress' ); ?></p>
+					<h2>Register with social media</h2>
+				</div>
+			</div>
 			<?php
 
 			/**
@@ -74,9 +78,9 @@
 			 * @since 1.1.0
 			 */
 			do_action( 'bp_before_account_details_fields' ); ?>
+			<div class="row">
 
-			<div class="register-section" id="basic-details-section">
-
+			<div class="col-md-6" id="basic-details-section">
 				<?php /***** Basic Account Details ******/ ?>
 
 				<h2><?php _e( 'Account Details', 'buddypress' ); ?></h2>
@@ -159,7 +163,7 @@
 				 */
 				do_action( 'bp_before_signup_profile_fields' ); ?>
 
-				<div class="register-section" id="profile-details-section">
+				<div class="col-md-6" id="profile-details-section">
 
 					<h2><?php _e( 'Profile Details', 'buddypress' ); ?></h2>
 
@@ -226,7 +230,7 @@
 
 							</fieldset>
 						</div>
-
+					</div>
 					<?php endwhile; ?>
 
 					<input type="hidden" name="signup_profile_field_ids" id="signup_profile_field_ids" value="<?php bp_the_profile_field_ids(); ?>" />

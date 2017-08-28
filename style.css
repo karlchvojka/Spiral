@@ -468,6 +468,25 @@ div#item-header-content h1.page-title {
   }
 /* END BP GROUPS CUSTOM STYLES */
 
+/* LOGIN FORM STYLES */
+
+#buddypress .dir-search input[type=search], #buddypress .dir-search input[type=text], #buddypress .groups-members-search input[type=search], #buddypress .groups-members-search input[type=text], #buddypress .standard-form input[type=color], #buddypress .standard-form input[type=date], #buddypress .standard-form input[type=datetime-local], #buddypress .standard-form input[type=datetime], #buddypress .standard-form input[type=email], #buddypress .standard-form input[type=month], #buddypress .standard-form input[type=number], #buddypress .standard-form input[type=password], #buddypress .standard-form input[type=range], #buddypress .standard-form input[type=search], #buddypress .standard-form input[type=tel], #buddypress .standard-form input[type=text], #buddypress .standard-form input[type=time], #buddypress .standard-form input[type=url], #buddypress .standard-form input[type=week], #buddypress .standard-form select, #buddypress .standard-form textarea {
+  border-radius:5px;
+  width:100% !important;
+}
+
+#buddypress .standard-form label, #buddypress .standard-form legend, #buddypress .standard-form span.label{
+  font-size:20px;
+  font-weight:500;
+}
+
+#field-visibility-settings-toggle-1 {
+  margin-top:20px;
+}
+
+#signup_submit {
+font-size:20px !important;
+}
 /* ------------------------------------------- */
 
 /* ------------------------------------------- */
