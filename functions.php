@@ -35,6 +35,21 @@ if ( function_exists( 'register_nav_menus' ) ) {
 	);
 }
 
+// SIDEBAR REGISTRATION
+add_action( 'widgets_init', 'theme_slug_widgets_init' );
+function theme_slug_widgets_init() {
+  register_sidebar( array(
+    'name' => __( 'Main Sidebar', 'theme-slug' ),
+    'id' => 'sidebar-1',
+    'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
+    'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2 class="widgettitle">',
+		'after_title'   => '</h2>',
+  ) );
+}
+
+
 // DELETE ADMIN BAR!!!!!!!!!
 function my_function_admin_bar(){
 return false;
@@ -44,7 +59,39 @@ add_filter( 'show_admin_bar' , 'my_function_admin_bar');
  // Register custom navigation walker
 require_once('wp_bootstrap_navwalker.php');
 
+function login_redirect( $redirect_to, $request, $user ){
+    return home_url('dashboard-2');
+}
+add_filter( 'login_redirect', 'login_redirect', 10, 3 );
 
+/* --------------------------------------- */
+/* -------- CUSTOMIZE LOGIN PAGE --------- */
+/* --------------------------------------- */
+
+function my_custom_login() {
+echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/tlx_login/tlx_login.css" />';
+}
+add_action('login_head', 'my_custom_login');
+
+function my_login_logo_url() {
+return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+return 'Learning Exchange CI Tool';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+/* END LOGIN PAGE FUNCTIONS */
+
+function my_remove_em_nav() {
+	global $bp;
+      bp_core_remove_nav_item( 'events' );
+      bp_core_remove_subnav_item( 'group-settings', 'profile' );
+
+}
+add_action( 'bp_init', 'my_remove_em_nav' );
 /* ------------------------------------------------------------
 :: ADD GROUPS EXTENSIONS
 --------------------------------------------------------------- */
@@ -58,10 +105,11 @@ $args = array(
 'nav_item_position' => 1,
  'screens' => array(
 		 'edit' => array(
-				 'name' => 'Inquiry',
+				 'name' => 'Edit Inquiry',
 				 // Changes the text of the Submit button
 				 // on the Edit page
 				 'submit_text' => 'Submit',
+				 'position' => 1
 		 ),
 		 'create' => array(
 				 'position' => 1,
@@ -70,7 +118,7 @@ $args = array(
 );
 parent::init( $args );
 }
-function display() {
+function display($group_id = NULL) {
 $group_id = bp_get_group_id();
 $step1ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step1ans1');
 $step1ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step1ans2');
@@ -97,73 +145,236 @@ $step13ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans1');
 $step13ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step13ans2');
 
 //Step one
-if($step1ans1)
-echo "<h5>Step 1 - 1: $step1ans1</h5>";
-if($step1ans2)
-echo "<h5>Step 1 - 2: $step1ans2</h5>";
-if($step1ans3)
-echo "<h5>Step 1 - 3: $step1ans3</h5>";
+?>
 
-//Step three
-if($step3ans1)
-echo "<h5>Step 3 - 1: $step3ans1</h5>";
-if($step3ans2)
-echo "<h5>Step 3 - 2: $step3ans2</h5>";
+<?php $the_query = new WP_Query( 'page_id=53' ); ?>
 
-//Step Four
-if($step4ans1)
-echo "<h5>Step 4 - 1: $step4ans1</h5>";
-if($step4ans2)
-echo "<h5>Step 4 - 2: $step4ans2</h5>";
+<?php while ($the_query -> have_posts()) : $the_query -> the_post();?>
 
-//Step Five
-if($step5ans1)
-echo "<h5>Step 5 - 1: $step5ans1</h5>";
 
-//Step Six
-if($step6ans1)
-echo "<h5>Step 6 - 1: $step6ans1</h5>";
-if($step6ans1)
-echo "<h5>Step 6 - 2: $step6ans2</h5>";
+<div id="inq_wrapper" class="container">
 
-//Step Seven
-if($step7ans1)
-echo "<h5>Step 7 - 1: $step7ans1</h5>";
-if($step7ans2)
-echo "<h5>Step 7 - 2: $step7ans2</h5>";
+	<div class="button_class clear row" style="height:60px;">
+		<div class="col-md-6">
+			<h2 id="inq_page">Collaborative Inquiry Stages</h2>
+		</div>
+		<div class="col-md-6">
 
-//Step Eight
-if($step8ans1)
-echo "<h5>Step 8 - 1: $step8ans1</h5>";
-if($step8ans2)
-echo "<h5>Step 8 - 2: $step8ans2</h5>";
+<button class="print_button pull-right" onclick="printreportbutton()"><i class="fa fa-print" aria-hidden="true"></i> Print Report</button>
 
-//Step Nine
-if($step9ans1)
-echo "<h5>Step 9 - 1: $step9ans1</h5>";
-if($step9ans2)
-echo "<h5>Step 9 - 2: $step9ans2</h5>";
-if($step9ans3)
-echo "<h5>Step 9 - 3: $step9ans3</h5>";
+		</div>
+	</div>
 
-//Step Ten
-if($step10ans1)
-echo "<h5>Step 10 - 1: $step10ans1</h5>";
-if($step10ans2)
-echo "<h5>Step 10 - 2: $step10ans2</h5>";
-if($step10ans3)
-echo "<h5>Step 10 - 3: $step10ans3</h5>";
 
-//Step Twelve
-if($step12ans1)
-echo "<h5>Step 12 - 1: $step12ans1</h5>";
 
-//Step Thirteen
-if($step13ans1)
-echo "<h5>Step 13 - 1: $step13ans1</h5>";
-if($step13ans2)
-echo "<h5>Step 13 - 2: $step13ans2</h5>";
+	<div id="accordion" role="tablist" aria-multiselectable="true">
+		<!-- CARD ONE -->
+	  <div class="card">
+	    <div class="card-header" role="tab" id="headingOne">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	          Team Setup
+	        </a>
+					<i class="fa fa-angle-up fa-lg" aria-hidden="true"></i>
+	      </h3>
+	    </div>
 
+	    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+	      <div class="card-block">
+					<?php
+					if($step1ans1)
+					echo "<h4>" . get_field('step_1_ques_1') . "</h4><p>$step1ans1</p>";
+					if($step1ans2)
+					echo "<h4>" . get_field('step_1_ques_2') . "</h4><p>$step1ans2</p>";
+					if($step1ans3)
+					echo "<h4>" . get_field('step_1_ques_3') . "</h4><p>$step1ans3</p>";
+					?>
+	      </div>
+	    </div>
+	  </div>
+		<!-- END CARD ONE -->
+
+		<!-- START CARD TWO -->
+	  <div class="card">
+	    <div class="card-header" role="tab" id="headingTwo">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	          Plan : Determine a Focus
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+	      <div class="card-block">
+					<?php
+					//Step threes
+					if($step3ans1)
+					echo "<h4>" . get_field('step_3_ques_1') . "</h4><p>$step3ans1</p>";
+					if($step3ans2)
+					echo "<h4>" . get_field('step_3_ques_2') . "</h4><p>$step3ans2</p>";
+					//Step Four
+					if($step4ans1)
+					echo "<h4>" . get_field('step_4_ques_1') . "</h4><p>$step4ans1</p>";
+					if($step4ans2)
+					echo "<h4>" . get_field('step_4_ques_2') . "</h4><p>$step4ans2</p>";
+					?>
+				</div>
+	    </div>
+	  </div>
+		<!-- END CARD TWO -->
+
+		<!-- START CARD THREE -->
+	  <div class="card">
+	    <div class="card-header" role="tab" id="headingThree">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+	          Plan: Action Planning
+
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+	      <div class="card-block">
+					<?php
+					//Step Five
+					if($step5ans1)
+					echo "<h4>" . get_field('step_5_ques_1') . "</h4><p>$step5ans1</p>";
+					if($step6ans1)
+					echo "<h4>" . get_field('step_6_ques_1') . "</h4><p>$step6ans1</p>";
+					if($step6ans1)
+					echo "<h4>" . get_field('step_6_ques_2') . "</h4><p>$step6ans2</p>";
+					if($step7ans1)
+					echo "<h4>" . get_field('step_7_ques_1') . "</h4><p>$step7ans1</p>";
+					if($step7ans2)
+					echo "<h4>" . get_field('step_7_ques_2') . "</h4><p>$step7ans2</p>";
+					?>      </div>
+	    </div>
+	  </div>
+		<!-- END CARD THREE -->
+
+		<!-- START CARD FOUR -->
+		<div class="card">
+	    <div class="card-header" role="tab" id="headingFour">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+	          Plan: Professional Learning And Resources
+
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+	      <div class="card-block">
+					<?php
+					//Step Eight
+					if($step8ans1)
+					echo "<h4>" . get_field('step_8_ques_1') . "</h4><p>$step8ans1</p>";
+					if($step8ans2)
+					echo "<h4>" . get_field('step_8_ques_2') . "</h4><p>$step8ans2</p>";
+					?>
+				</div>
+	    </div>
+	  </div>
+		<!-- END CARD FOUR -->
+
+		<!-- START CARD FIVE -->
+		<div class="card">
+	    <div class="card-header" role="tab" id="headingFive">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+	         Plan: Planning for collecting data and looking for evidence
+
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+	      <div class="card-block">
+					<?php
+					//Step Nine
+					if($step9ans1)
+					echo "<h4>" . get_field('step_9_ques_1') . "</h4><p>$step9ans1</p>";
+					if($step9ans2)
+					echo "<h4>" . get_field('step_9_ques_2') . "</h4><p>$step9ans2</p>";
+					if($step9ans3)
+					echo "<h4>" . get_field('step_9_ques_3') . "</h4><p>$step9ans4</p>";
+					?>
+				</div>
+	    </div>
+	  </div>
+		<!-- END CARD FIVE -->
+
+		<!-- START CARD SIX -->
+		<div class="card">
+	    <div class="card-header" role="tab" id="headingSix">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+	          Plan: Format
+
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+	      <div class="card-block">
+					<?php
+					//Step Ten
+					if($step10ans1)
+					echo "<h4>" . get_field('step_10_ques_1') . "</h4><p>$step10ans1</p>";
+					if($step10ans2)
+					echo "<h4>" . get_field('step_10_ques_2') . "</h4><p>$step10ans2</p>";
+					if($step10ans3)
+					echo "<h4>" . get_field('step_10_ques_3') . "</h4><p>$step10ans3</p>";
+					?>
+				</div>
+	    </div>
+	  </div>
+		<!-- END CARD SIX -->
+
+		<!-- START CARD Seven -->
+		<div class="card">
+	    <div class="card-header" role="tab" id="headingSeven">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+	          Plan: Instructional Change
+
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
+	      <div class="card-block">
+					<?php
+					//Step Twelve
+					if($step12ans1)
+					echo "<h4>" . get_field('step_12_ques_1') . "</h4><p>$step10ans3</p>";
+					?>
+				</div>
+	    </div>
+	  </div>
+		<!-- END CARD SEVEN -->
+		<!-- START CARD EIGHT -->
+		<div class="card">
+	    <div class="card-header" role="tab" id="headingEight">
+	      <h3 class="mb-0">
+	        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+	          Plan: Logistics
+	        </a>
+	      </h3>
+	    </div>
+	    <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight">
+	      <div class="card-block">
+					<?php
+					//Step Thirteen
+					if($step13ans1)
+					echo "<h4>" . get_field('step_13_ques_1') . "</h4><p>$step10ans3</p>";
+					if($step13ans2)
+					echo "<h4>" . get_field('step_13_ques_2') . "</h4><p>$step10ans3</p>";
+					?>
+				</div>
+	    </div>
+	  </div>
+		<!-- END CARD EIGHT -->
+	</div>
+</div>
+<?php endwhile; ?>
+
+<?php
 }
 function settings_screen( $group_id = NULL ) {
 	$step1ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step1ans1');
@@ -243,8 +454,7 @@ function settings_screen( $group_id = NULL ) {
 	      </div>
 	      <div class="right_panel col-md-6">
 	        <p><?php the_field('step_1_ques_1'); ?></p>
-					<?php $group = get_field( 'step_1_ques_1' );
-  				echo $group->step_1_ques_1;?>
+
 					<input type="text" id="step_1_answ_1" value="<?php echo $step1ans1; ?>" tabindex="1" size="20" name="group_ext_step1ans1" />
 
 	        <p><?php the_field('step_1_ques_2'); ?></p>
@@ -347,13 +557,13 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_4_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_4_ques_1'); ?></p>
+
+	        </div>
+	        <div class="right_panel col-md-6">
+						<p><?php the_field('step_4_ques_1'); ?></p>
 	          <input type="text" id="step_4_answ_1" value="<?php echo $step4ans1; ?>" tabindex="1" size="20" name="group_ext_step4ans1" />
 	          <p><?php the_field('step_4_ques_2'); ?></p>
 	          <input type="text" id="step_4_answ_2" value="<?php echo $step4ans2; ?>" tabindex="1" size="20" name="group_ext_step4ans2" />
-	        </div>
-	        <div class="right_panel col-md-6">
-
 	        </div>
 	    </div>
 	    <!-- END TAB FOUR -->
@@ -364,11 +574,11 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_5_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_5_ques_1'); ?></p>
-	          <input type="text" id="step_5_answ_1" value="<?php echo $step5ans1; ?>" tabindex="1" size="20" name="group_ext_step5ans1" />
+
 	        </div>
 	        <div class="right_panel col-md-6">
-
+						<p><?php the_field('step_5_ques_1'); ?></p>
+	          <input type="text" id="step_5_answ_1" value="<?php echo $step5ans1; ?>" tabindex="1" size="20" name="group_ext_step5ans1" />
 	        </div>
 	    </div>
 	    <!-- END TAB FIVE -->
@@ -379,13 +589,13 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_6_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_6_ques_1'); ?></p>
-	          <input type="text" id="step_6_answ_1" value="<?php echo $step6ans1; ?>" tabindex="1" size="20" name="group_ext_step6ans1" />
-	          <p><?php the_field('step_6_ques_2'); ?></p>
-	          <input type="text" id="step_6_answ_2" value="<?php echo $step6ans2; ?>" tabindex="1" size="20" name="group_ext_step6ans2" />
 
 	        </div>
 	        <div class="right_panel col-md-6">
+						<p><?php the_field('step_6_ques_1'); ?></p>
+					 <input type="text" id="step_6_answ_1" value="<?php echo $step6ans1; ?>" tabindex="1" size="20" name="group_ext_step6ans1" />
+					 <p><?php the_field('step_6_ques_2'); ?></p>
+					 <input type="text" id="step_6_answ_2" value="<?php echo $step6ans2; ?>" tabindex="1" size="20" name="group_ext_step6ans2" />
 
 	        </div>
 	    </div>
@@ -397,13 +607,13 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_7_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_7_ques_1'); ?></p>
-	          <input type="text" id="step_7_answ_1" value="<?php echo $step7ans1; ?>" tabindex="1" size="20" name="group_ext_step7ans1" />
-	          <p><?php the_field('step_7_ques_2'); ?></p>
-	          <input type="text" id="step_7_answ_2" value="<?php echo $step7ans2; ?>" tabindex="1" size="20" name="group_ext_step7ans2" />
 
 	        </div>
 	        <div class="right_panel col-md-6">
+						<p><?php the_field('step_7_ques_1'); ?></p>
+	          <input type="text" id="step_7_answ_1" value="<?php echo $step7ans1; ?>" tabindex="1" size="20" name="group_ext_step7ans1" />
+	          <p><?php the_field('step_7_ques_2'); ?></p>
+	          <input type="text" id="step_7_answ_2" value="<?php echo $step7ans2; ?>" tabindex="1" size="20" name="group_ext_step7ans2" />
 
 	        </div>
 	    </div>
@@ -415,13 +625,13 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_8_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_8_ques_1'); ?></p>
-	          <input type="text" id="step_8_answ_1" value="<?php echo $step8ans1; ?>" tabindex="1" size="20" name="group_ext_step8ans1" />
-	          <p><?php the_field('step_8_ques_2'); ?></p>
-	          <input type="text" id="step_8_answ_2" value="<?php echo $step8ans2; ?>" tabindex="1" size="20" name="group_ext_step8ans2" />
+
 	        </div>
 	        <div class="right_panel col-md-6">
-
+						<p><?php the_field('step_8_ques_1'); ?></p>
+					 <input type="text" id="step_8_answ_1" value="<?php echo $step8ans1; ?>" tabindex="1" size="20" name="group_ext_step8ans1" />
+					 <p><?php the_field('step_8_ques_2'); ?></p>
+					 <input type="text" id="step_8_answ_2" value="<?php echo $step8ans2; ?>" tabindex="1" size="20" name="group_ext_step8ans2" />
 	        </div>
 	    </div>
 	    <!-- END TAB EIGHT -->
@@ -480,26 +690,28 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_10_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_10_ques_1'); ?></p>
-	          <input type="text" id="step_10_answ_1" value="<?php echo $step10ans1; ?>" tabindex="1" size="20" name="group_ext_step10ans1" />
-	          <p><?php the_field('step_10_ques_2'); ?></p>
-	          <input type="text" id="step_10_answ_2" value="<?php echo $step10ans2; ?>" tabindex="1" size="20" name="group_ext_step10ans2" />
-	          <p><?php the_field('step_10_ques_3'); ?></p>
-	          <input type="text" id="step_10_answ_3" value="<?php echo $step10ans3; ?>" tabindex="1" size="20" name="group_ext_step10ans3" />
+
 	        </div>
 	        <div class="right_panel col-md-6">
-
+						<p><?php the_field('step_10_ques_1'); ?></p>
+					 <input type="text" id="step_10_answ_1" value="<?php echo $step10ans1; ?>" tabindex="1" size="20" name="group_ext_step10ans1" />
+					 <p><?php the_field('step_10_ques_2'); ?></p>
+					 <input type="text" id="step_10_answ_2" value="<?php echo $step10ans2; ?>" tabindex="1" size="20" name="group_ext_step10ans2" />
+					 <p><?php the_field('step_10_ques_3'); ?></p>
+					 <input type="text" id="step_10_answ_3" value="<?php echo $step10ans3; ?>" tabindex="1" size="20" name="group_ext_step10ans3" />
 	        </div>
 	    </div>
 	    <!-- END TAB TEN -->
 
 	    <!-- START TAB ELEVEN -->
-	    <div class="tab-pane row" id="ta11">
+	    <div class="tab-pane row" id="tab11">
 	        <div class="panel_title col-md-12">
 	          <h2><?php the_field('step_11_title'); ?></h2>
 	        </div>
 	      	<div class="left_panel col-md-6">
-	            <?php the_field('step_11_video_1'); ?>
+						<div class="embed-container">
+	            <?php the_field('step_11_video'); ?>
+						</div>
 	        </div>
 	        <div class="right_panel col-md-6">
 
@@ -513,11 +725,11 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_12_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_12_ques_1'); ?></p>
-	          <input type="text" id="step_12_answ_1" value="<?php echo $step12ans1; ?>" tabindex="1" size="20" name="group_ext_step12ans1" />
+
 	        </div>
 	        <div class="right_panel col-md-6">
-
+						<p><?php the_field('step_12_ques_1'); ?></p>
+						<input type="text" id="step_12_answ_1" value="<?php echo $step12ans1; ?>" tabindex="1" size="20" name="group_ext_step12ans1" />
 	        </div>
 	    </div>
 	    <!-- END TAB TWELVE -->
@@ -528,12 +740,12 @@ function settings_screen( $group_id = NULL ) {
 	        <h2><?php the_field('step_13_title'); ?></h2>
 	      </div>
 	      	<div class="left_panel col-md-6">
-	          <p><?php the_field('step_13_ques_1'); ?></p>
-	          <input type="text" id="step_13_answ_1" value="<?php echo $step13ans1; ?>" tabindex="1" size="20" name="group_ext_step13ans1" />
-	          <p><?php the_field('step_13_ques_2'); ?></p>
-	          <input type="text" id="step_13_answ_2" value="<?php echo $step13ans2; ?>" tabindex="1" size="20" name="group_ext_step13ans2" />
-	        </div>
+					</div>
 	        <div class="right_panel col-md-6">
+						<p><?php the_field('step_13_ques_1'); ?></p>
+					 <input type="text" id="step_13_answ_1" value="<?php echo $step13ans1; ?>" tabindex="1" size="20" name="group_ext_step13ans1" />
+					 <p><?php the_field('step_13_ques_2'); ?></p>
+					 <input type="text" id="step_13_answ_2" value="<?php echo $step13ans2; ?>" tabindex="1" size="20" name="group_ext_step13ans2" />
 
 	        </div>
 	    </div>

@@ -1,3 +1,4 @@
+
 <?php
 $postTitleError = '';
 
@@ -33,6 +34,8 @@ if ( isset( $_POST['submit'] ) ) {
 
 <!-- FORM JS STUFFS -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
 <script src="<?php bloginfo('template_url');?>/js/bootstrap.min.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/jquery.bootstrap.wizard.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/prettify.js"></script>
@@ -55,7 +58,40 @@ $(document).ready(function() {
 			var $percent = ($current/$total) * 100;
 			$('#rootwizard .progress-bar').css({width:$percent+'%'});
 		}});
-});</script>
+});
+
+jQuery(function($) {
+        var panelList = $('#accordion');
+        panelList.sortable({
+            // Only make the .panel-heading child elements support dragging.
+            // Omit this to make then entire <li>...</li> draggable.
+            handle: '.card-header',
+            update: function() {
+                $('.card', panelList).each(function(index, elem) {
+                     var $listItem = $(elem),
+                         newIndex = $listItem.index();
+
+                     // Persist the new indices.
+                });
+            }
+        });
+    });
+
+function printreportbutton() {
+    window.print();
+}
+</script>
+<style type="text/css">
+    /* show the move cursor as the user moves the mouse over the panel header.*/
+    #draggablePanelList .panel-heading {
+        cursor: move;
+    }
+</style>
+<script>
+$(document).on('click',function(){
+$('.collapse').collapse('hide');
+})
+</script>
 
 <!-- END CSS INCLUDES -->
 

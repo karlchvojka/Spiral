@@ -132,7 +132,7 @@ do_action( 'bp_before_groups_loop' ); ?>
 <?php else: ?>
 
 	<div id="message" class="info">
-		<p><?php _e( 'There were no groups found.', 'buddypress' ); ?></p>
+		<p><?php _e( 'There were no inquires found.', 'buddypress' ); ?></p>
 	</div>
 
 <?php endif; ?>
