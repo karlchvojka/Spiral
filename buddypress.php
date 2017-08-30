@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php
+acf_form_head();
+get_header(); ?>
 
 <!-- WRAP SITE -->
 <div id="site_wrap" class="container">

@@ -1,3 +1,4 @@
+
 <?php
 $postTitleError = '';
 
@@ -90,7 +91,7 @@ function printreportbutton() {
 $(document).on('click',function(){
 $('.collapse').collapse('hide');
 })
-</script> 
+</script>
 
 <!-- END CSS INCLUDES -->
 

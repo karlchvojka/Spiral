@@ -83,9 +83,15 @@ return 'Learning Exchange CI Tool';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
-/* END LOGIN PAGE FUNCTIONS
+/* END LOGIN PAGE FUNCTIONS */
 
+function my_remove_em_nav() {
+	global $bp;
+      bp_core_remove_nav_item( 'events' );
+      bp_core_remove_subnav_item( 'group-settings', 'profile' );
 
+}
+add_action( 'bp_init', 'my_remove_em_nav' );
 /* ------------------------------------------------------------
 :: ADD GROUPS EXTENSIONS
 --------------------------------------------------------------- */
@@ -112,7 +118,7 @@ $args = array(
 );
 parent::init( $args );
 }
-function display() {
+function display($group_id = NULL) {
 $group_id = bp_get_group_id();
 $step1ans1 = groups_get_groupmeta ( $group_id, 'group_ext_step1ans1');
 $step1ans2 = groups_get_groupmeta ( $group_id, 'group_ext_step1ans2');
