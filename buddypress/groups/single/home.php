@@ -50,6 +50,30 @@
 				do_action( 'bp_group_options_nav' ); ?>
 
 			</ul>
+			<?php
+			$query = new WP_Query( array( 'post_type' => 'inquiry' ) );
+			$group_id = bp_get_group_id();
+
+				if ( $query->have_posts() ) : ?>
+				    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+							<?php
+							$parentID = get_post_meta(get_the_ID(), "GroupID", true);
+
+								 if ($parentID == $group_id) {
+									 the_title();
+									 //$MySecondClassObject->__construct();
+								};
+
+							?>
+
+
+
+
+				    <?php endwhile; wp_reset_postdata(); ?>
+				<!-- show pagination here -->
+				<?php else : ?>
+				    <!-- show 404 error here -->
+				<?php endif; ?>
 		</div>
 	</div><!-- #item-nav -->
 	<div id="item-body" class="row">

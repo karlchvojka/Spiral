@@ -16,6 +16,10 @@ get_header();
 
         <?php echo wp_get_post_parent_id( get_the_ID() ); ?>
 
+        <?php echo "THIS POST ID:".get_the_ID();
+        $parentID = get_post_meta(get_the_ID(), "GroupID");
+       echo "Group ID:" . $parentID;
+       var_dump($parentID);?>
 
         <?php
           /* Show the edit button to the post author only */

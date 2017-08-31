@@ -98,6 +98,7 @@ add_action( 'bp_init', 'my_remove_em_nav' );
 function bob_add_group_extension() {
 if ( class_exists( 'BP_Group_Extension' ) ) :
 class Group_Extension_Ville extends BP_Group_Extension {
+
 function __construct() {
 $args = array(
 'slug' => 'add-inq-form',
