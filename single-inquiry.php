@@ -13,7 +13,17 @@ get_header();
 
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
+
+        <?php //echo wp_get_post_parent_id( get_the_ID() ); ?>
+
+
         <?php
+        echo "ID:".get_the_ID();
+        $var = get_post_meta(get_the_ID(), "GroupID");
+
+        echo "Group ID:" . $var;
+        var_dump($var);
+
           /* Show the edit button to the post author only */
           if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { ?>
           <a class='post-edit-button' href="<?php echo get_permalink() ?>?action=edit">Edit Post</a>
