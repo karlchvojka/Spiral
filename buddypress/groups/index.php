@@ -14,8 +14,9 @@
 do_action( 'bp_before_directory_groups_page' ); ?>
 
 <div id="buddypress">
-
-	<?php
+		<div class="header_inner_wrap">
+			<div class="container">
+					<?php
 
 	/**
 	 * Fires before the display of the groups.
@@ -109,6 +110,9 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 				</li>
 			</ul>
 		</div>
+	</div>
+</div>
+<div class="container">
 
 		<h2 class="bp-screen-reader-text"><?php
 			/* translators: accessibility text */
@@ -149,7 +153,7 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 	 * @since 1.1.0
 	 */
 	do_action( 'bp_after_directory_groups' ); ?>
-
+</div>
 </div><!-- #buddypress -->
 
 <?php

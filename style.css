@@ -90,6 +90,7 @@ list-style-type: none;
   background-image: none;
   background-color:#ffffff;
   z-index:999;
+  margin-bottom:0px;
 	}
 	ul.Nav {
 		list-style:none;
@@ -120,6 +121,9 @@ list-style-type: none;
 		            color:#2a1155;
 		            margin:0 auto 10px auto;
 		          }
+            .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a i {
+               color:#fd5842;
+            }
   .navbar-nav {
     background-color:#ffffff;
   }
@@ -174,11 +178,7 @@ list-style-type: none;
    margin-bottom:0px;
   }
 .widget.buddypress div.item-options {
-  padding:5px 0px;
-  background-color:#4d3d6b;
-  color:#ffffff;
-  text-align:center;
-  margin-bottom:0px;
+  display:none;
   }
   .widget.buddypress div.item-options a:link, .widget.buddypress div.item-options a:visited {
     background-color:transparent;
@@ -280,7 +280,6 @@ list-style-type: none;
     }
     .print_button {
       border:1px solid;
-      margin-bottom:20px;
     }
     /* End Button styles */
 
@@ -338,14 +337,19 @@ list-style-type: none;
 /* End Tab Structure Styles */
 
 /* BP GROUPS CUSTOM STYLES */
+.header_inner_wrap {
+  width:100%;
+  padding-top:20px;
+  background-color:#ffffff;
+  border-bottom: 1px solid #c7bfd8;
+}
 #buddypress div.dir-search {
   margin:0px;
 }
 div#item-header {
   background-color:#ffffff;
-  border-radius:5px;
-  border:1px solid #c7bfd8;
-  margin-bottom:20px;
+  border-bottom:1px solid #c7bfd8;
+  border-top:0px;
   padding-top: 15px;
   padding-left:0px;
   padding-right:0px;
@@ -379,6 +383,7 @@ div#item-header-content h1.page-title {
       margin-top:0px;
       margin-bottom:0px;
       }
+    
       div#accordion .card h4 {
         font-size:16px;
         color:#520051;
@@ -406,24 +411,29 @@ div#item-header-content h1.page-title {
   }
 
   #buddypress #reply-title small a span, #buddypress a.bp-primary-action span {
-    background-color:#fd5842;
+    background-color:#ffffff;
+    color:#000000;
+  }
+  #buddypress #item-nav {
+    background-color:#ffffff;
+    border-bottom:1px solid #c7bfd8;
+    padding:10px;
+    margin-bottom:10px;
   }
   #buddypress div.item-list-tabs ul li.current a, #buddypress div.item-list-tabs ul li.selected a {
     border-radius:5px;
     margin:0px 5px;
-    background-color: #fd5942;
-    color:#ffffff;
+    color:#4d3d6b;
+    background-color:#ffffff;
     }
   #buddypress div.item-list-tabs ul li a, #buddypress .comment-reply-link, #buddypress .generic-button a, #buddypress .standard-form button, #buddypress a.button, #buddypress input[type=button], #buddypress input[type=reset], #buddypress input[type=submit], #buddypress ul.button-nav li a, a.bp-title-button {
     border-radius:5px;
     border:none;
     margin:0px 5px;
-    background-color:#a185ad;
-    color:#ffffff;
+    color:#4d3d6b;
     }
   #buddypress div.item-list-tabs ul li a:hover, #buddypress a.button:hover {
-    background-color:#4d3d6b;
-    color:#ffffff;
+    color:#fd5842;
     border:none;
   }
   /* GROUP LIST STYLES */
@@ -468,6 +478,26 @@ div#item-header-content h1.page-title {
   }
 /* END BP GROUPS CUSTOM STYLES */
 
+/* Create Group */
+form#create-group-form {
+  }
+  form#create-group-form #group-create-tabs {
+    background-color:#ffffff;
+    border-bottom: 1px solid #c7bfd8;
+    padding: 10px 0px;
+  }
+
+  form#create-group-form div#main-column {
+    margin-left:0px;
+    float:left;
+  }
+  form#create-group-form #message {
+    display:none;
+  }
+
+#buddypress ul.item-list {
+  border:none;
+}
 /* LOGIN FORM STYLES */
 
 #buddypress .dir-search input[type=search], #buddypress .dir-search input[type=text], #buddypress .groups-members-search input[type=search], #buddypress .groups-members-search input[type=text], #buddypress .standard-form input[type=color], #buddypress .standard-form input[type=date], #buddypress .standard-form input[type=datetime-local], #buddypress .standard-form input[type=datetime], #buddypress .standard-form input[type=email], #buddypress .standard-form input[type=month], #buddypress .standard-form input[type=number], #buddypress .standard-form input[type=password], #buddypress .standard-form input[type=range], #buddypress .standard-form input[type=search], #buddypress .standard-form input[type=tel], #buddypress .standard-form input[type=text], #buddypress .standard-form input[type=time], #buddypress .standard-form input[type=url], #buddypress .standard-form input[type=week], #buddypress .standard-form select, #buddypress .standard-form textarea {
@@ -489,6 +519,17 @@ font-size:20px !important;
 }
 /* ------------------------------------------- */
 
+/* INDIVIDUAL ROUND STYLES */
+.inquiry_header {
+  background-color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #c7bfd8;
+    margin:20px 0px;
+    padding:20px;
+  }
+  .inquiry_header div  {
+    padding:0px;
+  }
 /* ------------------------------------------- */
 /* MODIFIERS */
 /* ------------------------------------------- */
