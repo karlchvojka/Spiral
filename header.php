@@ -1,3 +1,4 @@
+
 <?php
 $postTitleError = '';
 
@@ -24,8 +25,10 @@ if ( isset( $_POST['submit'] ) ) {
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/bootstrap-theme.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/buddypress.min.css" />
+<link rel="stylesheet" type="text/css" media="print" href="<?php bloginfo('stylesheet_directory'); ?>/print.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <script src="<?php bloginfo('template_url')?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="https://use.fontawesome.com/c674cc7c17.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/form.js" type="text/javascript"></script>
@@ -57,6 +60,9 @@ $(document).ready(function() {
 			var $percent = ($current/$total) * 100;
 			$('#rootwizard .progress-bar').css({width:$percent+'%'});
 		}});
+    $('#myCollapsible').collapse({
+      toggle: true
+    })
 });
 
 jQuery(function($) {
@@ -85,12 +91,9 @@ function printreportbutton() {
     #draggablePanelList .panel-heading {
         cursor: move;
     }
+
 </style>
-<script>
-$(document).on('click',function(){
-$('.collapse').collapse('hide');
-})
-</script> 
+
 
 <!-- END CSS INCLUDES -->
 

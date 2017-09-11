@@ -7,7 +7,7 @@
  */
 
 ?>
-<div id="buddypress" class="container">
+<div id="buddypress">
 
 	<?php if ( bp_has_groups() ) : while ( bp_groups() ) : bp_the_group(); ?>
 
@@ -33,9 +33,8 @@
 		endif;
 		?>
 	</div><!-- #item-header -->
-
-	<div id="item-nav" class="row">
-		<div class="item-list-tabs no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Group primary navigation', 'buddypress' ); ?>" role="navigation">
+	<div id="item-nav">
+		<div class="item-list-tabs no-ajax container" id="object-nav" aria-label="<?php esc_attr_e( 'Group primary navigation', 'buddypress' ); ?>" role="navigation">
 			<ul>
 
 				<?php bp_get_options_nav(); ?>
@@ -50,8 +49,12 @@
 				do_action( 'bp_group_options_nav' ); ?>
 
 			</ul>
+
 		</div>
 	</div><!-- #item-nav -->
+<div class="container">
+
+
 	<div id="item-body" class="row">
 		<?php
 
@@ -147,5 +150,6 @@
 	do_action( 'bp_after_group_home_content' ); ?>
 
 	<?php endwhile; endif; ?>
+</div> <!-- CONTAINER -->
 
 </div><!-- #buddypress -->

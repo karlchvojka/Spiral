@@ -1,0 +1,24 @@
+/* Print Style Sheet */
+#buddypress #item-nav, .print_button, #header_admin {
+  display:none;
+}
+div#accordion .card h3 {
+  font-size:22px;
+  color:#4d3d6b !important;
+}
+div#accordion .card h4 {
+  font-size:20px;
+  color:#4d3d6b !important;
+}
+div#accordion .card p {
+  font-size:16px;
+    color:#4d3d6b !important;
+}
+div#accordion .card h3:hover {
+  text-decoration: none !important;
+}
+div#accordion .card {
+  border:0px !important;
+  margin-bottom:0px !important;
+  padding:10px !important;
+}

@@ -14,9 +14,9 @@
 do_action( 'bp_before_group_header' );
 
 ?>
-
+<div class="container">
 <div id="item-actions" class="row">
-	<div class="col-md-2">
+
 		<?php if ( ! bp_disable_group_avatar_uploads() ) : ?>
 			<div id="item-header-avatar">
 				<a href="<?php echo esc_url( bp_get_group_permalink() ); ?>" class="bp-tooltip" data-bp-tooltip="<?php echo esc_attr( bp_get_group_name() ); ?>">
@@ -26,8 +26,7 @@ do_action( 'bp_before_group_header' );
 				</a>
 			</div><!-- #item-header-avatar -->
 		<?php endif; ?>
-	</div>
-	<div class="col-md-8">
+	<div class="col-md-10">
 		<div id="item-header-content">
 			<h1 class="page-title"><?php the_title();?></h1>
 			<span class="highlight"><?php bp_group_type(); ?></span><br/>
@@ -51,7 +50,7 @@ do_action( 'bp_before_group_header' );
 			</div>
 		</div><!-- #item-header-content -->
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-2" id="header_admin">
 		<?php if ( bp_group_is_visible() ) : ?>
 
 			<h2><?php _e( 'Group Admins', 'buddypress' ); ?></h2>
@@ -94,7 +93,7 @@ do_action( 'bp_before_group_header' );
 
 </div><!-- #item-actions -->
 
-
+</div>
 
 
 
