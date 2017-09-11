@@ -1,17 +1,4 @@
 
-<?php
-$postTitleError = '';
-
-if ( isset( $_POST['submit'] ) ) {
-
-    if ( trim( $_POST['title'] ) === '' ) {
-        $postTitleError = 'Please enter a title.';
-        $hasError = true;
-    }
-
-}
-?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -44,15 +31,6 @@ if ( isset( $_POST['submit'] ) ) {
 <script>
 $(document).ready(function() {
   	$('#rootwizard').bootstrapWizard({onNext: function(tab, navigation, index) {
-			if(index==1) {
-				// Make sure we entered the name
-				if(!$('#step_1_answ_1').val()) {
-					alert('You must enter a Project name');
-					$('#step_1_answ_1').focus();
-					return false;
-				}
-			}
-
 
 		}, onTabShow: function(tab, navigation, index) {
 			var $total = navigation.find('li').length;

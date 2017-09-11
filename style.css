@@ -236,7 +236,7 @@ list-style-type: none;
     .pager {
       display:block;
     }
-    .pager li.next a.btn:visited, .pager li.next a.btn:link, .print_button, .print_button  {
+    .pager li.next a.btn:visited, .pager li.next a.btn:link, .print_button, .print_button, .pager li.submit input#submit {
       border-radius: 3px;
       background-color:#fd5842;
       color:#ffffff;
@@ -383,7 +383,7 @@ div#item-header-content h1.page-title {
       margin-top:0px;
       margin-bottom:0px;
       }
-    
+
       div#accordion .card h4 {
         font-size:16px;
         color:#520051;
