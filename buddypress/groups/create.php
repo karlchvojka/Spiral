@@ -61,7 +61,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 
 				<h2 class="bp-screen-reader-text"><?php
 					/* translators: accessibility text */
-					_e( 'Group Details', 'buddypress' );
+					_e( 'Inquiry Details', 'buddypress' );
 				?></h2>
 
 				<?php
@@ -73,13 +73,16 @@ do_action( 'bp_before_create_group_page' ); ?>
 				 */
 				do_action( 'bp_before_group_details_creation_step' ); ?>
 
+				<h1>Team Setup</h1>
+				<?php the_field('teamSetupVideo1', 53); ?>
+
 				<div>
-					<label for="group-name"><?php _e( 'Group Name (required)', 'buddypress' ); ?></label>
+					<label for="group-name"><?php _e( 'What is the name of your collaborative inquiry project? (Required)', 'buddypress' ); ?></label>
 					<input type="text" name="group-name" id="group-name" aria-required="true" value="<?php bp_new_group_name(); ?>" />
 				</div>
 
 				<div>
-					<label for="group-desc"><?php _e( 'Group Description (required)', 'buddypress' ); ?></label>
+					<label for="group-desc"><?php _e( 'Inquiry Description (required)', 'buddypress' ); ?></label>
 					<textarea name="group-desc" id="group-desc" aria-required="true"><?php bp_new_group_description(); ?></textarea>
 				</div>
 
@@ -350,7 +353,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 
 				<h2 class="bp-screen-reader-text"><?php
 					/* translators: accessibility text */
-					_e( 'Group Invites', 'buddypress' );
+					_e( 'Inquiry Invites', 'buddypress' );
 				?></h2>
 
 				<?php
@@ -473,7 +476,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 					<?php /* Create Button */ ?>
 					<?php if ( bp_is_first_group_creation_step() ) : ?>
 
-						<input type="submit" value="<?php esc_attr_e( 'Create Group and Continue', 'buddypress' ); ?>" id="group-creation-create" name="save" />
+						<input type="submit" value="<?php esc_attr_e( 'Create Inquiry and Continue', 'buddypress' ); ?>" id="group-creation-create" name="save" />
 
 					<?php endif; ?>
 

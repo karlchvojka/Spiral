@@ -51,42 +51,61 @@ do_action( 'bp_before_group_header' );
 		</div><!-- #item-header-content -->
 	</div>
 	<div class="col-md-2" id="header_admin">
-		<?php if ( bp_group_is_visible() ) : ?>
+	
+		<div class="titles">
+			<div class="left">
+				<p>Reflect</p>
+			</div>
+			<div class="right">
+				<p>Plan</p>
+			</div>
+		</div>
+		<div class="status_wrap">
 
-			<h2><?php _e( 'Group Admins', 'buddypress' ); ?></h2>
+		  <div class="top_row clear">
 
-			<?php bp_group_list_admins();
+		    <div id="top_left" class="sector">
+		      <img id="reflect_prog" src="<?php bloginfo('template_url');?>/images/reflext.png" />
+		    </div>
+		    <div id="top_right" class="sector">
+		        <img id="plan_prog" src="<?php bloginfo('template_url');?>/images/plan.png" />
+		    </div>
+		  </div>
+		  <div class="bottom_row clear">
+		    <div  id="bottom_left" class="sector">
+		        <img id="observe_prog" src="<?php bloginfo('template_url');?>/images/observe.png" />
+		    </div>
+		    <div id="bottom_right" class="sector">
+		        <img id="act_prog" src="<?php bloginfo('template_url');?>/images/act.png" />
+		    </div>
+		  </div>
+		</div>
+		<div class="titles">
+			<div class="left">
+				<p>Observe</p>
+			</div>
+			<div class="right">
+				<p>Act</p>
+			</div>
+		</div>
+		<label class="switch">
+			Reflect
+		  <input id="reflect" name="reflect" type="checkbox" onchange="doalert()">
+		</label>
 
-			/**
-			 * Fires after the display of the group's administrators.
-			 *
-			 * @since 1.1.0
-			 */
-			do_action( 'bp_after_group_menu_admins' );
+		<label class="switch">
+			plan
+		  <input id="plan" name="plan" type="checkbox" onchange="doalert()">
+		</label>
 
-			if ( bp_group_has_moderators() ) :
-
-				/**
-				 * Fires before the display of the group's moderators, if there are any.
-				 *
-				 * @since 1.1.0
-				 */
-				do_action( 'bp_before_group_menu_mods' ); ?>
-
-				<h2><?php _e( 'Group Mods' , 'buddypress' ); ?></h2>
-
-				<?php bp_group_list_mods();
-
-				/**
-				 * Fires after the display of the group's moderators, if there are any.
-				 *
-				 * @since 1.1.0
-				 */
-				do_action( 'bp_after_group_menu_mods' );
-
-			endif;
-
-		endif; ?>
+		<label class="switch">
+		  observe
+		  <input id="observe" name="observe" type="checkbox" onchange="doalert()">
+		</label>
+		<label class="switch">
+		  act
+		  <input id="act" name="act" type="checkbox" onchange="doalert()">
+		</label>
 	</div>
 
 

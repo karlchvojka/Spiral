@@ -24,7 +24,7 @@
 <!-- FORM JS STUFFS -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-
+<script src="<?php bloginfo('template_url');?>/js/status.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/bootstrap.min.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/jquery.bootstrap.wizard.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/prettify.js"></script>

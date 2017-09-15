@@ -367,6 +367,39 @@ div#item-header-content h1.page-title {
 .print_button {
 
 }
+
+/* Status Thing */
+.status_wrap {
+  background-image: url('images/ProgressWheel_bg.png');
+  background-size:cover;
+  width:150px;
+  height:150px;
+}
+.top_row, .bottom_row {
+  width:100%;
+  height:75px;
+}
+.sector {
+  width:75px;
+  height:75px;
+}
+.sector img {
+  width:73px;
+  height:auto;
+  display:none;
+}
+.titles, .titles div {
+  height:20px;
+}
+.status_wrap label {
+  display:block;
+  height:50px;
+  float:left;
+}
+.left, .sector {
+  float:left;
+}
+/* End status */
   div#accordion {
   }
   div#accordion .card {
@@ -529,6 +562,23 @@ font-size:20px !important;
   }
   .inquiry_header div  {
     padding:0px;
+  }
+.embed-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%; height: auto;
+}
+  .embed-container iframe, .embed-container object, .embed-container embed, .player_inner, iframe {
+
+    width: 100%;
+    min-height:640px;
+  }
+
+  .left_panel .embed-container iframe, .left_panel .embed-container object, .left_panel .embed-container embed, .left_panel .player_inner, iframe {
+    width:100%;
+    height:100%;
+    min-height:100% !important;
   }
 /* ------------------------------------------- */
 /* MODIFIERS */
