@@ -17,7 +17,7 @@ get_header();
 
         <div class="row inquiry_header">
           <p>
-            single_inquiry.php
+            single_rounds.php
           </p>
       		<div class="col-md-6">
       			<h2 id="inq_page">Round Title: <?php the_title(); ?></h2>

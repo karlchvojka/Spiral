@@ -96,5 +96,16 @@ function my_remove_em_nav() {
 }
 add_action( 'bp_init', 'my_remove_em_nav' );
 
+function template_change( $template ){
+    if( is_single() && in_category('planningstage') ){
+        $templates = array("single-inquiry.php");
+    } elseif( is_single() && in_category('inquiryrounds') ){
+        $templates = array("single-rounds.php");
+    } 
+    $template = locate_template( $templates );
+    return $template;
+}
+add_filter( 'single_template', 'template_change' ); //'template_include'/'single_template'
+
 
 ?>
