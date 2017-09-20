@@ -101,7 +101,9 @@ function template_change( $template ){
         $templates = array("single-inquiry.php");
     } elseif( is_single() && in_category('inquiryrounds') ){
         $templates = array("single-rounds.php");
-    } 
+    } elseif( is_single() && in_category('logentries')) {
+				$templates = array("single-logentries.php");
+		}
     $template = locate_template( $templates );
     return $template;
 }
