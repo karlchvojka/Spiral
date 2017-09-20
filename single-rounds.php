@@ -16,9 +16,6 @@ get_header();
       <?php while (have_posts()) : the_post(); ?>
 
         <div class="row inquiry_header">
-          <p>
-            single_rounds.php
-          </p>
       		<div class="col-md-6">
       			<h2 id="inq_page">Round Title: <?php the_title(); ?></h2>
       		</div>
@@ -54,7 +51,7 @@ get_header();
               <div class="card-header" role="tab" id="headingOne"  data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
                 <h5 class="mb-0">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                    Team Setup
+                    Learning from Last round
                   </a>
                   <a class="pull-right">+</a>
                 </h5>
@@ -62,12 +59,15 @@ get_header();
 
               <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <div class="card-block">
-                  <h4><?php the_field('step_1_ques_1', 53);?></h4>
-                  <p><?php the_field('step_1_answ_1');?></p>
-                  <h4><?php the_field('step_1_ques_2', 53);?></h4>
-                  <p><?php the_field('step_1_answ_2');?></p>
-                  <h4><?php get_field('step_1_ques_3', 53);?></h4>
-                  <p><?php the_field('step_1_answ_3'); ?></p>
+                  <h4><?php the_field('learningfromlastroundques1', 53);?></h4>
+                  <p>If Yes:</p>
+                  <h4><?php the_field('learningFromLastRoundQues1Yes', 53);?></h4>
+                  <p><?php the_field('llearningFromLastRoundAnsw1Yes');?></p>
+                  <p>If No:</p>
+                  <h4><?php the_field('learningFromLastRoundQues1No1', 53);?></h4>
+                  <p><?php the_field('learningFromLastRoundAnsw1No1');?></p>
+                  <h4><?php get_field('learningFromLastRoundQues1No2', 53);?></h4>
+                  <p><?php the_field('learningFromLastRoundAnsw1No2'); ?></p>
                 </div>
               </div>
             </div>
@@ -78,21 +78,20 @@ get_header();
               <div class="card-header" role="tab" id="headingTwo">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Plan : Determine a Focus
+                    Learning from Round {round #}: Surprise Learning
                   </a>
                   <a class="pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="card-block">
-                  <h4><?php the_field('step_3_ques_1', 53);?></h4>
-                  <p><?php the_field('step_3_answ_1');?></p>
-                  <h4><?php the_field('step_3_ques_2', 53);?></h4>
-                  <p><?php the_field('step_3_answ_2');?></p>
-                  <h4><?php the_field('step_4_ques_1', 53);?></h4>
-                  <p><?php the_field('step_4_answ_1');?></p>
-                  <h4><?php the_field('step_4_ques_2', 53);?></h4>
-                  <p><?php the_field('step_4_answ_2');?></p>
+                  <h4><?php the_field('learningFromRoundSurpriseLearningSectionQues1', 53);?></h4>
+                  <p><?php the_field('learningFromRoundSurpriseLearningSectionAnsw1');?></p>
+                  <h4><?php the_field('learningFromRoundSurpriseLearningSectionQues2', 53);?></h4>
+                  <p><?php the_field('learningFromRoundSurpriseLearningSectionAnsw2');?></p>
+                  <h4><?php the_field('learningFromRoundSurpriseLearningSectionQues3', 53);?></h4>
+                  <p><?php the_field('learningFromRoundSurpriseLearningSectionAnsw3');?></p>
+
                 </div>
               </div>
             </div>
@@ -103,7 +102,7 @@ get_header();
               <div class="card-header" role="tab" id="headingThree">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Plan: Action Planning
+                    Learning from Round {round #}: Evidence
 
                   </a>
                   <a class="pull-right">+</a>
@@ -111,16 +110,8 @@ get_header();
               </div>
               <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
                 <div class="card-block">
-                  <h4><?php the_field('step_5_ques_1', 53);?></h4>
-                  <p><?php the_field('step_5_answ_1');?></p>
-                  <h4><?php the_field('step_6_ques_1', 53);?></h4>
-                  <p><?php the_field('step_6_answ_1');?></p>
-                  <h4><?php the_field('step_6_ques_2', 53);?></h4>
-                  <p><?php the_field('step_6_answ_2');?></p>
-                  <h4><?php the_field('step_7_ques_1', 53);?></h4>
-                  <p><?php the_field('step_7_answ_1');?></p>
-                  <h4><?php the_field('step_7_ques_2', 53);?></h4>
-                  <p><?php the_field('step_7_answ_2');?></p>
+                  <h4><?php the_field('learningFromRoundEvidenceQues1', 53);?></h4>
+                  <p><?php the_field('learningFromRoundEvidenceAnsw1');?></p>
                 </div>
               </div>
             </div>
@@ -131,18 +122,15 @@ get_header();
               <div class="card-header" role="tab" id="headingFour">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    Plan: Professional Learning And Resources
-
+                    Learning from Round {round #}
                   </a>
                   <a class="pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
                 <div class="card-block">
-                  <h4><?php the_field('step_8_ques_1', 53);?></h4>
-                  <p><?php the_field('step_8_answ_1');?></p>
-                  <h4><?php the_field('step_8_ques_2', 53);?></h4>
-                  <p><?php the_field('step_8_answ_2');?></p>
+                  <h4><?php the_field('learningFromRoundEvidenceQues2', 53);?></h4>
+                  <p><?php the_field('learningFromRoundEvidenceAnsw2');?></p>
                 </div>
               </div>
             </div>
@@ -153,7 +141,7 @@ get_header();
               <div class="card-header" role="tab" id="headingFive">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                   Plan: Planning for collecting data and looking for evidence
+                  Learning from Round {round #}
 
                   </a>
                   <a class="pull-right">+</a>
@@ -161,12 +149,8 @@ get_header();
               </div>
               <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
                 <div class="card-block">
-                  <h4><?php the_field('step_9_ques_1', 53);?></h4>
-                  <p><?php the_field('step_9_answ_1');?></p>
-                  <h4><?php the_field('step_9_ques_2', 53);?></h4>
-                  <p><?php the_field('step_9_answ_2');?></p>
-                  <h4><?php the_field('step_9_ques_3', 53);?></h4>
-                  <p><?php the_field('step_9_answ_3');?></p>
+                  <h4><?php the_field('learningFromRoundEvidenceQues3', 53);?></h4>
+                  <p><?php the_field('learningFromRoundEvidenceAnsw3');?></p>
                 </div>
               </div>
             </div>
@@ -177,7 +161,7 @@ get_header();
               <div class="card-header" role="tab" id="headingSix">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                    Plan: Format
+                  Process
 
                   </a>
                   <a class="pull-right">+</a>
@@ -185,12 +169,10 @@ get_header();
               </div>
               <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
                 <div class="card-block">
-                  <h4><?php the_field('step_10_ques_1', 53);?></h4>
-                  <p><?php the_field('step_10_answ_1');?></p>
-                  <h4><?php the_field('step_10_ques_2', 53);?></h4>
-                  <p><?php the_field('step_10_answ_2');?></p>
-                  <h4><?php the_field('step_10_ques_3', 53);?></h4>
-                  <p><?php the_field('step_10_answ_3');?></p>
+                  <h4><?php the_field('processQues1', 53);?></h4>
+                  <p><?php the_field('processAnsw1');?></p>
+                  <h4><?php the_field('processQues2', 53);?></h4>
+                  <p><?php the_field('processAnsw2');?></p>
 
                 </div>
               </div>
@@ -202,7 +184,7 @@ get_header();
               <div class="card-header" role="tab" id="headingSeven">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                    Plan: Instructional Change
+                    Closing Inquiry
 
                   </a>
                   <a class="pull-right">+</a>
@@ -210,34 +192,17 @@ get_header();
               </div>
               <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
                 <div class="card-block">
-                  <h4><?php the_field('step_12_ques_1', 53);?></h4>
-                  <p><?php the_field('step_12_answ_1');?></p>
+                  <h4><?php the_field('closingInquiryQues1', 53);?></h4>
+                  <p><?php the_field('closingInquiryAnsw1');?></p>
+                  <h4><?php the_field('closingInquiryQues2', 53);?></h4>
+                  <p><?php the_field('closingInquiryAnsw2');?></p>
+                  <h4><?php the_field('closingInquiryQues3', 53);?></h4>
+                  <p><?php the_field('closingInquiryAnsw3');?></p>
                 </div>
               </div>
             </div>
             <!-- END CARD SEVEN -->
-            <!-- START CARD EIGHT -->
-            <div class="card">
-              <div class="card-header" role="tab" id="headingEight">
-                <h3 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                    Plan: Logistics
-                  </a>
-                  <a class="pull-right">+</a>
-                </h3>
-              </div>
-              <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight">
-                <div class="card-block">
-
-                  <h4><?php the_field('step_13_ques_1', 53);?></h4>
-                  <p><?php the_field('step_13_answ_1');?></p>
-                  <h4><?php the_field('step_13_ques_2', 53);?></h4>
-                  <p><?php the_field('step_13_answ_2');?></p>
-
-                </div>
-              </div>
-            </div>
-            <!-- END CARD EIGHT -->
+        
           </div>
           <!-- END ACCORDION -->
         <?php endwhile; ?>
