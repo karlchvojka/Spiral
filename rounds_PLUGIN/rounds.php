@@ -1,15 +1,3 @@
-
-<style>
-  .ifYes, .ifNo {
-
-  }
-  span.cat_name {
-    margin-right:50px;
-    font-weight:bold;
-  }
-</style>
-
-
 <?php
 /* Plugin Name: Rounds
   Description: Adds rounds functionality to Buddypress groups
@@ -45,7 +33,6 @@
     2. Get the slug and name from the form
       2.a
  */
-
   function rounds_group_extension() {
 
   if ( class_exists( 'BP_Group_Extension' ) ) :
@@ -187,7 +174,8 @@
       <!-- END WIZIARD TABS -->
 
       <!-- START PROGRESS BAR -->
-      <div id="bar" class="progress">
+    <div class="form_wrap"> </div>
+        <div id="bar" class="progress">
         <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
       </div>
    <form id="new_post" name="new_post" method="post" action="" class="wpcf7-form form-horizontal" enctype="multipart/form-data" role="form">
@@ -214,7 +202,7 @@
      	      <div class="left_panel col-md-12">
                <input type="text" name="postTitle" id="postTitle" class="string span6" value="<?php if ( isset( $_POST['postTitle'] ) ) echo $_POST['postTitle']; ?>">
 
-     	        <div class="embed-container">
+     	        <div class="video-responsive">
      	        <?php the_field('reflectVideo1', 53); ?>
 
      	        </div>
@@ -232,7 +220,7 @@
      	        <h2><?php the_field('learningFromLastRoundTitle', 53); ?></h2>
      	      </div>
      	      	<div class="left_panel col-md-6">
-                 <div class="embed-container">
+                 <div class="video-responsive">
                 <?php the_field('learningFromLastRoundVideo1', 53); ?>
                 </div>
      	        </div>
@@ -374,7 +362,7 @@
      	      </div>
      	      	<div class="left_panel col-md-6">
 
-     	              <div class="embed-container">
+     	              <div class="video-responsive">
      	              <?php the_field('processVideo1', 53); ?>
      	              </div>
 
@@ -397,7 +385,7 @@
      	        <h2><?php the_field('closingInquirySectionTitle', 53); ?></h2>
      	      </div>
      	      	<div class="left_panel col-md-6">
-                 <div class="embed-container">
+                 <div class="video-responsive">
                  <?php the_field('closingInquiryVideo1', 53); ?>
                  </div>
      	        </div>
@@ -418,7 +406,7 @@
      	         <h2><?php the_field('closingInquirySectionTitle', 53); ?></h2>
      	        </div>
      	      	<div class="left_panel col-md-6">
-     						<div class="embed-container">
+     						<div class="video-responsive">
      	            <?php the_field('closingInquiryVideo2', 53); ?>
      						</div>
      	        </div>
@@ -437,7 +425,7 @@
      	       <h2><?php the_field('closingInquirySectionTitle', 53); ?></h2>
      	      </div>
      	      	<div class="left_panel col-md-6">
-                 <div class="embed-container">
+                 <div class="video-responsive">
      	            <?php the_field('closingInquiryVideo3', 53); ?>
      						</div>
      	        </div>
@@ -466,26 +454,30 @@
 
        <!-- END OF FORM -->
        </div>
+       <style>
+       h2.prevEntries {
+         font-size:28px;
+       }
+       div.inq_wrap {
+         background-color: #ffffff;
+         padding: 20px;
+         border-radius: 3px;
+         border: 1px solid #e2e2e2;
+         margin-bottom: 15px;
+         }
+         .inq_wrap h3 {
+           margin-top:0px;
+           margin-bottom:0px;
+         }
+       .date_wrap {
+         text-align:right;
+         margin-bottom:0px;
+       }
+       </style>
         <div class="row">
           <div class="container">
+            <h2 class="prevEntries">Previous Entries</h2>
 
-          <style>
-          div.inq_wrap {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 3px;
-            border: 1px solid #e2e2e2;
-            margin-bottom: 15px;
-            }
-            .inq_wrap h3 {
-              margin-top:0px;
-              margin-bottom:0px;
-            }
-          .date_wrap {
-            text-align:right;
-            margin-bottom:0px;
-          }
-          </style>
 
           <?php
           $args2 = array(
@@ -597,7 +589,7 @@
       );
 
      	$post_id = wp_insert_post($new_post);
-
+      groups_update_groupmeta($group_id, 'planFin', 'complete', true);
 
   // THIS SECTION RUNS ON SUBMIT. UPDATES THE STUFF IN THE SELECTED FIELD INTO THE COORISPONDING FIELD IN THE DB
   //DETERMINE A FOCUS FIELDS
@@ -698,7 +690,7 @@
     <!-- START PLAYLIST ITEM -->
     <div class="playlist_item row">
       <div class="video col-md-5">
-        <div class="embed-container">
+        <div class="video-responsive">
 
         <?php the_field('plan_video_1', $acf_ref); ?>
         </div>
@@ -711,7 +703,7 @@
     <!-- START PLAYLIST ITEM -->
     <div class="playlist_item row">
       <div class="video col-md-5">
-        <div class="embed-container">
+        <div class="video-responsive">
         <?php the_field('plan_video_2', $acf_ref); ?>
         </div>
       </div>
@@ -733,7 +725,7 @@
     <h2><?php the_field('determine_stage_title', $acf_ref); ?></h2>
   </div>
     <div class="left_panel col-md-6">
-      <div class="embed-container">
+      <div class="video-responsive">
       <?php the_field('determine_a_focus_video', $acf_ref); ?>
       </div>
     </div>
@@ -763,7 +755,7 @@
       <!-- START PLAYLIST ITEM -->
       <div class="playlist_item row">
         <div class="video col-md-5">
-          <div class="embed-container">
+          <div class="video-responsive">
           <?php the_field('inqQuesVideo1', $acf_ref); ?>
           </div>
         </div>
@@ -775,7 +767,7 @@
       <!-- START PLAYLIST ITEM -->
       <div class="playlist_item row">
         <div class="video col-md-5">
-          <div class="embed-container">
+          <div class="video-responsive">
           <?php the_field('inqQuesVideo2', $acf_ref); ?>
           </div>
         </div>
@@ -787,7 +779,7 @@
       <!-- START PLAYLIST ITEM -->
       <div class="playlist_item row">
         <div class="video col-md-5">
-          <div class="embed-container">
+          <div class="video-responsive">
           <?php the_field('inqQuesVideo3', $acf_ref); ?>
           </div>
         </div>
@@ -799,7 +791,7 @@
       <!-- START PLAYLIST ITEM -->
       <div class="playlist_item row">
         <div class="video col-md-5">
-          <div class="embed-container">
+          <div class="video-responsive">
           <?php the_field('inqQuesVideo4', $acf_ref); ?>
           </div>
         </div>
@@ -860,7 +852,7 @@
       <!-- START PLAYLIST ITEM -->
       <div class="playlist_item row">
         <div class="video col-md-5">
-          <div class="embed-container">
+          <div class="video-responsive">
           <?php the_field('actionPlanningVideo1', $acf_ref); ?>
           </div>
         </div>
@@ -872,7 +864,7 @@
       <!-- START PLAYLIST ITEM -->
       <div class="playlist_item row">
         <div class="video col-md-5">
-          <div class="embed-container">
+          <div class="video-responsive">
           <?php the_field('actionPlanningVideo2', $acf_ref); ?>
           </div>
         </div>
@@ -901,7 +893,7 @@
       <!-- START PLAYLIST ITEM -->
       <div class="playlist_item row">
         <div class="video col-md-5">
-          <div class="embed-container">
+          <div class="video-responsive">
           <?php the_field('actionPlanningVideo3', $acf_ref); ?>
           </div>
         </div>
@@ -913,7 +905,7 @@
       <!-- START PLAYLIST ITEM -->
       <div class="playlist_item row">
         <div class="video col-md-5">
-          <div class="embed-container">
+          <div class="video-responsive">
           <?php the_field('actionPlanningVideo4', $acf_ref); ?>
           </div>
         </div>
@@ -941,7 +933,7 @@
     <h2><?php the_field('profLearnResTitle', $acf_ref); ?></h2>
   </div>
     <div class="left_panel col-md-6">
-      <div class="embed-container">
+      <div class="video-responsive">
       <?php the_field('profLearnResVideo1', $acf_ref); ?>
       </div>
     </div>
@@ -963,7 +955,7 @@
       <!-- START PLAYLIST ITEM -->
       <div class="playlist_item row">
         <div class="video col-md-5">
-          <div class="embed-container">
+          <div class="video-responsive">
           <?php the_field('planForCollectingDataVideo1', $acf_ref); ?>
           </div>
         </div>
@@ -978,7 +970,7 @@
       <!-- START PLAYLIST ITEM -->
       <div class="playlist_item row">
         <div class="video col-md-5">
-          <div class="embed-container">
+          <div class="video-responsive">
           <?php the_field('planForCollectingDataVideo2', $acf_ref); ?>
           </div>
         </div>
@@ -1030,7 +1022,7 @@
       <h2><?php the_field('instChangeTitle', $acf_ref); ?></h2>
     </div>
     <div class="left_panel col-md-6">
-      <div class="embed-container">
+      <div class="video-responsive">
         <?php the_field('instChangeVideo1', $acf_ref); ?>
       </div>
     </div>
@@ -1048,7 +1040,7 @@
     <h2><?php the_field('logisticsTitle', $acf_ref); ?></h2>
   </div>
     <div class="left_panel col-md-6">
-      <div class="embed-container">
+      <div class="video-responsive">
         <?php the_field('logisticsVideo1', $acf_ref); ?>
       </div>
     </div>
@@ -1092,4 +1084,239 @@
  }
  add_action('bp_init', 'bob_add_group_extension');
 
+
+// END BOB
+function logs_group_extension() {
+if ( class_exists( 'BP_Group_Extension' ) ) :
+class Group_Extension_Logs extends BP_Group_Extension {
+
+function __construct() {
+$args = array(
+'slug' => 'add-logs-form',
+'name' => 'Logs',
+'nav_item_position' => 3,
+'screens' => array (
+  'create' => array (
+  'enabled' => false
+  )
+)
+
+);
+parent::init( $args );
+}
+function display($group_id = NULL) {
+  // Assign post ID to variable
+  $post_ID = get_the_ID();
+  // Assign buddypress group ID to a variable
+  $group_id = bp_get_group_id();
+ ?>
+
+ <?php
+ $postTitleError = '';
+ $postContentError = '';
+
+ if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POST['action'] == "frontnewPost") {
+
+ if ( trim( $_POST['postTitle'] ) === '' ) {
+ $postTitleError = 'Please enter a title.';
+ $hasError = true;
+ }
+ if ( trim( $_POST['postContent'] ) === '' ) {
+ $postContentError = 'Please enter the post content.';
+ $hasError = true;
+ }
+
+ if (isset ($_POST['postTitle'])) {
+         $postTitle =  $_POST['postTitle'];
+     }
+
+     if (isset ($_POST['postContent'])) {
+         $postContent = $_POST['postContent'];
+     }
+
+ if ( isset($_POST['postTitle']) && isset($_POST['postContent']) && ( $hasError==false )) {
+ global $wpdb;
+
+     	$new_post = array(
+     'post_title'    =>   $postTitle,
+     'post_content'  =>   $postContent,
+     'tax_input' => array( 'category' => 22 ),
+     	'post_status'   =>   'publish',
+     'post_type' =>   'inquiry',
+     'meta_input' => array(
+       'GroupID' => $group_id
+     )
+     );
+
+
+     	$post_id = wp_insert_post($new_post);
+
+
+     	$link = get_permalink( $post_id );
+ echo "<meta http-equiv='refresh' content='0;url=$link' />"; exit;
+ }
+
+
+ }
+
+?>
+<style>
+.title_wrap h1 {
+  text-align:center;
+}
+div.log_wrap {
+  padding:20px;
+  background-color:#ffffff;
+  border-radius:5px;
+  border:1px solid #e2e2e2;
+  }
+  div.log_wrap h3 {
+    margin-top:0px;
+
+  }
+div.rounds_wrap {
+  margin-bottom:5px;
+}
+a.rounds_title {
+  display:block;
+  font-size:14px;
+}
+p.date_wrap {
+  font-size:12px;
+  margin-bottom:0px;
+}
+input#postTitle, textarea {
+  width:100%;
+  margin-top:10px;
+  border-radius:5px;
+  border:1px solid #e2e2e2;
+  padding:10px;
+}
+</style>
+
+ <div class="form-content container">
+  <div class="row">
+    <div class="title_wrap col-md-12">
+      <h1>What if we make a CI tool that helps people understand CI?</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="theory_wrap col-md-12">
+      <h2>Theory of Action</h2>
+      <ol>
+        <li>If we make the thing and throw it out there into the sector, it will improve math scores. </li>
+        <li>If we watch various stand up comedians while we make this, then it will make it a more entertaining service for the users.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="wpcf7 row">
+ <form id="new_post" name="new_post" method="post" action="" class="wpcf7-form form-horizontal" enctype="multipart/form-data" role="form">
+
+   <div class="required">
+     <?php if ( $postTitleError != '' ) { ?>
+     <span class="error"><?php echo $postTitleError; ?></span>
+     <div class="clearfix"></div>
+     <?php } ?>
+     <?php if ( $postContentError != '' ) { ?>
+     <span class="error"><?php echo $postContentError; ?></span>
+     <div class="clearfix"></div>
+     <?php } ?>
+   </div>
+
+   <!-- post name -->
+   <div class="control-group string postTitle col-md-8">
+     <label for="postTitle" class="string control-label">Log Title</label>
+     <div class="controls">
+     <input type="text" name="postTitle" id="postTitle" class="string span6" value="<?php if ( isset( $_POST['postTitle'] ) ) echo $_POST['postTitle']; ?>">
+     </div>
+
+     <label for="postContent" class="string control-label">Contents</label>
+     <div class="controls">
+     <textarea id="postContent" tabindex="15" name="postContent" cols="80" rows="10"><?php if ( isset( $_POST['postContent'] ) ) { if ( function_exists( 'stripslashes' ) ) { echo stripslashes( $_POST['postContent'] );} else { echo $_POST['postContent'];}} ?></textarea>
+   </div>
+   </div>
+   <div class="log_wrap col-md-4">
+     <!-- PUT LOOP FOR OTHER LOGS HERE -->
+      <h3>Past Logs</h3>
+       <?php
+       $args2 = array(
+       'post_type' => 'inquiry',
+       'cat' => '22',
+     	'meta_key' => 'GroupID',
+     	'meta_value' => $group_id
+     );
+     $rd_query = new WP_Query( $args2 );?>
+
+     <?php if ( $rd_query->have_posts() ) : ?>
+       <?php while ( $rd_query->have_posts() ) : $rd_query->the_post(); ?>
+      <div class="rounds_wrap">
+        <a class="rounds_title" target="_blank" href="<?php the_permalink();?>"><?php the_title();?></a>
+        <p class="date_wrap"><?php echo get_the_date(); ?></p>
+      </div>
+         <?php endwhile; ?>
+       <?php endif; ?>
+   </div>
+   <!-- post Content -->
+   <div class="control-group string postContent">
+
+     </div>
+   </div>
+   <br/>
+
+   <br/>
+   <fieldset class="submit">
+   <input type="submit" value="Post Review" tabindex="40" id="submit" name="submit" class="btn-sm" />
+   </fieldset>
+
+   <input type="hidden" name="action" value="frontnewPost" />
+ </form>
+
+ <?php
+  if ( bp_current_user_can( 'bp_moderate' ) ) {
+  echo '<form>
+    <button id="finishStage2" class="btn">Finish Act/Observe Stage</button>
+  </form>';
+} else {
+  echo '';
+}
+
+ ?>
+
+ <script>
+ jQuery(document).ready(function($) {
+    $('button#finishStage2').click(function qwe4_tracker(){
+
+        var data = { action: 'my_action' };
+
+        $.post(ajaxurl, data, function(response) {
+            //alert('Got this from the server: ' + response);  // Uncomment to use for testing
+        });
+    });
+});
+</script>
+<?php add_action('wp_ajax_my_action', 'my_action_callback');
+function my_action_callback() {
+
+  $group_id = bp_get_group_id();
+
+    groups_update_groupmeta($group_id, 'actObs', 'complete', true);
+
+    die(); // this is required to return a proper result
+} ?>
+
+ </div>
+ <!-- END WPCF7 -->
+
+ <!-- END OF FORM -->
+ </div>
+
+ <?php
+}
+function settings_screen_save( $group_id = NULL ) {
+}
+}
+bp_register_group_extension( 'Group_Extension_Logs' );
+endif; // if ( class_exists( 'BP_Group_Extension' ) )
+}
+add_action('bp_init', 'logs_group_extension');
 ?>
