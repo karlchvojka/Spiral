@@ -27,16 +27,18 @@ html {
 body {
 	background-color:#f7f7f7;
   font-family: 'Lato', sans-serif;
+  color:#353641;
 	}
 
 /* GLOBAL TEXT STYLES */
 
-h1 {
+h1, #buddypress .standard-form legend {
 	font-size:24px;
 	color:#fd5842;
 	font-family: 'Lato', sans-serif;
-  font-weight:900;
+  font-weight:900 !important;
   text-transform:uppercase;
+  margin-top:30px;
 	}
 
 h2 {
@@ -179,7 +181,7 @@ list-style-type: none;
    border-top-left-radius: 5px;
    border-top-right-radius: 5px;
    background-color:#4d3d6b;
-   padding:10px 0px;
+   padding:20px 0px;
    margin-bottom:0px;
   }
 .widget.buddypress div.item-options {
@@ -206,6 +208,16 @@ list-style-type: none;
     }
   .widget.buddypress .item-avatar a {
     margin-bottom:0px;
+  }
+
+  a.create_new_inq:link, a.create_new_inq:visited {
+    display:block;
+    width:25%;
+    margin-top:20px;
+    padding:10px;
+    color:#ffffff;
+    text-transform:uppercase;
+    background-color:#fd5842;
   }
 
 /* END DASHBOARD STYLES */
@@ -290,25 +302,26 @@ list-style-type: none;
 
   /* End Global Styles */
 
-  /* Makes videos responsive */
-  .embed-container {
-  	position: relative;
-  	padding-bottom: 56.25%;
-  	height: 0;
-  	overflow: hidden;
-  	max-width: 100%;
-  	height: auto;
+  /* CREATE SECTION STYLES */
+  div.create_question {
+    margin-top:30px;
   }
+  /* END CREATE SECTION STYLES */
 
-  .embed-container iframe,
-  .embed-container object,
-  .embed-container embed {
-  	position: absolute;
-  	top: 0;
-  	left: 0;
-  	width: 100%;
-  	height: 100%;
-  }
+  /* Makes videos responsive */
+  .video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
   /* End Video Responsive Styles */
 
   /* Hiding pill structure that needs to exist, but now isnt shown. */
@@ -342,6 +355,11 @@ list-style-type: none;
 /* End Tab Structure Styles */
 
 /* BP GROUPS CUSTOM STYLES */
+
+div.form_wrap {
+  padding:20px;
+  background-color:#ffffff;
+}
 .header_inner_wrap {
   width:100%;
   padding-top:20px;
@@ -392,6 +410,11 @@ div#item-header-content h1.page-title {
   width:73px;
   height:auto;
   display:none;
+}
+#top_right img {
+  position:Relative;
+  top:3px;
+  left:0px;
 }
 .titles, .titles div {
   height:20px;
@@ -501,8 +524,10 @@ div#item-header-content h1.page-title {
     margin-bottom:40px;
   }
   /* END GROUP LIST STYLES */
+
   #buddypress div#item-header div#item-actions, #buddypress div#item-header div#item-header-content {
-    float:none;
+    margin-top:60px;
+
   }
   #buddypress div#item-header div#item-actions {
     width:100%;
@@ -524,7 +549,9 @@ form#create-group-form {
     border-bottom: 1px solid #c7bfd8;
     padding: 10px 0px;
   }
-
+form#create-group-form #group-create-tabs div.container ul li:first-child a {
+  padding-left:0px;
+}
   form#create-group-form div#main-column {
     margin-left:0px;
     float:left;
@@ -535,6 +562,15 @@ form#create-group-form {
 
 #buddypress ul.item-list {
   border:none;
+}
+#buddypress .standard-form div.submit input {
+  display:block;
+  width:25%;
+  margin-top:20px;
+  padding:10px;
+  color:#ffffff;
+  text-transform:uppercase;
+  background-color:#fd5842;
 }
 /* LOGIN FORM STYLES */
 
@@ -568,22 +604,16 @@ font-size:20px !important;
   .inquiry_header div  {
     padding:0px;
   }
-.embed-container {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%; height: auto;
-}
-  .embed-container iframe, .embed-container object, .embed-container embed, .player_inner{
+  .ifYes, .ifNo {
 
-    width: 100%;
-    min-height:640px;
+  }
+  span.cat_name {
+    margin-right:50px;
+    font-weight:bold;
   }
 
-  .left_panel .embed-container iframe, .left_panel .embed-container object, .left_panel .embed-container embed, .left_panel .player_inner {
-    width:100%;
-    height:100%;
-    min-height:100% !important;
+  .titlesbottom {
+    margin-bottom:20px;
   }
 /* ------------------------------------------- */
 /* MODIFIERS */

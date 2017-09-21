@@ -24,7 +24,7 @@
 <!-- FORM JS STUFFS -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-<script src="<?php bloginfo('template_url');?>/js/status.js"></script>
+<!--<script src="<?php bloginfo('template_url');?>/js/status.js"></script>-->
 <script src="<?php bloginfo('template_url');?>/js/bootstrap.min.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/jquery.bootstrap.wizard.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/prettify.js"></script>
@@ -85,8 +85,12 @@ function printreportbutton() {
 
 <body>
   <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
+    <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="row">
+        <div class="col-md-12">
+
+
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
@@ -110,5 +114,5 @@ function printreportbutton() {
           'walker'            => new WP_Bootstrap_Navwalker())
         );
         ?>
-    </div>
+    </div></div></div>
   </nav>

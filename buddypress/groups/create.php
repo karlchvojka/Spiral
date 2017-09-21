@@ -76,12 +76,12 @@ do_action( 'bp_before_create_group_page' ); ?>
 				<h1>Team Setup</h1>
 				<?php the_field('teamSetupVideo1', 53); ?>
 
-				<div>
+				<div class="create_question">
 					<label for="group-name"><?php _e( 'What is the name of your collaborative inquiry project? (Required)', 'buddypress' ); ?></label>
 					<input type="text" name="group-name" id="group-name" aria-required="true" value="<?php bp_new_group_name(); ?>" />
 				</div>
 
-				<div>
+				<div class="create_question">
 					<label for="group-desc"><?php _e( 'Inquiry Description (required)', 'buddypress' ); ?></label>
 					<textarea name="group-desc" id="group-desc" aria-required="true"><?php bp_new_group_description(); ?></textarea>
 				</div>
@@ -131,7 +131,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 							<li><?php _e( 'Group content and activity will be visible to any site member.', 'buddypress' ); ?></li>
 						</ul>0-->
 
-						<label for="group-status-private"><input type="radio" name="group-status" id="group-status-private" value="private"<?php if ( 'private' == bp_get_new_group_status() ) { ?> checked="checked"<?php } ?> aria-describedby="private-group-description" /> <?php _e( 'This is a private group', 'buddypress' ); ?></label>
+						<label for="group-status-private"><input type="radio" name="group-status" id="group-status-private" value="private"<?php if ( 'private' == bp_get_new_group_status() ) { ?> checked="checked"<?php } ?> aria-describedby="private-group-description" checked/> <?php _e( 'This is a private group', 'buddypress' ); ?></label>
 
 						<ul id="private-group-description">
 							<li><?php _e( 'Only users who request membership and are accepted can join the group.', 'buddypress' ); ?></li>

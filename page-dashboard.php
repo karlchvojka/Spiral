@@ -22,6 +22,7 @@ get_header(); ?>
 					?>
   				<p><?php the_content(); ?></p>
 					<?php the_field('video_link'); ?>
+					<a class="create_new_inq btn" href="<?php bloginfo('url')?>/groups/create/step/group-details/">CREATE A NEW INQUIRY</a>
 		    </div>
 			<div class="col-md-4">
 				<?php get_sidebar('sidebar-1'); ?>

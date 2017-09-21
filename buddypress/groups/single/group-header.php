@@ -27,12 +27,17 @@ do_action( 'bp_before_group_header' );
 			</div><!-- #item-header-avatar -->
 		<?php endif; ?>
 	<div class="col-md-10">
-		<div id="item-header-content">
+		<div id="item-header-content" class="vcenter">
 			<h1 class="page-title"><?php the_title();?></h1>
 			<span class="highlight"><?php bp_group_type(); ?></span><br/>
 
 			<span class="activity" data-livestamp="<?php bp_core_iso8601_date( bp_get_group_last_active( 0, array( 'relative' => false ) ) ); ?>"><?php printf( __( 'active %s', 'buddypress' ), bp_get_group_last_active() ); ?></span>
 
+						<?php
+						//$group_id = bp_get_group_id();
+						//$meta = groups_get_groupmeta( $group_id, $meta_key = '');
+						//print_r($meta);
+							?>
 			<?php
 
 			/**
@@ -51,7 +56,7 @@ do_action( 'bp_before_group_header' );
 		</div><!-- #item-header-content -->
 	</div>
 	<div class="col-md-2" id="header_admin">
-	
+
 		<div class="titles">
 			<div class="left">
 				<p>Reflect</p>
@@ -63,7 +68,30 @@ do_action( 'bp_before_group_header' );
 		<div class="status_wrap">
 
 		  <div class="top_row clear">
+				<?php
+				 $group_id = bp_get_group_id();
+				if ( metadata_exists('group', $group_id, 'planFin' ) ) {
+					echo '<style type="text/css">
+						#plan_prog {
+								display: block;
+						}
+						</style>';
+					} else {
+						echo '<script>
+						    console.log("FALSE");
+						</script>';
+					}
+					if ( metadata_exists('group', $group_id, 'actObs' ) ) {
+						echo'<script>
+						console.log("TRUE 2")
+						</script>';
+					} else {
+						echo'<script>
+						console.log("FALSE 2")
+						</script>';
+					}
 
+				 ?>
 		    <div id="top_left" class="sector">
 		      <img id="reflect_prog" src="<?php bloginfo('template_url');?>/images/reflext.png" />
 		    </div>
@@ -80,7 +108,7 @@ do_action( 'bp_before_group_header' );
 		    </div>
 		  </div>
 		</div>
-		<div class="titles">
+		<div class="titles titlesbottom">
 			<div class="left">
 				<p>Observe</p>
 			</div>
@@ -88,24 +116,6 @@ do_action( 'bp_before_group_header' );
 				<p>Act</p>
 			</div>
 		</div>
-		<label class="switch">
-			Reflect
-		  <input id="reflect" name="reflect" type="checkbox" onchange="doalert()">
-		</label>
-
-		<label class="switch">
-			plan
-		  <input id="plan" name="plan" type="checkbox" onchange="doalert()">
-		</label>
-
-		<label class="switch">
-		  observe
-		  <input id="observe" name="observe" type="checkbox" onchange="doalert()">
-		</label>
-		<label class="switch">
-		  act
-		  <input id="act" name="act" type="checkbox" onchange="doalert()">
-		</label>
 	</div>
 
 
