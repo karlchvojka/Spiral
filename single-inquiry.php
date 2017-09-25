@@ -49,12 +49,12 @@ get_header();
             </div>-->
             <div class="card">
               <div class="card-header" role="tab" id="headingOne"  data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
-                <h5 class="mb-0">
+                <h3 class="mb-0">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                     Determine A Focus
                   </a>
-                  <a class="pull-right">+</a>
-                </h5>
+                  <a class="add_cross pull-right">+</a>
+                </h3>
               </div>
 
               <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
@@ -75,7 +75,7 @@ get_header();
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   Inquiry Questions
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
@@ -97,7 +97,7 @@ get_header();
                     Difference You Want To Make
 
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
@@ -117,7 +117,7 @@ get_header();
                     Action Planning
 
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
@@ -143,7 +143,7 @@ get_header();
                   Professional Learning and Resources
 
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
@@ -165,7 +165,7 @@ get_header();
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                     Plan For Collecting Data and Looking For Evidence
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
@@ -190,7 +190,7 @@ get_header();
                   Evidence Format
 
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
@@ -212,7 +212,7 @@ get_header();
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                     Instructional Change
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight">
@@ -231,7 +231,7 @@ get_header();
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
                     Logistics
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine">

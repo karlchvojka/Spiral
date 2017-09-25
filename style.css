@@ -49,6 +49,10 @@ h2 {
 	}
 
 h3 {
+  font-size:20px;
+  color:#353641;
+  font-family: 'Lato', sans-serif;
+  margin-top:0px;
 	}
 
 h4 {
@@ -81,6 +85,9 @@ a:link, a:visited {
 textarea {
   width:100%;
   margin-bottom:20px;
+  min-height:140px;
+  border:1px solid #e2e2e2;
+  border-radius:5px;
 }
 
 /* GLOBAL LIST STYLES */
@@ -226,7 +233,7 @@ list-style-type: none;
 
   /* Global Styles */
   .playlist_item{
-    padding:20px 10px;
+
     margin:10px 0px;
     background-color:#ffffff;
     }
@@ -247,7 +254,10 @@ list-style-type: none;
       min-height:20px;
     }
   .panel_title > h2 {
-  }
+    }
+    .left_panel ul {
+      list-style-type:disc;
+    }
 
     /* button styles */
     .pager {
@@ -458,6 +468,13 @@ div#item-header-content h1.page-title {
       .card-block:last-child p {
         margin-bottom:0px;
       }
+
+      .add_cross {
+        color:#520051;
+      }
+      h2#inq_page {
+        margin-top:10px;
+      }
   div#accordion div.card .collapse {
     margin-top:20px;
   }
@@ -615,6 +632,28 @@ font-size:20px !important;
   .titlesbottom {
     margin-bottom:20px;
   }
+
+  #rootwizard {
+    padding:20px;
+    background-color:#ffffff;
+  }
+  #pill_nav {
+    margin:0px;
+    padding:0px;
+  }
+  ul.pager {
+    margin-bottom:0px;
+  }
+
+  .panel_title h2 {
+    color:#fd5842;
+    font-weight:bold;
+    text-transform:uppercase;
+
+  }
+
+
+
 /* ------------------------------------------- */
 /* MODIFIERS */
 /* ------------------------------------------- */

@@ -20,7 +20,11 @@ get_header();
       			<h2 id="inq_page">Round Title: <?php the_title(); ?></h2>
       		</div>
       		<div class="col-md-6">
-
+            <?php
+						$group_id = get_the_ID();
+						$meta = get_post_meta( $group_id, $meta_key = '');
+						print_r($meta);
+							?>
            <button class="print_button pull-right" onclick="printreportbutton()"><i class="fa fa-print" aria-hidden="true"></i> Print Report</button>
 
       		</div>
@@ -49,12 +53,12 @@ get_header();
             </div>-->
             <div class="card">
               <div class="card-header" role="tab" id="headingOne"  data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
-                <h5 class="mb-0">
+                <h3 class="mb-0">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                     Learning from Last round
                   </a>
-                  <a class="pull-right">+</a>
-                </h5>
+                  <a class="add_cross pull-right">+</a>
+                </h3>
               </div>
 
               <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
@@ -80,7 +84,7 @@ get_header();
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     Learning from Round {round #}: Surprise Learning
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
@@ -105,7 +109,7 @@ get_header();
                     Learning from Round {round #}: Evidence
 
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
@@ -124,7 +128,7 @@ get_header();
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                     Learning from Round {round #}
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
@@ -144,7 +148,7 @@ get_header();
                   Learning from Round {round #}
 
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
@@ -164,7 +168,7 @@ get_header();
                   Process
 
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
@@ -187,7 +191,7 @@ get_header();
                     Closing Inquiry
 
                   </a>
-                  <a class="pull-right">+</a>
+                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
               <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
@@ -202,7 +206,7 @@ get_header();
               </div>
             </div>
             <!-- END CARD SEVEN -->
-        
+
           </div>
           <!-- END ACCORDION -->
         <?php endwhile; ?>
