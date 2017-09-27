@@ -1,4 +1,17 @@
 <?php
+
+
+// GET THE PROJECT_SETUP PAGE ID
+function get_ID_by_slug($page_slug) {
+    $page = get_page_by_path($page_slug);
+    if ($page) {
+        return $page->ID;
+    } else {
+        return null;
+    }
+}
+$projID = get_ID_by_slug('project-setup');
+$acf_ref = $projID;
 /**
  * BuddyPress - Groups Create
  *
@@ -74,7 +87,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 				do_action( 'bp_before_group_details_creation_step' ); ?>
 
 				<h1>Team Setup</h1>
-				<?php the_field('teamSetupVideo1', 53); ?>
+				<?php the_field('teamSetupVideo1', $acf_ref); ?>
 
 				<div class="create_question">
 					<label for="group-name"><?php _e( 'What is the name of your collaborative inquiry project? (Required)', 'buddypress' ); ?></label>

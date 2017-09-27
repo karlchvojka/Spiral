@@ -652,6 +652,89 @@ font-size:20px !important;
 
   }
 
+  h2.prevEntries {
+    font-size:28px;
+    color:#fd5842;
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  div.inq_wrap {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+    margin-bottom: 15px;
+    }
+    .inq_wrap h3 {
+      margin-top:0px;
+      margin-bottom:0px;
+    }
+  .date_wrap {
+    text-align:right;
+    margin-bottom:0px;
+  }
+
+
+  /* LOGS START */
+  .title_wrap h1 {
+    text-align:center;
+  }
+  h3.logHeader {
+    font-size:20px;
+    text-transform:uppercase;
+    color:#fd5842;
+    margin-top:20px;
+    font-weight:bold;
+  }
+  .theory_wrap h2 {
+    font-size:22px;
+    text-transform:uppercase;
+    color:#fd5842;
+    margin-top:20px;
+    font-weight:bold;
+  }
+  div.log_wrap {
+    padding:20px;
+    background-color:#ffffff;
+    border-radius:5px;
+    border:1px solid #e2e2e2;
+    }
+    div.log_wrap h3 {
+      margin-top:0px;
+
+    }
+  div.rounds_wrap {
+    margin-bottom:5px;
+  }
+  a.rounds_title {
+    display:block;
+    font-size:14px;
+  }
+  p.date_wrap {
+    font-size:12px;
+    margin-bottom:0px;
+  }
+  input#postTitle, textarea {
+    width:100%;
+    margin-top:10px;
+    border-radius:5px;
+    border:1px solid #e2e2e2;
+    padding:10px;
+  }
+  input.btn-sm, button#finishStage2 {
+    border-radius: 3px !important;
+      background-color: #fd5842 !important;
+      color: #ffffff !important;
+      padding: 10px 16px !important;
+      font-size: 16px !important;
+      font-weight: bold !important;
+  }
+  div.theory_wrap {
+    margin-bottom:20px;
+  }
+  button#finishStage2 {
+    margin-top:20px;
+  }
 
 
 /* ------------------------------------------- */

@@ -110,4 +110,8 @@ function template_change( $template ){
 add_filter( 'single_template', 'template_change' ); //'template_include'/'single_template'
 
 
+// GET ME THAT ID
+
+
+
 ?>

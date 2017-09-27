@@ -15,6 +15,7 @@ get_header();
 
 <!-- WIZARD WRAP -->
 <div id="rootwizard" class="container">
+
   <?php /* The loop */ ?>
   <?php while ( have_posts() ) : the_post(); ?>
     <h1><?php the_title(); ?></h1>

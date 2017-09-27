@@ -75,6 +75,9 @@ do_action( 'bp_before_group_header' );
 						#plan_prog {
 								display: block;
 						}
+					#nav-add-inq-form-groups-li {
+						display:none;
+					}
 						</style>';
 					} else {
 						echo '<script>
