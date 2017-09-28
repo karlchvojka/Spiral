@@ -62,10 +62,6 @@ add_filter( 'show_admin_bar' , 'my_function_admin_bar');
  // Register custom navigation walker
 require_once('wp_bootstrap_navwalker.php');
 
-function login_redirect( $redirect_to, $request, $user ){
-    return home_url('dashboard-2');
-}
-add_filter( 'login_redirect', 'login_redirect', 10, 3 );
 
 /* --------------------------------------- */
 /* -------- CUSTOMIZE LOGIN PAGE --------- */
@@ -111,7 +107,6 @@ add_filter( 'single_template', 'template_change' ); //'template_include'/'single
 
 
 // GET ME THAT ID
-
 
 
 ?>

@@ -21,9 +21,9 @@ get_header();
       		</div>
       		<div class="col-md-6">
             <?php
-						$group_id = get_the_ID();
-						$meta = get_post_meta( $group_id, $meta_key = '');
-						print_r($meta);
+						//$group_id = get_the_ID();
+						//$meta = get_post_meta( $group_id, $meta_key = '');
+						//print_r($meta);
 							?>
            <button class="print_button pull-right" onclick="printreportbutton()"><i class="fa fa-print" aria-hidden="true"></i> Print Report</button>
 

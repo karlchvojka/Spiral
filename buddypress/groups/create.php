@@ -118,7 +118,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 
 				<h2 class="bp-screen-reader-text"><?php
 					/* translators: accessibility text */
-					_e( 'Group Settings', 'buddypress' );
+					_e( 'Inquiry Settings', 'buddypress' );
 				?></h2>
 
 				<?php
@@ -192,7 +192,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 
 				<fieldset class="group-create-invitations">
 
-					<legend><?php _e( 'Group Invitations', 'buddypress' ); ?></legend>
+					<legend><?php _e( 'Inquiry Invitations', 'buddypress' ); ?></legend>
 
 					<p><?php _e( 'Which members of this group are allowed to invite others?', 'buddypress' ); ?></p>
 

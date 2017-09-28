@@ -116,7 +116,7 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 
 		<h2 class="bp-screen-reader-text"><?php
 			/* translators: accessibility text */
-			_e( 'Groups directory', 'buddypress' );
+			_e( 'Inquiries directory', 'buddypress' );
 		?></h2>
 
 		<div id="groups-dir-list" class="groups dir-list">
