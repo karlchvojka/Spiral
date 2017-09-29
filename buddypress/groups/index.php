@@ -16,6 +16,7 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 <div id="buddypress">
 		<div class="header_inner_wrap">
 			<div class="container">
+
 					<?php
 
 	/**
@@ -120,6 +121,7 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 		?></h2>
 
 		<div id="groups-dir-list" class="groups dir-list">
+			<h1>Inquiry Directory</h1>
 			<?php bp_get_template_part( 'groups/groups-loop' ); ?>
 		</div><!-- #groups-dir-list -->
 

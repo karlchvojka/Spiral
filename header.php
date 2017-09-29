@@ -99,7 +99,7 @@ function printreportbutton() {
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                  <img src="<?php bloginfo('template_url'); ?>/images/logo.jpg" />
+                  <img src="<?php bloginfo('template_url'); ?>/images/spiral-logo.png" />
               </a>
       </div>
       <?php /* Primary navigation */

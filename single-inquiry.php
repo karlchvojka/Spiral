@@ -20,8 +20,8 @@ get_header();
       			<h2 id="inq_page">Planning Stage: <?php the_title(); ?></h2>
       		</div>
       		<div class="col-md-6">
-
-           <button class="print_button pull-right" onclick="printreportbutton()"><i class="fa fa-print" aria-hidden="true"></i> Print Report</button>
+            <button onclick="javascript:window.open('','_self').close();" class="print_button pull-right" />Go Back</button>
+            <button class="print_button pull-right" onclick="printreportbutton()"><i class="fa fa-print" aria-hidden="true"></i> Print Report</button>
 
       		</div>
 

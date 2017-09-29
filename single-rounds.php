@@ -26,7 +26,7 @@ get_header();
 						//print_r($meta);
 							?>
            <button class="print_button pull-right" onclick="printreportbutton()"><i class="fa fa-print" aria-hidden="true"></i> Print Report</button>
-
+           <button onclick="javascript:window.open('','_self').close();" class="print_button pull-right" />Go Back</button>
       		</div>
 
       	</div>

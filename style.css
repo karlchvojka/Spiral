@@ -122,8 +122,14 @@ list-style-type: none;
   .navbar-header {
 		}
     .navbar-header img {
-      height:auto;
+      height: auto;
+    width: 200px;
+    display: block;
     	}
+      .navbar-brand {
+        height:100px;
+        margin-top:10px;
+      }
 			ul.Nav {
 		    list-style:none;
 		    z-index:999;
@@ -700,9 +706,7 @@ font-size:20px !important;
 
 
   /* LOGS START */
-  .title_wrap h1 {
-    text-align:center;
-  }
+
   h3.logHeader {
     font-size:20px;
     text-transform:uppercase;
@@ -757,7 +761,7 @@ font-size:20px !important;
     margin-bottom:20px;
   }
   button#finishStage2 {
-    margin-top:20px;
+    margin-top:-5px;
   }
 .log_wrapper {
   background-color: #ffffff;
