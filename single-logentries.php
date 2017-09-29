@@ -17,22 +17,22 @@ get_header();
 
         <div class="row inquiry_header">
       		<div class="col-md-6">
-      			<h2 id="inq_page">Planning Stage: <?php the_title(); ?></h2>
+      			<h2 id="inq_page">Inquiry Log: <?php the_title(); ?></h2>
       		</div>
 
       	</div>
 
-        <div class="row">
+        <div class="log_wrapper row">
 
         <?php the_title();?>
         <?php the_content();?>
           <!-- END ACCORDION -->
         <?php endwhile; ?>
-  <?php endif; ?>
+          <?php endif; ?>
 
-	<!-- END ROW -->
+        	<!-- END ROW -->
 
-</div> <!-- END CONTAINER -->
+        </div> <!-- END CONTAINER -->
 
 
 </div>

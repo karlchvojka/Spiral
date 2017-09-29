@@ -8,8 +8,7 @@
  * @since 0.8.5
  */
 
- $projID = get_ID_by_slug('project-setup');
- $acf_ref = $projID;
+ $acf_ref = 53;
 
 
 if ( function_exists( 'bp_post_get_permalink' ) ) { // ugly ugly ugly hack to check for pre-1.2 versions of BP

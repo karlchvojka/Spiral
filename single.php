@@ -6,5 +6,7 @@ if ( in_category( 'planningstage' ) ) {
 }
 else if (in_category('inquiryrounds')) {
   include( TEMPLATEPATH.'/single-rounds.php' );
+} elseif (in_category('logentries')) {
+  include( TEMPLATEPATH.'/single-logentries.php');
 }
 ?>
