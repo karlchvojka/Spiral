@@ -307,6 +307,14 @@ list-style-type: none;
       #buddypress div.activity-meta a:hover,  #buddypress div.item-list-tabs#subnav ul li a:hover {
         font-size:14px;
       }
+#buddypress div.item-list-tabs ul li#groups-all a, #buddypress div.item-list-tabs ul li#groups-personal a, #buddypress div.item-list-tabs ul li#group-create-nav a {
+  border-radius: 3px;
+    background-color: #fd5842;
+    color: #ffffff;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: bold;
+}
     .pager .previous a.btn:visited, .pager .previous a.btn:link, a.reg-button:link, a.reg-button:visited, a.login-button:link, a.login-button:visited {
       background-color:#a185ad;
       border-radius:3px;
@@ -424,6 +432,9 @@ div#item-header-content h1.page-title {
 }
 .print_button {
 
+}
+#buddypress div.item-list-tabs ul li#nav-add-report-page-groups-li{
+  margin-right:39%;
 }
 
 /* Status Thing */

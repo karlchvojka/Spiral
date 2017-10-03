@@ -4,7 +4,8 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // E
     wp_deregister_style( 'wp-admin' );
 }
 get_header();
-
+$projID = get_page_by_path('project-setup');
+$acf_ref = $projID;
 ?>
 
 
@@ -59,9 +60,9 @@ get_header();
 
               <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <div class="card-block">
-                  <h4><?php the_field('detFocusQues1', 53);?></h4>
+                  <h4><?php the_field('detFocusQues1', $acf_ref);?></h4>
                   <p><?php the_field('detFocusAnsw1');?></p>
-                  <h4><?php the_field('detFocusQues2', 53);?></h4>
+                  <h4><?php the_field('detFocusQues2', $acf_ref);?></h4>
                   <p><?php the_field('detFocusAnsw2');?></p>
                 </div>
               </div>
@@ -80,9 +81,9 @@ get_header();
               </div>
               <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="card-block">
-                  <h4><?php the_field('inqQuesQues1', 53);?></h4>
+                  <h4><?php the_field('inqQuesQues1', $acf_ref);?></h4>
                   <p><?php the_field('inqQuesAnsw1');?></p>
-                  <h4><?php the_field('inqQuesQues2', 53);?></h4>
+                  <h4><?php the_field('inqQuesQues2', $acf_ref);?></h4>
                   <p><?php the_field('inqQuesAnsw2');?></p>
                 </div>
               </div>
@@ -102,7 +103,7 @@ get_header();
               </div>
               <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
                 <div class="card-block">
-                  <h4><?php the_field('diffYouWantToMakeQues1', 53);?></h4>
+                  <h4><?php the_field('diffYouWantToMakeQues1', $acf_ref);?></h4>
                   <p><?php the_field('diffYouWantToMakeAnsw1');?></p>
                 </div>
               </div>
@@ -122,13 +123,13 @@ get_header();
               </div>
               <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
                 <div class="card-block">
-                  <h4><?php the_field('actionPlanningQues1', 53);?></h4>
+                  <h4><?php the_field('actionPlanningQues1', $acf_ref);?></h4>
                   <p><?php the_field('actionPlanningAnsw1');?></p>
-                  <h4><?php the_field('actionPlanningQues2', 53);?></h4>
+                  <h4><?php the_field('actionPlanningQues2', $acf_ref);?></h4>
                   <p><?php the_field('actionPlanningAnsw2');?></p>
-                  <h4><?php the_field('actionPlanningQues3', 53);?></h4>
+                  <h4><?php the_field('actionPlanningQues3', $acf_ref);?></h4>
                   <p><?php the_field('actionPlanningAnsw3');?></p>
-                  <h4><?php the_field('actionPlanningQues4', 53);?></h4>
+                  <h4><?php the_field('actionPlanningQues4', $acf_ref);?></h4>
                   <p><?php the_field('actionPlanningAnsw4');?></p>
                 </div>
               </div>
@@ -148,9 +149,9 @@ get_header();
               </div>
               <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
                 <div class="card-block">
-                  <h4><?php the_field('profLearnResQues1', 53);?></h4>
+                  <h4><?php the_field('profLearnResQues1', $acf_ref);?></h4>
                   <p><?php the_field('profLearnResAnsw1');?></p>
-                  <h4><?php the_field('profLearnResQues2', 53);?></h4>
+                  <h4><?php the_field('profLearnResQues2', $acf_ref);?></h4>
                   <p><?php the_field('profLearnResAnsw2');?></p>
 
                 </div>
@@ -170,11 +171,11 @@ get_header();
               </div>
               <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
                 <div class="card-block">
-                  <h4><?php the_field('planForCollectingDataQues1', 53);?></h4>
+                  <h4><?php the_field('planForCollectingDataQues1', $acf_ref);?></h4>
                   <p><?php the_field('planForCollectingDataAnsw1');?></p>
-                  <h4><?php the_field('planForCollectingDataQues2', 53);?></h4>
+                  <h4><?php the_field('planForCollectingDataQues2', $acf_ref);?></h4>
                   <p><?php the_field('planForCollectingDataAnsw2');?></p>
-                  <h4><?php the_field('planForCollectingDataQues3', 53);?></h4>
+                  <h4><?php the_field('planForCollectingDataQues3', $acf_ref);?></h4>
                   <p><?php the_field('planForCollectingDataAnsw3');?></p>
 
                 </div>
@@ -195,11 +196,11 @@ get_header();
               </div>
               <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
                 <div class="card-block">
-                  <h4><?php the_field('evidenceFormatQues1', 53);?></h4>
+                  <h4><?php the_field('evidenceFormatQues1', $acf_ref);?></h4>
                   <p><?php the_field('evidenceFormatAnsw1');?></p>
-                  <h4><?php the_field('evidenceFormatQues2', 53);?></h4>
+                  <h4><?php the_field('evidenceFormatQues2', $acf_ref);?></h4>
                   <p><?php the_field('evidenceFormatAnsw2');?></p>
-                  <h4><?php the_field('evidenceFormatQues3', 53);?></h4>
+                  <h4><?php the_field('evidenceFormatQues3', $acf_ref);?></h4>
                   <p><?php the_field('evidenceFormatAnsw3');?></p>
                 </div>
               </div>
@@ -218,7 +219,7 @@ get_header();
               <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight">
                 <div class="card-block">
 
-                  <h4><?php the_field('instChangeQues1', 53);?></h4>
+                  <h4><?php the_field('instChangeQues1', $acf_ref);?></h4>
                   <p><?php the_field('instChangeAnsw1');?></p>
                 </div>
               </div>
@@ -237,9 +238,9 @@ get_header();
               <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine">
                 <div class="card-block">
 
-                  <h4><?php the_field('logisticsQues1', 53);?></h4>
+                  <h4><?php the_field('logisticsQues1', $acf_ref);?></h4>
                   <p><?php the_field('logisticsAnsw1');?></p>
-                  <h4><?php the_field('logisticsQues2', 53);?></h4>
+                  <h4><?php the_field('logisticsQues2', $acf_ref);?></h4>
                   <p><?php the_field('logisticsAnsw2');?></p>
                 </div>
               </div>

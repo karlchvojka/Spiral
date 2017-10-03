@@ -4,7 +4,6 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // E
     wp_deregister_style( 'wp-admin' );
 }
 get_header();
-
 ?>
 
 
@@ -17,14 +16,19 @@ get_header();
 
         <div class="row inquiry_header">
       		<div class="col-md-6">
-      			<h2 id="inq_page">Inquiry Log: <?php the_title(); ?></h2>
+      			<h2 id="inq_page">Inquiry Log Title: <?php the_title(); ?></h2>
+      		</div>
+          <div class="col-md-6">
+            <button onclick="window.history.go(-1); return false;" class="print_button pull-right" />Go Back</button>
+            <button class="print_button pull-right" onclick="printreportbutton()"><i class="fa fa-print" aria-hidden="true"></i> Print Report</button>
+
       		</div>
 
       	</div>
 
-        <div class="log_wrapper row">
 
-        <?php the_title();?>
+        <div class="log_wrapper row">
+        <h3>Description:</h3>
         <?php the_content();?>
           <!-- END ACCORDION -->
         <?php endwhile; ?>

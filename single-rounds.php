@@ -4,7 +4,8 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // E
     wp_deregister_style( 'wp-admin' );
 }
 get_header();
-
+$projID = get_page_by_path('project-setup');
+$acf_ref = $projID;
 ?>
 
 
@@ -63,14 +64,14 @@ get_header();
 
               <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <div class="card-block">
-                  <h4><?php the_field('learningfromlastroundques1', 53);?></h4>
+                  <h4><?php the_field('learningfromlastroundques1', $acf_ref);?></h4>
                   <p>If Yes:</p>
-                  <h4><?php the_field('learningFromLastRoundQues1Yes', 53);?></h4>
+                  <h4><?php the_field('learningFromLastRoundQues1Yes', $acf_ref);?></h4>
                   <p><?php the_field('llearningFromLastRoundAnsw1Yes');?></p>
                   <p>If No:</p>
-                  <h4><?php the_field('learningFromLastRoundQues1No1', 53);?></h4>
+                  <h4><?php the_field('learningFromLastRoundQues1No1', $acf_ref);?></h4>
                   <p><?php the_field('learningFromLastRoundAnsw1No1');?></p>
-                  <h4><?php get_field('learningFromLastRoundQues1No2', 53);?></h4>
+                  <h4><?php get_field('learningFromLastRoundQues1No2', $acf_ref);?></h4>
                   <p><?php the_field('learningFromLastRoundAnsw1No2'); ?></p>
                 </div>
               </div>
@@ -89,11 +90,11 @@ get_header();
               </div>
               <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="card-block">
-                  <h4><?php the_field('learningFromRoundSurpriseLearningSectionQues1', 53);?></h4>
+                  <h4><?php the_field('learningFromRoundSurpriseLearningSectionQues1', $acf_ref);?></h4>
                   <p><?php the_field('learningFromRoundSurpriseLearningSectionAnsw1');?></p>
-                  <h4><?php the_field('learningFromRoundSurpriseLearningSectionQues2', 53);?></h4>
+                  <h4><?php the_field('learningFromRoundSurpriseLearningSectionQues2', $acf_ref);?></h4>
                   <p><?php the_field('learningFromRoundSurpriseLearningSectionAnsw2');?></p>
-                  <h4><?php the_field('learningFromRoundSurpriseLearningSectionQues3', 53);?></h4>
+                  <h4><?php the_field('learningFromRoundSurpriseLearningSectionQues3', $acf_ref);?></h4>
                   <p><?php the_field('learningFromRoundSurpriseLearningSectionAnsw3');?></p>
 
                 </div>
@@ -114,7 +115,7 @@ get_header();
               </div>
               <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
                 <div class="card-block">
-                  <h4><?php the_field('learningFromRoundEvidenceQues1', 53);?></h4>
+                  <h4><?php the_field('learningFromRoundEvidenceQues1', $acf_ref);?></h4>
                   <p><?php the_field('learningFromRoundEvidenceAnsw1');?></p>
                 </div>
               </div>
@@ -133,7 +134,7 @@ get_header();
               </div>
               <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
                 <div class="card-block">
-                  <h4><?php the_field('learningFromRoundEvidenceQues2', 53);?></h4>
+                  <h4><?php the_field('learningFromRoundEvidenceQues2', $acf_ref);?></h4>
                   <p><?php the_field('learningFromRoundEvidenceAnsw2');?></p>
                 </div>
               </div>
@@ -153,7 +154,7 @@ get_header();
               </div>
               <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
                 <div class="card-block">
-                  <h4><?php the_field('learningFromRoundEvidenceQues3', 53);?></h4>
+                  <h4><?php the_field('learningFromRoundEvidenceQues3', $acf_ref);?></h4>
                   <p><?php the_field('learningFromRoundEvidenceAnsw3');?></p>
                 </div>
               </div>
@@ -173,9 +174,9 @@ get_header();
               </div>
               <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
                 <div class="card-block">
-                  <h4><?php the_field('processQues1', 53);?></h4>
+                  <h4><?php the_field('processQues1', $acf_ref);?></h4>
                   <p><?php the_field('processAnsw1');?></p>
-                  <h4><?php the_field('processQues2', 53);?></h4>
+                  <h4><?php the_field('processQues2', $acf_ref);?></h4>
                   <p><?php the_field('processAnsw2');?></p>
 
                 </div>
@@ -196,11 +197,11 @@ get_header();
               </div>
               <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
                 <div class="card-block">
-                  <h4><?php the_field('closingInquiryQues1', 53);?></h4>
+                  <h4><?php the_field('closingInquiryQues1', $acf_ref);?></h4>
                   <p><?php the_field('closingInquiryAnsw1');?></p>
-                  <h4><?php the_field('closingInquiryQues2', 53);?></h4>
+                  <h4><?php the_field('closingInquiryQues2', $acf_ref);?></h4>
                   <p><?php the_field('closingInquiryAnsw2');?></p>
-                  <h4><?php the_field('closingInquiryQues3', 53);?></h4>
+                  <h4><?php the_field('closingInquiryQues3', $acf_ref);?></h4>
                   <p><?php the_field('closingInquiryAnsw3');?></p>
                 </div>
               </div>
