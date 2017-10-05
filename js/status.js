@@ -11,6 +11,7 @@ function doalert() {
   const switchObserve = document.getElementById("observe");
   const switchAct = document.getElementById("act");
 
+
   // ReflectWrap checked function
   if (switchReflect.checked) {
     reflectWrap.style.display = 'block';
@@ -18,6 +19,7 @@ function doalert() {
     reflectWrap.style.display = 'none';
   }
 
+  planWrap.style.display = switchPlan.checked  === true ? 'block' : 'none' ;
   // ReflectWrap checked function
   if (switchPlan.checked) {
     planWrap.style.display = 'block';
@@ -25,14 +27,14 @@ function doalert() {
     planWrap.style.display = 'none';
   }
 
-  // ReflectWrap checked function
+  // observeWrap checked function
   if (switchObserve.checked) {
     observeWrap.style.display = 'block';
   } else {
     observeWrap.style.display = 'none';
   }
 
-  // ReflectWrap checked function
+  // actWrap checked function
   if (switchAct.checked) {
     actWrap.style.display = 'block';
   } else {

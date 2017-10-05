@@ -115,7 +115,44 @@ if ( function_exists( 'bp_post_get_permalink' ) ) { // ugly ugly ugly hack to ch
 
 	<div class="container">
 	<div class="row">
+    <div class="col-md-6">
+      <div class="video-responsive">
+  		<?php the_field('invTeamMemVideo1', $acf_ref); ?>
+    </div>
+  		<div id="message" class="info">
+  			<p><?php _e('Select people to invite from your friends list.', 'invite-anyone'); ?></p>
+  		</div>
 
+  		<?php do_action( 'bp_before_group_send_invites_list' ) ?>
+
+  		<?php /* The ID 'friend-list' is important for AJAX support. */ ?>
+  		<ul id="invite-anyone-invite-list" class="item-list">
+  		<?php if ( bp_group_has_invites() ) : ?>
+
+  			<?php while ( bp_group_invites() ) : bp_group_the_invite(); ?>
+
+  				<li id="<?php bp_group_invite_item_id() ?>">
+  					<?php bp_group_invite_user_avatar() ?>
+
+  					<h4><?php bp_group_invite_user_link() ?></h4>
+  					<span class="activity"><?php bp_group_invite_user_last_active() ?></span>
+
+  					<?php do_action( 'bp_group_send_invites_item' ) ?>
+
+  					<div class="action">
+  						<a class="remove" href="<?php bp_group_invite_user_remove_invite_url() ?>" id="<?php bp_group_invite_item_id() ?>"><?php _e( 'Remove Invite', 'invite-anyone' ) ?></a>
+
+  						<?php do_action( 'bp_group_send_invites_item_action' ) ?>
+  					</div>
+  				</li>
+
+  			<?php endwhile; ?>
+
+  		<?php endif; ?>
+  		</ul>
+
+  		<?php do_action( 'bp_after_group_send_invites_list' ) ?>
+  	</div>
 	<div class="col-md-6">
 		<p><?php _e("Search for members to invite:", 'invite-anyone') ?></p>
 
@@ -127,7 +164,7 @@ if ( function_exists( 'bp_post_get_permalink' ) ) { // ugly ugly ugly hack to ch
 
 		<?php wp_nonce_field( 'groups_invite_uninvite_user', '_wpnonce_invite_uninvite_user' ) ?>
 
-		<?php if ( ! invite_anyone_is_large_network( 'users' ) ) : ?>
+		<!-- <?php// if ( ! invite_anyone_is_large_network( 'users' ) ) : ?>
 			<p><?php _e( 'Select members from the directory:', 'invite-anyone' ) ?></p>
 
 			<div id="invite-anyone-member-list">
@@ -135,45 +172,10 @@ if ( function_exists( 'bp_post_get_permalink' ) ) { // ugly ugly ugly hack to ch
 					<?php bp_new_group_invite_member_list() ?>
 				</ul>
 			</div>
-		<?php endif ?>
+		<?php //endif ?>-->
 	</div>
 
-	<div class="col-md-6">
-		<?php the_field('invTeamMemVideo1', $acf_ref); ?>
-		<div id="message" class="info">
-			<p><?php _e('Select people to invite from your friends list.', 'invite-anyone'); ?></p>
-		</div>
 
-		<?php do_action( 'bp_before_group_send_invites_list' ) ?>
-
-		<?php /* The ID 'friend-list' is important for AJAX support. */ ?>
-		<ul id="invite-anyone-invite-list" class="item-list">
-		<?php if ( bp_group_has_invites() ) : ?>
-
-			<?php while ( bp_group_invites() ) : bp_group_the_invite(); ?>
-
-				<li id="<?php bp_group_invite_item_id() ?>">
-					<?php bp_group_invite_user_avatar() ?>
-
-					<h4><?php bp_group_invite_user_link() ?></h4>
-					<span class="activity"><?php bp_group_invite_user_last_active() ?></span>
-
-					<?php do_action( 'bp_group_send_invites_item' ) ?>
-
-					<div class="action">
-						<a class="remove" href="<?php bp_group_invite_user_remove_invite_url() ?>" id="<?php bp_group_invite_item_id() ?>"><?php _e( 'Remove Invite', 'invite-anyone' ) ?></a>
-
-						<?php do_action( 'bp_group_send_invites_item_action' ) ?>
-					</div>
-				</li>
-
-			<?php endwhile; ?>
-
-		<?php endif; ?>
-		</ul>
-
-		<?php do_action( 'bp_after_group_send_invites_list' ) ?>
-	</div>
 	</div>
 </div>
 	<div class="clear"></div>

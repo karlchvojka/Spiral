@@ -50,10 +50,9 @@ h2 {
 
   #buddypress .standard-form label {
     font-size:20px;
-    color:#fd5842;
+    color:#353641;
     font-family: 'Lato', sans-serif;
     margin-top:0px;
-    text-transform:uppercase;
 
   }
 
@@ -78,6 +77,7 @@ p {
   font-family: 'Lato', sans-serif;
   margin-bottom:20px;
 	}
+
 
 /* END GLOBAL TEXT STYLES */
 
@@ -347,7 +347,7 @@ list-style-type: none;
 
   /* CREATE SECTION STYLES */
   div.create_question {
-    margin-top:30px;
+    margin-top:60px;
   }
   /* END CREATE SECTION STYLES */
 
@@ -394,10 +394,12 @@ list-style-type: none;
   /* End Progress Bar Styles */
 
 
-
 /* End Tab Structure Styles */
 
 /* BP GROUPS CUSTOM STYLES */
+#buddypress .dir-search input[type=search], #buddypress .dir-search input[type=text], #buddypress .groups-members-search input[type=search], #buddypress .groups-members-search input[type=text], #buddypress .standard-form input[type=color], #buddypress .standard-form input[type=date], #buddypress .standard-form input[type=datetime-local], #buddypress .standard-form input[type=datetime], #buddypress .standard-form input[type=email], #buddypress .standard-form input[type=month], #buddypress .standard-form input[type=number], #buddypress .standard-form input[type=password], #buddypress .standard-form input[type=range], #buddypress .standard-form input[type=search], #buddypress .standard-form input[type=tel], #buddypress .standard-form input[type=text], #buddypress .standard-form input[type=time], #buddypress .standard-form input[type=url], #buddypress .standard-form input[type=week], #buddypress .standard-form select, #buddypress .standard-form textarea {
+  background-color:#ffffff;
+}
 
 div.form_wrap {
   padding:20px;
@@ -434,9 +436,12 @@ div#item-header-content h1.page-title {
 
 }
 #buddypress div.item-list-tabs ul li#nav-add-report-page-groups-li{
-  margin-right:39%;
+  margin-right:30%;
 }
 
+#bar {
+  width:25%;
+}
 /* Status Thing */
 .status_wrap {
   background-image: url('images/ProgressWheel_bg.png');
@@ -461,6 +466,7 @@ div#item-header-content h1.page-title {
   position:Relative;
   top:3px;
   left:0px;
+  display:block;
 }
 .titles, .titles div {
   height:20px;
@@ -510,6 +516,7 @@ div#item-header-content h1.page-title {
       }
       h2#inq_page {
         margin-top:10px;
+        font-weight:bold;
       }
   div#accordion div.card .collapse {
     margin-top:20px;
@@ -542,11 +549,19 @@ div#item-header-content h1.page-title {
     color:#4d3d6b;
     background-color:#ffffff;
     }
-  #buddypress div.item-list-tabs ul li a, #buddypress .comment-reply-link, #buddypress .generic-button a, #buddypress .standard-form button, #buddypress a.button, #buddypress input[type=button], #buddypress input[type=reset], #buddypress input[type=submit], #buddypress ul.button-nav li a, a.bp-title-button {
+
+
+  #buddypress div.item-list-tabs ul li a, #buddypress .comment-reply-link, #buddypress .generic-button a, #buddypress .standard-form button, #buddypress a.button, #buddypress input[type=button], #buddypress input[type=file], #buddypress input[type=reset], #buddypress input[type=submit], #buddypress ul.button-nav li a, a.bp-title-button {
     border-radius:5px;
     border:none;
     margin:0px 5px;
     color:#4d3d6b;
+    }
+
+    #buddypress input[type=file] {
+      display:block;
+      margin-bottom:20px;
+      padding:5px;
     }
     #buddypress input[type=submit] {
       color:#ffffff;
@@ -622,13 +637,13 @@ form#create-group-form #group-create-tabs div.container ul li:first-child a {
   border:none;
 }
 #buddypress .standard-form div.submit input {
-  display:block;
-  width:25%;
   margin-top:20px;
   padding:10px;
   color:#ffffff;
   text-transform:uppercase;
   background-color:#fd5842;
+  font-size:16px;
+  font-weight:bold;
 }
 /* LOGIN FORM STYLES */
 
@@ -651,7 +666,32 @@ font-size:20px !important;
 }
 /* ------------------------------------------- */
 
+
+/* Plan Styles */
+
+.videoSubTitle {
+  margin-top:25px;
+  margin-bottom:10px;
+}
+
+.videoSubTitle:first-of-type {
+  margin-top:0px;
+}
+
+p.undernote {
+  font-size:12px;
+  color:#737373;
+  font-family: 'Lato', sans-serif;
+  margin-bottom:5px;
+}
+
 /* INDIVIDUAL ROUND STYLES */
+
+/* UNCOMMENT FOR PRODUCTION
+  div#tab7.active ~ .pager li.next {
+    display:none;
+  }
+*/
 .inquiry_header {
   background-color: #ffffff;
     border-radius: 3px;
@@ -659,6 +699,14 @@ font-size:20px !important;
     margin:20px 0px;
     padding:20px;
   }
+  .inquiry_header h3 {
+    color:#fd5842;
+    font-weight:bold;
+    font-size:18px;
+    }
+    .inquiry_header h3 img.avatar {
+      margin-right:20px;
+    }
   .inquiry_header div  {
     padding:0px;
   }

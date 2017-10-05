@@ -8,24 +8,71 @@ $projID = get_page_by_path('project-setup');
 $acf_ref = $projID;
 ?>
 
+<style>
+#member-list {
+  padding-left:0px;
+}
+</style>
+
 
 <div class="container">
 
-
-
     <?php if (have_posts()) : ?>
       <?php while (have_posts()) : the_post(); ?>
+        <?php
+        // ARGS FOR FOLLOWING LOOPS
+        $post_id = get_the_ID();
+        $parent_id = get_post_meta($post_id, $meta_key = 'GroupID');
+        $asgs = array (
+          'group_id' => $parent_id
+        );
+          ?>
 
         <div class="row inquiry_header">
-      		<div class="col-md-6">
-      			<h2 id="inq_page">Round Title: <?php the_title(); ?></h2>
-      		</div>
-      		<div class="col-md-6">
+          <div class="col-md-6">
+            <h2 id="inq_page">Round Title: <?php the_title(); ?></h2>
             <?php
-						//$group_id = get_the_ID();
-						//$meta = get_post_meta( $group_id, $meta_key = '');
-						//print_r($meta);
-							?>
+            //ARGS FOR THE GROUP LOOP
+            $args = array(
+            'include' => $parent_id,
+            'max' => 1
+            );
+            // START OF GROUP LOOP
+            if ( bp_has_groups( $args) ) : while ( bp_groups() ) : bp_the_group();
+            // GROUP AVATAR AND NAME PULL
+            ?>
+            <h3><?php bp_group_avatar( 'type=thumb&width=50&height=50' ) ?><?php bp_group_name() ?></h3>
+            <?php
+            // GROUP DESCRIPTION PULL
+            bp_group_description_excerpt() ?>
+            <div class="col-md-6">
+            <h3>Inquiry Members:</h3>
+              <?php
+              // START OF THE MEMEBERS LOOP
+              if ( bp_group_has_members($asgs) ) : ?>
+                <ul id="member-list" class="item-list">
+                <?php while ( bp_group_members() ) : bp_group_the_member(); ?>
+                  <li>
+                    <?php bp_group_member_name() ?>
+                  </li>
+                <?php endwhile; ?>
+                </ul>
+                <?php endif;
+              // END GROUP MEMBERS LOOP
+              ?>
+            </div>
+            <div class="col-md-6">
+              <h3>Creation Date:</h3>
+              <?php bp_group_date_created(); ?>
+            </div>
+          <?php endwhile; ?>
+          <?php do_action( 'bp_after_groups_loop' ) ?>
+          <?php endif;
+          // END GROUPS LOOP
+          ?>
+          </div>
+      		<div class="col-md-6">
+
            <button class="print_button pull-right" onclick="printreportbutton()"><i class="fa fa-print" aria-hidden="true"></i> Print Report</button>
            <button onclick="javascript:window.open('','_self').close();" class="print_button pull-right" />Go Back</button>
       		</div>
@@ -56,7 +103,7 @@ $acf_ref = $projID;
               <div class="card-header" role="tab" id="headingOne"  data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
                 <h3 class="mb-0">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                    Learning from Last round
+                    Learning from This round
                   </a>
                   <a class="add_cross pull-right">+</a>
                 </h3>
@@ -83,7 +130,7 @@ $acf_ref = $projID;
               <div class="card-header" role="tab" id="headingTwo">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Learning from Round {round #}: Surprise Learning
+                    Learning from this Round: Surprise Learning
                   </a>
                   <a class="add_cross pull-right">+</a>
                 </h3>
@@ -107,7 +154,7 @@ $acf_ref = $projID;
               <div class="card-header" role="tab" id="headingThree">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Learning from Round {round #}: Evidence
+                    Learning from this Round: Evidence
 
                   </a>
                   <a class="add_cross pull-right">+</a>
@@ -127,7 +174,7 @@ $acf_ref = $projID;
               <div class="card-header" role="tab" id="headingFour">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    Learning from Round {round #}
+                    Learning from this Round: Evidence
                   </a>
                   <a class="add_cross pull-right">+</a>
                 </h3>
@@ -146,7 +193,7 @@ $acf_ref = $projID;
               <div class="card-header" role="tab" id="headingFive">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  Learning from Round {round #}
+                  Learning from this Round: Evidence
 
                   </a>
                   <a class="add_cross pull-right">+</a>

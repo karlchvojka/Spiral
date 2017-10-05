@@ -17,8 +17,6 @@ div#accordion .card p {
 div#accordion .card h3:hover {
   text-decoration: none !important;
 }
-div#accordion .card {
-  border:0px !important;
-  margin-bottom:0px !important;
-  padding:10px !important;
+.add_cross {
+  display:none;
 }

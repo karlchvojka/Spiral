@@ -85,19 +85,29 @@ do_action( 'bp_before_create_group_page' ); ?>
 				 * @since 1.1.0
 				 */
 				do_action( 'bp_before_group_details_creation_step' ); ?>
+        <div class="row">
+          <div class="col-md-6">
+            <h1>Team Setup</h1>
+            <div class="video-responsive">
+                    <?php the_field('teamSetupVideo1', $acf_ref); ?>
+            </div>
 
-				<h1>Team Setup</h1>
-				<?php the_field('teamSetupVideo1', $acf_ref); ?>
 
-				<div class="create_question">
-					<label for="group-name"><?php _e( 'What is the name of your collaborative inquiry project? (Required)', 'buddypress' ); ?></label>
-					<input type="text" name="group-name" id="group-name" aria-required="true" value="<?php bp_new_group_name(); ?>" />
-				</div>
+          </div>
+          <div class="col-md-6">
+            <div class="create_question">
+    					<label for="group-name"><?php _e( 'What is the name of your collaborative inquiry? (Required)', 'buddypress' ); ?></label>
+    					<input type="text" name="group-name" id="group-name" aria-required="true" value="<?php bp_new_group_name(); ?>" />
+    				</div>
 
-				<div class="create_question">
-					<label for="group-desc"><?php _e( 'Inquiry Description (required)', 'buddypress' ); ?></label>
-					<textarea name="group-desc" id="group-desc" aria-required="true"><?php bp_new_group_description(); ?></textarea>
-				</div>
+    				<div>
+    					<label for="group-desc"><?php _e( 'Inquiry Description (required)', 'buddypress' ); ?></label>
+    					<textarea name="group-desc" id="group-desc" aria-required="true"><?php bp_new_group_description(); ?></textarea>
+    				</div>
+
+          </div>
+        </div>
+
 
 				<?php
 
@@ -198,9 +208,9 @@ do_action( 'bp_before_create_group_page' ); ?>
 
 					<div class="radio">
 
-						<label for="group-invite-status-members"><input type="radio" name="group-invite-status" id="group-invite-status-members" value="members"<?php bp_group_show_invite_status_setting( 'members' ); ?> /> <?php _e( 'All group members', 'buddypress' ); ?></label>
+						<!-- <label for="group-invite-status-members"><input type="radio" name="group-invite-status" id="group-invite-status-members" value="members"<?php bp_group_show_invite_status_setting( 'members' ); ?> /> <?php _e( 'All group members', 'buddypress' ); ?></label>-->
 
-						<label for="group-invite-status-mods"><input type="radio" name="group-invite-status" id="group-invite-status-mods" value="mods"<?php bp_group_show_invite_status_setting( 'mods' ); ?> /> <?php _e( 'Group admins and mods only', 'buddypress' ); ?></label>
+						<!-- <label for="group-invite-status-mods"><input type="radio" name="group-invite-status" id="group-invite-status-mods" value="mods"<?php bp_group_show_invite_status_setting( 'mods' ); ?> /> <?php _e( 'Group admins and mods only', 'buddypress' ); ?></label>-->
 
 						<label for="group-invite-status-admins"><input type="radio" name="group-invite-status" id="group-invite-status-admins" value="admins"<?php bp_group_show_invite_status_setting( 'admins' ); ?> /> <?php _e( 'Group admins only', 'buddypress' ); ?></label>
 
@@ -470,34 +480,36 @@ do_action( 'bp_before_create_group_page' ); ?>
 
 			<?php if ( 'crop-image' != bp_get_avatar_admin_step() ) : ?>
 
-				<div class="submit" id="previous-next">
-
+				<div class="submit row" id="previous-next">
 					<?php /* Previous Button */ ?>
 					<?php if ( !bp_is_first_group_creation_step() ) : ?>
-
-						<input type="button" value="<?php esc_attr_e( 'Back to Previous Step', 'buddypress' ); ?>" id="group-creation-previous" name="previous" onclick="location.href='<?php bp_group_creation_previous_link(); ?>'" />
-
+            <div class="col-md-6">
+						  <input type="button" value="<?php esc_attr_e( 'Back to Previous Step', 'buddypress' ); ?>" id="group-creation-previous" name="previous" onclick="location.href='<?php bp_group_creation_previous_link(); ?>'" />
+            </div>
 					<?php endif; ?>
 
 					<?php /* Next Button */ ?>
 					<?php if ( !bp_is_last_group_creation_step() && !bp_is_first_group_creation_step() ) : ?>
+            <div class="col-md-6">
 
-						<input type="submit" value="<?php esc_attr_e( 'Next Step', 'buddypress' ); ?>" id="group-creation-next" name="save" />
-
+						<input type="submit" value="<?php esc_attr_e( 'Next Step', 'buddypress' ); ?>" id="group-creation-next" name="save" class="pull-right" />
+          </div>
 					<?php endif;?>
 
 					<?php /* Create Button */ ?>
 					<?php if ( bp_is_first_group_creation_step() ) : ?>
+            <div class="col-md-6">
 
 						<input type="submit" value="<?php esc_attr_e( 'Create Inquiry and Continue', 'buddypress' ); ?>" id="group-creation-create" name="save" />
-
+          </div>
 					<?php endif; ?>
 
 					<?php /* Finish Button */ ?>
 					<?php if ( bp_is_last_group_creation_step() ) : ?>
+            <div class="col-md-6">
 
-						<input type="submit" value="<?php esc_attr_e( 'Finish', 'buddypress' ); ?>" id="group-creation-finish" name="save" />
-
+						<input type="submit" value="<?php esc_attr_e( 'Create Inquiry', 'buddypress' ); ?>" id="group-creation-finish" name="save" class="pull-right" />
+          </div>
 					<?php endif; ?>
 				</div>
 

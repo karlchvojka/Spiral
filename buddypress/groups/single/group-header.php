@@ -18,7 +18,7 @@ do_action( 'bp_before_group_header' );
 <div id="item-actions" class="row">
 
 		<?php if ( ! bp_disable_group_avatar_uploads() ) : ?>
-			<div id="item-header-avatar">
+			<div id="item-header-avatar" class="col-md-2">
 				<a href="<?php echo esc_url( bp_get_group_permalink() ); ?>" class="bp-tooltip" data-bp-tooltip="<?php echo esc_attr( bp_get_group_name() ); ?>">
 
 					<?php bp_group_avatar(); ?>
@@ -26,7 +26,7 @@ do_action( 'bp_before_group_header' );
 				</a>
 			</div><!-- #item-header-avatar -->
 		<?php endif; ?>
-	<div class="col-md-10">
+	<div class="col-md-8">
 		<div id="item-header-content" class="vcenter">
 			<h1 class="page-title"><?php the_title();?></h1>
 			<span class="highlight"><?php bp_group_type(); ?></span><br/>
@@ -70,18 +70,6 @@ do_action( 'bp_before_group_header' );
 		  <div class="top_row clear">
 				<?php
 				 $group_id = bp_get_group_id();
-				if ( metadata_exists('group', $group_id, 'planFin' ) ) {
-					echo '<style type="text/css">
-						#plan_prog {
-								display: block;
-						}
-					
-						</style>';
-					} else {
-						echo '<script>
-						    console.log("FALSE");
-						</script>';
-					}
 					if ( metadata_exists('group', $group_id, 'actObs' ) ) {
 						echo'<script>
 						console.log("TRUE 2")
