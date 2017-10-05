@@ -12,21 +12,19 @@ $acf_ref = $projID;
 #member-list {
   padding-left:0px;
 }
+
+input[type=checkbox] {
+  visibility: hidden;
+}
 </style>
 
 <div class="container">
-
-
-
     <?php if (have_posts()) : ?>
       <?php while (have_posts()) : the_post(); ?>
         <?php
         // ARGS FOR FOLLOWING LOOPS
         $post_id = get_the_ID();
         $parent_id = get_post_meta($post_id, $meta_key = 'GroupID');
-        $asgs = array (
-          'group_id' => $parent_id
-        );
           ?>
         <div class="row inquiry_header">
       		<div class="col-md-6">
@@ -37,6 +35,11 @@ $acf_ref = $projID;
             'include' => $parent_id,
             'max' => 1
             );
+
+            $bpmargs = array (
+              'group_id' => $parent_id
+            );
+
             // START OF GROUP LOOP
             if ( bp_has_groups( $args) ) : while ( bp_groups() ) : bp_the_group();
             // GROUP AVATAR AND NAME PULL
@@ -47,9 +50,10 @@ $acf_ref = $projID;
             bp_group_description_excerpt() ?>
             <div class="col-md-6">
             <h3>Inquiry Members:</h3>
+
               <?php
               // START OF THE MEMEBERS LOOP
-              if ( bp_group_has_members($asgs) ) : ?>
+              if ( bp_group_has_members($bpmargs) ) : ?>
                 <ul id="member-list" class="item-list">
                 <?php while ( bp_group_members() ) : bp_group_the_member(); ?>
                   <li>
@@ -60,6 +64,7 @@ $acf_ref = $projID;
                 <?php endif;
               // END GROUP MEMBERS LOOP
               ?>
+
             </div>
             <div class="col-md-6">
               <h3>Creation Date:</h3>
@@ -83,23 +88,13 @@ $acf_ref = $projID;
 
           <div id="accordion" role="tablist" aria-multiselectable="true" class="col-md-12">
             <!-- CARD ONE -->
-
-            <!--<div class="card">
-               <div class="card-header" role="tab" id="headingOne">
-                <h5 class="mb-0">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Collapsible Group Item #1
-                  </a>
-                </h5>
+            <div class="chec_wrap1">
+              <div class="slide_wrap">
+                <input type="checkbox" value="None" id="slideOne" name="check" />
+                <label for="slideOne"></label>
               </div>
-
-              <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-                <div class="card-block">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>-->
-            <div class="card">
+            </div>
+            <div class="card" id="card_one">
               <div class="card-header" role="tab" id="headingOne"  data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
                 <h3 class="mb-0">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
@@ -121,7 +116,13 @@ $acf_ref = $projID;
             <!-- END CARD ONE -->
 
             <!-- START CARD TWO -->
-            <div class="card">
+            <div class="chec_wrap2">
+              <div class="slide_wrap">
+                <input type="checkbox" value="None" id="slideTwo" name="check" />
+                <label for="slideTwo"></label>
+              </div>
+            </div>
+            <div class="card" id="card_two">
               <div class="card-header" role="tab" id="headingTwo">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -142,7 +143,13 @@ $acf_ref = $projID;
             <!-- END CARD TWO -->
 
             <!-- START CARD THREE -->
-            <div class="card">
+            <div class="chec_wrap3">
+              <div class="slide_wrap">
+                <input type="checkbox" value="None" id="slideThree" name="check" />
+                <label for="slideThree"></label>
+              </div>
+            </div>
+            <div class="card" id="card_three">
               <div class="card-header" role="tab" id="headingThree">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -162,7 +169,13 @@ $acf_ref = $projID;
             <!-- END CARD THREE -->
 
             <!-- START CARD FOUR -->
-            <div class="card">
+            <div class="chec_wrap4">
+              <div class="slide_wrap">
+                <input type="checkbox" value="None" id="slideFour" name="check" />
+                <label for="slideFour"></label>
+              </div>
+            </div>
+            <div class="card" id="card_four">
               <div class="card-header" role="tab" id="headingFour">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -188,7 +201,13 @@ $acf_ref = $projID;
             <!-- END CARD FOUR -->
 
             <!-- START CARD FIVE -->
-            <div class="card">
+            <div class="chec_wrap5">
+              <div class="slide_wrap">
+                <input type="checkbox" value="None" id="slideFive" name="check" />
+                <label for="slideFive"></label>
+              </div>
+            </div>
+            <div class="card" id="card_five">
               <div class="card-header" role="tab" id="headingFive">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
@@ -211,7 +230,13 @@ $acf_ref = $projID;
             <!-- END CARD FIVE -->
 
             <!-- START CARD SIX -->
-            <div class="card">
+            <div class="chec_wrap6">
+              <div class="slide_wrap">
+                <input type="checkbox" value="None" id="slideSix" name="check" />
+                <label for="slideSix"></label>
+              </div>
+            </div>
+            <div class="card" id="card_six">
               <div class="card-header" role="tab" id="headingSix">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
@@ -235,7 +260,13 @@ $acf_ref = $projID;
             <!-- END CARD SIX -->
 
             <!-- START CARD Seven -->
-            <div class="card">
+            <div class="chec_wrap7">
+              <div class="slide_wrap">
+                <input type="checkbox" value="None" id="slideSeven" name="check" />
+                <label for="slideSeven"></label>
+              </div>
+            </div>
+            <div class="card" id="card_seven">
               <div class="card-header" role="tab" id="headingSeven">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
@@ -258,7 +289,13 @@ $acf_ref = $projID;
             </div>
             <!-- END CARD SEVEN -->
             <!-- START CARD EIGHT -->
-            <div class="card">
+            <div class="chec_wrap8">
+              <div class="slide_wrap">
+                <input type="checkbox" value="None" id="slideEight" name="check" />
+                <label for="slideEight"></label>
+              </div>
+            </div>
+            <div class="card" id="card_eight">
               <div class="card-header" role="tab" id="headingEight">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
@@ -277,7 +314,13 @@ $acf_ref = $projID;
             </div>
             <!-- END CARD EIGHT -->
             <!-- START CARD NINE -->
-            <div class="card">
+            <div class="chec_wrap9">
+              <div class="slide_wrap">
+                <input type="checkbox" value="None" id="slideNine" name="check" />
+                <label for="slideNine"></label>
+              </div>
+            </div>
+            <div class="card" id="card_nine">
               <div class="card-header" role="tab" id="headingNine">
                 <h3 class="mb-0">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">

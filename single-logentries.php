@@ -6,6 +6,13 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // E
 get_header();
 ?>
 
+<style>
+#member-list {
+  padding-left:0px;
+}
+
+</style>
+
 
 <div class="container">
 
@@ -30,6 +37,10 @@ get_header();
             'include' => $parent_id,
             'max' => 1
             );
+
+            $bpmargs = array (
+              'group_id' => $parent_id
+            );
             // START OF GROUP LOOP
             if ( bp_has_groups( $args) ) : while ( bp_groups() ) : bp_the_group();
             // GROUP AVATAR AND NAME PULL
@@ -42,7 +53,7 @@ get_header();
             <h3>Inquiry Members:</h3>
               <?php
               // START OF THE MEMEBERS LOOP
-              if ( bp_group_has_members($asgs) ) : ?>
+              if ( bp_group_has_members($bpmargs) ) : ?>
                 <ul id="member-list" class="item-list">
                 <?php while ( bp_group_members() ) : bp_group_the_member(); ?>
                   <li>
