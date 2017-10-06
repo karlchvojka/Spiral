@@ -28,7 +28,7 @@
 <script src="<?php bloginfo('template_url');?>/js/bootstrap.min.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/jquery.bootstrap.wizard.js"></script>
 <script src="<?php bloginfo('template_url');?>/js/prettify.js"></script>
-<script src="<?php bloginfo('template_url');?>/js/report_hide.js"
+<script src="<?php bloginfo('template_url');?>/js/report_hide.js"></script>
 <script>
 $(document).ready(function() {
   	$('#rootwizard').bootstrapWizard({onNext: function(tab, navigation, index) {

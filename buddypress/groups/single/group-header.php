@@ -70,14 +70,16 @@ do_action( 'bp_before_group_header' );
 		  <div class="top_row clear">
 				<?php
 				 $group_id = bp_get_group_id();
-					if ( metadata_exists('group', $group_id, 'actObs' ) ) {
-						echo'<script>
-						console.log("TRUE 2")
-						</script>';
+					if ( metadata_exists('group', $group_id, 'planFin' ) ) {
+						echo '<script type="text/javascript">';
+				    echo '$(document).ready(function(){
+								$("#observe_prog").css("display", "block");
+								$("#act_prog").css("display", "block");
+						 });';
+				    echo '</script>';
+
 					} else {
-						echo'<script>
-						console.log("FALSE 2")
-						</script>';
+
 					}
 
 				 ?>

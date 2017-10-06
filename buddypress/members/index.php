@@ -55,7 +55,7 @@ do_action( 'bp_before_directory_members_page' ); ?>
 	do_action( 'bp_before_directory_members_tabs' ); ?>
 
 	<form action="" method="post" id="members-directory-form" class="dir-form">
-
+		
 		<div class="item-list-tabs" aria-label="<?php esc_attr_e( 'Members directory main navigation', 'buddypress' ); ?>" role="navigation">
 			<ul>
 				<li class="selected" id="members-all"><a href="<?php bp_members_directory_permalink(); ?>"><?php printf( __( 'All Members %s', 'buddypress' ), '<span>' . bp_get_total_member_count() . '</span>' ); ?></a></li>

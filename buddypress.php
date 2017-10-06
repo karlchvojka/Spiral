@@ -11,7 +11,6 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 			<?php endif; ?>
-
 </div>
 <!-- END WRAP SITE -->
 

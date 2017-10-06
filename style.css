@@ -78,6 +78,37 @@ p {
   margin-bottom:20px;
 	}
 
+  blockquote{
+    width:90%;
+    margin:10px auto;
+    padding:1.2em 30px 1.2em 75px;
+    border-left:2px solid #fd5842; ;
+    line-height:1.6;
+    position: relative;
+    background:#f7f6f6;
+  }
+
+  blockquote::before{
+    content: "\201C";
+    color:#000000;
+    font-size:4em;
+    position: absolute;
+    left: 10px;
+    top:-10px;
+  }
+
+  blockquote::after{
+    content: '';
+  }
+
+  blockquote span{
+    display:block;
+    color:#333333;
+    font-style: normal;
+    font-weight: bold;
+    margin-top:1em;
+  }
+
 
 /* END GLOBAL TEXT STYLES */
 
@@ -278,7 +309,7 @@ list-style-type: none;
     .pager {
       display:block;
     }
-    .pager li.next a.btn:visited, .pager li.next a.btn:link, .print_button, .print_button, .pager li.submit input#submit, #buddypress input[type=submit], #buddypress div.activity-meta a, #buddypress div.item-list-tabs ul li.current a,  #buddypress div.item-list-tabs#subnav ul li a {
+    .pager li.next a.btn:visited, .pager li.next a.btn:link, .print_button, .print_button, .pager li.submit input#submit, #buddypress input[type=submit], #buddypress div.activity-meta a, #buddypress div.item-list-tabs ul li.current a,  #buddypress div.item-list-tabs#subnav ul li a, input[type="submit"] {
       border-radius: 3px;
       background-color:#fd5842;
       color:#ffffff;
@@ -397,6 +428,10 @@ list-style-type: none;
 /* End Tab Structure Styles */
 
 /* BP GROUPS CUSTOM STYLES */
+
+li#groups-all {
+  display:none;
+}
 #buddypress .dir-search input[type=search], #buddypress .dir-search input[type=text], #buddypress .groups-members-search input[type=search], #buddypress .groups-members-search input[type=text], #buddypress .standard-form input[type=color], #buddypress .standard-form input[type=date], #buddypress .standard-form input[type=datetime-local], #buddypress .standard-form input[type=datetime], #buddypress .standard-form input[type=email], #buddypress .standard-form input[type=month], #buddypress .standard-form input[type=number], #buddypress .standard-form input[type=password], #buddypress .standard-form input[type=range], #buddypress .standard-form input[type=search], #buddypress .standard-form input[type=tel], #buddypress .standard-form input[type=text], #buddypress .standard-form input[type=time], #buddypress .standard-form input[type=url], #buddypress .standard-form input[type=week], #buddypress .standard-form select, #buddypress .standard-form textarea {
   background-color:#ffffff;
 }
@@ -467,6 +502,11 @@ div#item-header-content h1.page-title {
   top:3px;
   left:0px;
   display:block;
+}
+#observe_prog {
+  margin-right: 0px;
+    position: relative;
+    left: 3px;
 }
 .titles, .titles div {
   height:20px;
@@ -848,6 +888,11 @@ p.undernote {
   margin-bottom:20px;
 }
 
+/* Profile Styles */
+li#activity-personal-li, li#notifications-personal-li, li#messages-personal-li, li#invite-anyone-personal-li {
+  display:none;
+}
+
 /* ---------------------* /
 /* Report Styles */
 
@@ -857,7 +902,6 @@ p.undernote {
     height: 26px;
     background: #e2e2e2;
     margin-bottom:10px;
-    margin-top:30px;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
@@ -918,7 +962,7 @@ p.undernote {
 background: -moz-linear-gradient(top, #f7f7f7 0%, #e2e2e2 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(top, #f7f7f7 0%,#e2e2e2 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom, #f7f7f7 0%,#e2e2e2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e2e2e2',GradientType=0 ); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e2e2e2',GradientType=0 );
   }
 
   .slide_wrap input[type=checkbox]:checked + label {

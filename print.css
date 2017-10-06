@@ -24,3 +24,7 @@ div#accordion .card h3:hover {
 .chec_wrap1, .chec_wrap2, .chec_wrap3, .chec_wrap4, .chec_wrap5, .chec_wrap6, .chec_wrap7, .chec_wrap8, .chec_wrap9 {
   display:none;
 }
+
+.check_wrap {
+  display:none;
+}
