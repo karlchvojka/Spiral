@@ -18,6 +18,7 @@
 do_action( 'bp_before_member_header' ); ?>
 
 <div id="cover-image-container">
+	<div class="container">
 	<a id="header-cover-image" href="<?php bp_displayed_user_link(); ?>"></a>
 
 	<div id="item-header-cover-image">
@@ -86,6 +87,7 @@ do_action( 'bp_before_member_header' ); ?>
 		</div><!-- #item-header-content -->
 
 	</div><!-- #item-header-cover-image -->
+</div>
 </div><!-- #cover-image-container -->
 
 <?php

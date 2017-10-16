@@ -1,0 +1,870 @@
+/*
+Theme Name: Spiral
+Theme URI: www.resizeme.com
+Author: MKM Web Dev team
+Author URI: http://www.mkm.ab.ca
+Version: 1.0
+License: GNU General Public License
+*/
+
+/* ------------------------------------------- */
+/* GLOBAL STYLES */
+/* ------------------------------------------- */
+
+@fontface {
+  font-family: Lato;
+  src: url('https://fonts.googleapis.com/css?Lato:400,900');
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	}
+
+body {
+	background-color:#f7f7f7;
+  font-family: 'Lato', sans-serif;
+  color:#353641;
+	}
+
+/* GLOBAL TEXT STYLES */
+
+h1, #buddypress .standard-form legend {
+	font-size:24px;
+	color:#fd5842;
+	font-family: 'Lato', sans-serif;
+  font-weight:900 !important;
+  text-transform:uppercase;
+  margin-top:30px;
+	}
+
+h2 {
+	font-size:20px;
+  color:#353641;
+  font-family: 'Lato', sans-serif;
+  margin-top:0px;
+	}
+
+  #buddypress .standard-form label {
+    font-size:20px;
+    color:#353641;
+    font-family: 'Lato', sans-serif;
+    margin-top:0px;
+
+  }
+
+h3 {
+  font-size:20px;
+  color:#353641;
+  font-family: 'Lato', sans-serif;
+  margin-top:0px;
+	}
+
+h4 {
+	}
+
+h5 {
+	}
+
+h6 {
+	}
+
+p {
+	font-size:15px;
+  font-family: 'Lato', sans-serif;
+  margin-bottom:20px;
+	}
+
+
+/* END GLOBAL TEXT STYLES */
+
+/* GLOBAL LINK STYLES */
+
+a:link, a:visited {
+
+  color:#4d3d6b;
+	}
+	a:hover {
+		}
+/* END GLOBAL LINK STYLES */
+
+textarea {
+  width:100%;
+  margin-bottom:20px;
+  min-height:140px;
+  border:1px solid #e2e2e2;
+  border-radius:5px;
+}
+
+/* GLOBAL LIST STYLES */
+ul {
+list-style-type: none;
+	}
+	li {
+		}
+/* END GLOBAL LIST STYLES */
+
+/* GLOBAL NAV STYLES */
+.navbar-default {
+  min-height:100px;
+  background-image: none;
+  background-color:#ffffff;
+  z-index:999;
+  margin-bottom:0px;
+	}
+	ul.Nav {
+		list-style:none;
+		z-index:999;
+		}
+  .navbar-header {
+		}
+    .navbar-header img {
+      height: auto;
+    width: 200px;
+    display: block;
+    	}
+      .navbar-brand {
+        height:100px;
+        margin-top:10px;
+      }
+			ul.Nav {
+		    list-style:none;
+		    z-index:999;
+		    }
+		    .navbar-nav li{
+		      background-color:#ffffff;
+		      }
+		      .navbar-nav li a {
+		        font-size:12px;
+            background-color:#ffffff;
+		        color:#2a1155;
+		        }
+
+		        .navbar-nav li a i {
+		          display:block;
+		          font-size:30px;
+		          width:30px;
+		            color:#2a1155;
+		            margin:0 auto 10px auto;
+		          }
+            .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a i {
+               color:#fd5842;
+            }
+  .navbar-nav {
+    background-color:#ffffff;
+  }
+
+.header {
+  min-height:100px;
+}
+.bar {
+  width:100%;
+  padding:20px;
+  }
+
+
+/* END GLOBAL NAV STYLES */
+
+/* ------------------------------------------- */
+
+/* ------------------------------------------- */
+/* LAYOUT STYLES */
+/* ------------------------------------------- */
+
+/* HOMEPAGE STYLES */
+  a.login-button, a.reg-button {
+    text-align:center;
+    width:50%;
+    margin:10px auto;
+    display:block;
+  }
+
+  div.header_wrap {
+    background-color:#ffffff;
+    height:100px;
+    margin:0;
+    width:100%;
+    }
+    div.header_wrap a.home_logo img{
+      margin-top:16px;
+    }
+  div#sidebar {
+    margin-top:25px;
+  }
+/* END HOMEPAGE STYLES */
+
+/* DASHBOARD STYLES */
+ h2.widgettitle {
+   text-align:center;
+   color:#ffffff;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   background-color:#4d3d6b;
+   padding:20px 0px;
+   margin-bottom:0px;
+  }
+.widget.buddypress div.item-options {
+  display:none;
+  }
+  .widget.buddypress div.item-options a:link, .widget.buddypress div.item-options a:visited {
+    background-color:transparent;
+    color:#ffffff;
+  }
+.widget.buddypress #groups-list li {
+  background-color:#ffffff;
+  color:#000000;
+  border:1px solid #beb8c9;
+  border-bottom:none;
+  padding:10px;
+  margin-bottom:0px;
+  }
+  .widget.buddypress #groups-list li:last-child {
+    border-bottom:1px solid #beb8c9;
+  }
+  .widget.buddypress #groups-list li div.item {
+    margin-bottom:0px;
+    padding:0px 5px;
+    }
+  .widget.buddypress .item-avatar a {
+    margin-bottom:0px;
+  }
+
+  a.create_new_inq:link, a.create_new_inq:visited {
+    display:block;
+    width:25%;
+    margin-top:20px;
+    padding:10px;
+    color:#ffffff;
+    text-transform:uppercase;
+    background-color:#fd5842;
+  }
+
+/* END DASHBOARD STYLES */
+
+/* Tab Structure Styles */
+
+  /* Global Styles */
+  .playlist_item{
+
+    margin:10px 0px;
+    background-color:#ffffff;
+    }
+
+  .right_panel p, .left_panel p {
+    font-size:17px;
+    color:#353641;
+    margin-bottom:15px;
+    }
+  .right_panel input, .left_panel input {
+    padding:15px;
+    width:100%;
+    border-radius:4px;
+    margin-bottom:20px;
+    border:1px solid #e2e2e2;
+    }
+    .right_panel, .left_panel {
+      min-height:20px;
+    }
+  .panel_title > h2 {
+    }
+    .left_panel ul {
+      list-style-type:disc;
+    }
+
+    /* button styles */
+    .pager {
+      display:block;
+    }
+    .pager li.next a.btn:visited, .pager li.next a.btn:link, .print_button, .print_button, .pager li.submit input#submit, #buddypress input[type=submit], #buddypress div.activity-meta a, #buddypress div.item-list-tabs ul li.current a,  #buddypress div.item-list-tabs#subnav ul li a {
+      border-radius: 3px;
+      background-color:#fd5842;
+      color:#ffffff;
+      padding:10px 16px;
+      font-size:16px;
+      font-weight:bold;
+      }
+      .pager li.next a.btn:hover, .print_button:hover, #buddypress input[type=submit]:hover, #buddypress div.activity-meta a:hover,  #buddypress div.item-list-tabs#subnav a:hover {
+      background: #bd3001;
+      color:#ffffff;
+      font-size:16px;
+      font-weight:bold;
+      -webkit-font-smoothing: antialiased;
+      -webkit-transition: background 0.25s ease-in;
+      -ms-transition: background 0.25s ease-in;
+      -o-transition: background 0.25s ease-in;
+      transition: background 0.25s ease-in;
+      }
+#buddypress div.item-list-tabs ul li.current a, #buddypress div.item-list-tabs ul li.selected a {
+  padding:3px;
+}
+    #buddypress div.activity-meta a,  #buddypress div.item-list-tabs#subnav ul li a {
+      padding:5px 8px;
+      font-size:14px;
+      }
+      #buddypress div.activity-meta a:hover,  #buddypress div.item-list-tabs#subnav ul li a:hover {
+        font-size:14px;
+      }
+#buddypress div.item-list-tabs ul li#groups-all a, #buddypress div.item-list-tabs ul li#groups-personal a, #buddypress div.item-list-tabs ul li#group-create-nav a {
+  border-radius: 3px;
+    background-color: #fd5842;
+    color: #ffffff;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: bold;
+}
+    .pager .previous a.btn:visited, .pager .previous a.btn:link, a.reg-button:link, a.reg-button:visited, a.login-button:link, a.login-button:visited {
+      background-color:#a185ad;
+      border-radius:3px;
+      padding:10px 16px;
+      font-size:16px;
+      font-weight:bold;
+      color:#ffffff;
+      }
+      .pager .previous a.btn:hover, a.reg-button:hover, a.login-button:hover {
+        background: #321c5c;
+        color:#ffffff;
+        font-size:16px;
+        font-weight:bold;
+        -webkit-font-smoothing: antialiased;
+        -webkit-transition: background 0.25s ease-in;
+        -ms-transition: background 0.25s ease-in;
+        -o-transition: background 0.25s ease-in;
+        transition: background 0.25s ease-in;
+      }
+
+    .button_class h2 {
+      margin-top:10px;
+    }
+    .print_button {
+      border:1px solid;
+    }
+    /* End Button styles */
+
+  /* End Global Styles */
+
+  /* CREATE SECTION STYLES */
+  div.create_question {
+    margin-top:60px;
+  }
+  /* END CREATE SECTION STYLES */
+
+  /* Makes videos responsive */
+  .video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+  /* End Video Responsive Styles */
+
+  /* Hiding pill structure that needs to exist, but now isnt shown. */
+  #pill_nav {
+    height:0px;
+    min-height:0px;
+    max-height:0px;
+  }
+  #pill_nav li {
+    height:0px;
+    }
+  #pill_nav a {
+    padding:1px;
+    height:0px;
+    }
+  .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background-color: transparent;
+    }
+  /* End Pill Hiding Struture */
+
+  /* Progress Bar Styles */
+  .progress-bar {
+    background-image: none;
+    background-color:#a185ad;
+    color:transparent;
+  }
+  /* End Progress Bar Styles */
+
+
+/* End Tab Structure Styles */
+
+/* BP GROUPS CUSTOM STYLES */
+#buddypress .dir-search input[type=search], #buddypress .dir-search input[type=text], #buddypress .groups-members-search input[type=search], #buddypress .groups-members-search input[type=text], #buddypress .standard-form input[type=color], #buddypress .standard-form input[type=date], #buddypress .standard-form input[type=datetime-local], #buddypress .standard-form input[type=datetime], #buddypress .standard-form input[type=email], #buddypress .standard-form input[type=month], #buddypress .standard-form input[type=number], #buddypress .standard-form input[type=password], #buddypress .standard-form input[type=range], #buddypress .standard-form input[type=search], #buddypress .standard-form input[type=tel], #buddypress .standard-form input[type=text], #buddypress .standard-form input[type=time], #buddypress .standard-form input[type=url], #buddypress .standard-form input[type=week], #buddypress .standard-form select, #buddypress .standard-form textarea {
+  background-color:#ffffff;
+}
+
+div.form_wrap {
+  padding:20px;
+  background-color:#ffffff;
+}
+.header_inner_wrap {
+  width:100%;
+  padding-top:20px;
+  background-color:#ffffff;
+  border-bottom: 1px solid #c7bfd8;
+}
+#buddypress div.dir-search {
+  margin:0px;
+}
+div#item-header {
+  background-color:#ffffff;
+  border-bottom:1px solid #c7bfd8;
+  border-top:0px;
+  padding-top: 15px;
+  padding-left:0px;
+  padding-right:0px;
+}
+div#item-header-content div#item-buttons div.group-button {
+  clear:both;
+  float:none;
+}
+div#item-header-content h1.page-title {
+  margin-top:0px;
+}
+#inq_wrapper {
+  margin-top:20px;
+}
+.print_button {
+
+}
+#buddypress div.item-list-tabs ul li#nav-add-report-page-groups-li{
+  margin-right:30%;
+}
+
+#bar {
+  width:25%;
+}
+/* Status Thing */
+.status_wrap {
+  background-image: url('images/ProgressWheel_bg.png');
+  background-size:cover;
+  width:150px;
+  height:150px;
+}
+.top_row, .bottom_row {
+  width:100%;
+  height:75px;
+}
+.sector {
+  width:75px;
+  height:75px;
+}
+.sector img {
+  width:73px;
+  height:auto;
+  display:none;
+}
+#top_right img {
+  position:Relative;
+  top:3px;
+  left:0px;
+  display:block;
+}
+.titles, .titles div {
+  height:20px;
+}
+.status_wrap label {
+  display:block;
+  height:50px;
+  float:left;
+}
+.left, .sector {
+  float:left;
+}
+/* End status */
+  div#accordion {
+  }
+  div#accordion .card {
+      background-color:#ffffff;
+      padding:20px;
+      border-radius:3px;
+      border:1px solid #c7bfd8;
+      margin-bottom:15px;
+    }
+    div#accordion .card h3 {
+      font-size:20px;
+      color:#4d3d6b;
+      font-weight:900;
+      margin-top:0px;
+      margin-bottom:0px;
+      }
+
+      div#accordion .card h4 {
+        font-size:16px;
+        color:#520051;
+        font-weight:700;
+      }
+      div#accordion .card p {
+        font-size:14px;
+        color:#4d3d6b;
+        margin-bottom:16px;
+        }
+      .card-block:last-child p {
+        margin-bottom:0px;
+      }
+
+      .add_cross {
+        color:#520051;
+      }
+      h2#inq_page {
+        margin-top:10px;
+        font-weight:bold;
+      }
+  div#accordion div.card .collapse {
+    margin-top:20px;
+  }
+
+#buddypress div.item-list-tabs ul li a {
+  background-color:#ffffff;
+  border:1px solid #beb8c9;
+  }
+  #buddypress div.item-list-tabs#subnav {
+    margin-top:10px;
+    margin-bottom:20px;
+  }
+#buddypress div.item-list-tabs#subnav ul li.feed {
+  display:none;
+}
+  #buddypress #reply-title small a span, #buddypress a.bp-primary-action span {
+    background-color:#ffffff;
+    color:#000000;
+  }
+  #buddypress #item-nav{
+    background-color:#ffffff;
+    border-bottom:1px solid #c7bfd8;
+    padding:10px;
+    margin-bottom:10px;
+  }
+  #buddypress div.item-list-tabs ul li.current a, #buddypress div.item-list-tabs ul li.selected a {
+    border-radius:5px;
+    margin:0px 5px;
+    color:#4d3d6b;
+    background-color:#ffffff;
+    }
+
+
+  #buddypress div.item-list-tabs ul li a, #buddypress .comment-reply-link, #buddypress .generic-button a, #buddypress .standard-form button, #buddypress a.button, #buddypress input[type=button], #buddypress input[type=file], #buddypress input[type=reset], #buddypress input[type=submit], #buddypress ul.button-nav li a, a.bp-title-button {
+    border-radius:5px;
+    border:none;
+    margin:0px 5px;
+    color:#4d3d6b;
+    }
+
+    #buddypress input[type=file] {
+      display:block;
+      margin-bottom:20px;
+      padding:5px;
+    }
+    #buddypress input[type=submit] {
+      color:#ffffff;
+    }
+  #buddypress div.item-list-tabs ul li a:hover, #buddypress a.button:hover {
+    color:#fd5842;
+    border:none;
+  }
+  /* GROUP LIST STYLES */
+  #buddypress ul.item-list li {
+    padding:10px;
+    background-color:#ffffff;
+    border-radius:5px;
+    border:1px solid #c7bfd8;
+    margin-bottom: 5px;
+    }
+    #buddypress ul.item-list li div.action {
+      right:15px;
+    }
+  div#groups-dir-list ul#groups-list li {
+    margin-bottom:10px !important;
+  }
+  div#groups-dir-list ul#groups-list li .item .item-title a {
+    font-size:20px;
+    font-weight:700;
+  }
+
+  #buddypress .standard-form input[type=text] {
+    border-radius:5px;
+  }
+
+  #buddypress #item-body {
+    margin-bottom:40px;
+  }
+  /* END GROUP LIST STYLES */
+
+  #buddypress div#item-header div#item-actions, #buddypress div#item-header div#item-header-content {
+    margin-top:60px;
+
+  }
+  #buddypress div#item-header div#item-actions {
+    width:100%;
+  }
+  #buddypress div#item-header div#item-actions a {
+    display:block;
+  }
+  #buddypress div#item-header div#item-actions {
+    text-align:left;
+    margin:0px;
+  }
+/* END BP GROUPS CUSTOM STYLES */
+
+/* Create Group */
+form#create-group-form {
+  }
+  form#create-group-form #group-create-tabs {
+    background-color:#ffffff;
+    border-bottom: 1px solid #c7bfd8;
+    padding: 10px 0px;
+  }
+form#create-group-form #group-create-tabs div.container ul li:first-child a {
+  padding-left:0px;
+}
+  form#create-group-form div#main-column {
+    margin-left:0px;
+    float:left;
+  }
+  form#create-group-form #message {
+    display:none;
+  }
+
+#buddypress ul.item-list {
+  border:none;
+}
+#buddypress .standard-form div.submit input {
+  margin-top:20px;
+  padding:10px;
+  color:#ffffff;
+  text-transform:uppercase;
+  background-color:#fd5842;
+  font-size:16px;
+  font-weight:bold;
+}
+/* LOGIN FORM STYLES */
+
+#buddypress .dir-search input[type=search], #buddypress .dir-search input[type=text], #buddypress .groups-members-search input[type=search], #buddypress .groups-members-search input[type=text], #buddypress .standard-form input[type=color], #buddypress .standard-form input[type=date], #buddypress .standard-form input[type=datetime-local], #buddypress .standard-form input[type=datetime], #buddypress .standard-form input[type=email], #buddypress .standard-form input[type=month], #buddypress .standard-form input[type=number], #buddypress .standard-form input[type=password], #buddypress .standard-form input[type=range], #buddypress .standard-form input[type=search], #buddypress .standard-form input[type=tel], #buddypress .standard-form input[type=text], #buddypress .standard-form input[type=time], #buddypress .standard-form input[type=url], #buddypress .standard-form input[type=week], #buddypress .standard-form select, #buddypress .standard-form textarea {
+  border-radius:5px;
+  width:100% !important;
+}
+
+#buddypress .standard-form label, #buddypress .standard-form legend, #buddypress .standard-form span.label{
+  font-size:20px;
+  font-weight:500;
+}
+
+#field-visibility-settings-toggle-1 {
+  margin-top:20px;
+}
+
+#signup_submit {
+font-size:20px !important;
+}
+/* ------------------------------------------- */
+
+
+/* Plan Styles */
+
+.videoSubTitle {
+  margin-top:25px;
+  margin-bottom:10px;
+}
+
+.videoSubTitle:first-of-type {
+  margin-top:0px;
+}
+
+p.undernote {
+  font-size:12px;
+  color:#737373;
+  font-family: 'Lato', sans-serif;
+  margin-bottom:5px;
+}
+
+/* INDIVIDUAL ROUND STYLES */
+
+/* UNCOMMENT FOR PRODUCTION
+  div#tab7.active ~ .pager li.next {
+    display:none;
+  }
+*/
+.inquiry_header {
+  background-color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #c7bfd8;
+    margin:20px 0px;
+    padding:20px;
+  }
+  .inquiry_header h3 {
+    color:#fd5842;
+    font-weight:bold;
+    font-size:18px;
+    }
+    .inquiry_header h3 img.avatar {
+      margin-right:20px;
+    }
+  .inquiry_header div  {
+    padding:0px;
+  }
+  .ifYes, .ifNo {
+
+  }
+  span.cat_name {
+    margin-right:50px;
+    font-weight:bold;
+  }
+
+  .titlesbottom {
+    margin-bottom:20px;
+  }
+
+  #rootwizard {
+    padding:20px;
+    background-color:#ffffff;
+  }
+  #pill_nav {
+    margin:0px;
+    padding:0px;
+  }
+  ul.pager {
+    margin-bottom:0px;
+  }
+
+  .panel_title h2 {
+    color:#fd5842;
+    font-weight:bold;
+    text-transform:uppercase;
+
+  }
+
+  h2.prevEntries {
+    font-size:28px;
+    color:#fd5842;
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  div.inq_wrap {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+    margin-bottom: 15px;
+    }
+    .inq_wrap h3 {
+      margin-top:0px;
+      margin-bottom:0px;
+    }
+  .date_wrap {
+    text-align:right;
+    margin-bottom:0px;
+  }
+
+
+  /* LOGS START */
+
+  h3.logHeader {
+    font-size:20px;
+    text-transform:uppercase;
+    color:#fd5842;
+    margin-top:20px;
+    font-weight:bold;
+  }
+  .theory_wrap h2 {
+    font-size:22px;
+    text-transform:uppercase;
+    color:#fd5842;
+    margin-top:20px;
+    font-weight:bold;
+  }
+  div.log_wrap {
+    padding:20px;
+    background-color:#ffffff;
+    border-radius:5px;
+    border:1px solid #e2e2e2;
+    }
+    div.log_wrap h3 {
+      margin-top:0px;
+
+    }
+  div.rounds_wrap {
+    margin-bottom:5px;
+  }
+  a.rounds_title {
+    display:block;
+    font-size:14px;
+  }
+  p.date_wrap {
+    font-size:12px;
+    margin-bottom:0px;
+  }
+  input#postTitle, textarea {
+    width:100%;
+    margin-top:10px;
+    border-radius:5px;
+    border:1px solid #e2e2e2;
+    padding:10px;
+  }
+  input.btn-sm, button#finishStage2 {
+    border-radius: 3px !important;
+      background-color: #fd5842 !important;
+      color: #ffffff !important;
+      padding: 10px 16px !important;
+      font-size: 16px !important;
+      font-weight: bold !important;
+  }
+  div.theory_wrap {
+    margin-bottom:20px;
+  }
+  button#finishStage2 {
+    margin-top:-5px;
+  }
+.log_wrapper {
+  background-color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #c7bfd8;
+    margin: 20px 0px;
+    padding: 20px;
+}
+#buddypress div.activity-meta {
+  margin-bottom:10px;
+}
+
+#buddypress li.groups-members-search input[type=text]{
+  padding:10px 3px;
+  font-size:100%;
+}
+#buddypress .standard-form label {
+  margin-bottom:10px;
+}
+#buddypress .standard-form textarea {
+  margin-top:0px;
+}
+
+#buddypress .standard-form input[type=text] {
+  margin-bottom:20px;
+}
+/* ------------------------------------------- */
+/* MODIFIERS */
+/* ------------------------------------------- */
+.left {
+	float:left;
+	}
+
+.right {
+	float:right;
+	}
+
+.center {
+	}
+
+.nineSixty {
+	}
+.clear {
+	float:none;
+	clear:both;
+	}
+/* ------------------------------------------- */

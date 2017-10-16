@@ -44,22 +44,7 @@ $(document).ready(function() {
     })
 });
 
-jQuery(function($) {
-        var panelList = $('#accordion');
-        panelList.sortable({
-            // Only make the .panel-heading child elements support dragging.
-            // Omit this to make then entire <li>...</li> draggable.
-            handle: '.card-header',
-            update: function() {
-                $('.card', panelList).each(function(index, elem) {
-                     var $listItem = $(elem),
-                         newIndex = $listItem.index();
 
-                     // Persist the new indices.
-                });
-            }
-        });
-    });
 
 function printreportbutton() {
     window.print();

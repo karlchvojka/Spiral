@@ -1,0 +1,29 @@
+body {
+  background-color:#f7f7f7;
+}
+
+.login form {
+  border:1px solid #beb8c9;
+  border-radius: 5px;
+  }
+  #loginform p.submit input.button {
+    background-color: #a185ad;
+    border-radius: 3px;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height:0px;
+  }
+.login form .input, .login form input[type=checkbox], .login input[type=text] {
+  border-radius:5px;
+  border:1px solid #beb8c9;
+}
+
+
+.login h1 a {
+  background-image: url('../images/spiral-logo.png');
+  width: 300px;
+    background-size: contain;
+    height: 60px;
+}
