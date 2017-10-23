@@ -49,11 +49,14 @@ get_header();
             <?php
             // GROUP DESCRIPTION PULL
             bp_group_description_excerpt() ?>
-            <div class="col-md-6">
+
+            <!-- <div class="col-md-6">
             <h3>Inquiry Members:</h3>
+
+
               <?php
               // START OF THE MEMEBERS LOOP
-              if ( bp_group_has_members($bpmargs) ) : ?>
+              /*if ( bp_group_has_members() ) : ?>
                 <ul id="member-list" class="item-list">
                 <?php while ( bp_group_members() ) : bp_group_the_member(); ?>
                   <li>
@@ -63,8 +66,9 @@ get_header();
                 </ul>
                 <?php endif;
               // END GROUP MEMBERS LOOP
-              ?>
-            </div>
+              */?>
+
+            </div>-->
             <div class="col-md-6">
               <h3>Creation Date:</h3>
               <?php bp_group_date_created(); ?>

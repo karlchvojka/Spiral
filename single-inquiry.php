@@ -115,12 +115,14 @@ div.acf-form-submit input {
             <?php
             // GROUP DESCRIPTION PULL
             bp_group_description_excerpt() ?>
-            <div class="col-md-6">
+
+            <!-- <div class="col-md-6">
             <h3>Inquiry Members:</h3>
+
 
               <?php
               // START OF THE MEMEBERS LOOP
-              if ( bp_group_has_members($bpmargs) ) : ?>
+              /*if ( bp_group_has_members() ) : ?>
                 <ul id="member-list" class="item-list">
                 <?php while ( bp_group_members() ) : bp_group_the_member(); ?>
                   <li>
@@ -130,10 +132,10 @@ div.acf-form-submit input {
                 </ul>
                 <?php endif;
               // END GROUP MEMBERS LOOP
-              ?>
+              */?>
 
-            </div>
-            <div class="col-md-6">
+            </div>-->
+            <div class="col-md-12">
               <h3>Creation Date:</h3>
               <?php bp_group_date_created(); ?>
             </div>
@@ -146,7 +148,6 @@ div.acf-form-submit input {
       		<div class="col-md-6">
             <button onclick="javascript:window.open('','_self').close();" class="print_button pull-right" />Go Back</button>
             <button class="print_button pull-right" onclick="printreportbutton()"><i class="fa fa-print" aria-hidden="true"></i> Print Report</button>
-
       		</div>
 
       	</div>
@@ -170,10 +171,7 @@ div.acf-form-submit input {
             <div class="card" id="card_one">
               <div class="card-header" role="tab" id="headingOne"  data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
                 <h3 class="mb-0">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                     Determine A Focus
-                  </a>
-                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
 
@@ -214,13 +212,10 @@ div.acf-form-submit input {
             <div class="card" id="card_two">
               <div class="card-header" role="tab" id="headingTwo">
                 <h3 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   Inquiry Questions
-                  </a>
-                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
-              <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div id="collapseTwo" aria-labelledby="headingTwo">
                 <div class="card-block">
                   <h4><?php the_field('inqQuesQues1', $acf_ref);?></h4>
                   <p><?php the_field('inqQuesAnsw1');?></p>
@@ -257,14 +252,10 @@ div.acf-form-submit input {
             <div class="card" id="card_three">
               <div class="card-header" role="tab" id="headingThree">
                 <h3 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     Difference You Want To Make
-
-                  </a>
-                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
-              <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
                 <div class="card-block">
                   <h4><?php the_field('diffYouWantToMakeQues1', $acf_ref);?></h4>
                   <p><?php the_field('diffYouWantToMakeAnsw1');?></p>
@@ -294,14 +285,11 @@ div.acf-form-submit input {
             <div class="card" id="card_four">
               <div class="card-header" role="tab" id="headingFour">
                 <h3 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                     Action Planning
 
-                  </a>
-                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
-              <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+              <div id="collapseFour"  role="tabpanel" aria-labelledby="headingFour">
                 <div class="card-block">
                   <h4><?php the_field('actionPlanningQues1', $acf_ref);?></h4>
                   <p><?php the_field('actionPlanningAnsw1');?></p>
@@ -351,14 +339,11 @@ div.acf-form-submit input {
             <div class="card" id="card_five">
               <div class="card-header" role="tab" id="headingFive">
                 <h3 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                   Professional Learning and Resources
 
-                  </a>
-                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
-              <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+              <div id="collapseFive" role="tabpanel" aria-labelledby="headingFive">
                 <div class="card-block">
                   <h4><?php the_field('profLearnResQues1', $acf_ref);?></h4>
                   <p><?php the_field('profLearnResAnsw1');?></p>
@@ -395,13 +380,10 @@ div.acf-form-submit input {
             <div class="card" id="card_six">
               <div class="card-header" role="tab" id="headingSix">
                 <h3 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                     Plan For Collecting Data and Looking For Evidence
-                  </a>
-                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
-              <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+              <div id="collapseSix" role="tabpanel" aria-labelledby="headingSix">
                 <div class="card-block">
                   <h4><?php the_field('planForCollectingDataQues1', $acf_ref);?></h4>
                   <p><?php the_field('planForCollectingDataAnsw1');?></p>
@@ -446,14 +428,11 @@ div.acf-form-submit input {
             <div class="card" id="card_seven">
               <div class="card-header" role="tab" id="headingSeven">
                 <h3 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                   Evidence Format
 
-                  </a>
-                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
-              <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
+              <div id="collapseSeven" role="tabpanel" aria-labelledby="headingSeven">
                 <div class="card-block">
                   <h4><?php the_field('evidenceFormatQues1', $acf_ref);?></h4>
                   <p><?php the_field('evidenceFormatAnsw1');?></p>
@@ -496,13 +475,11 @@ div.acf-form-submit input {
             <div class="card" id="card_eight">
               <div class="card-header" role="tab" id="headingEight">
                 <h3 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                     Instructional Change
-                  </a>
-                  <a class="add_cross pull-right">+</a>
+
                 </h3>
               </div>
-              <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight">
+              <div id="collapseEight" role="tabpanel" aria-labelledby="headingEight">
                 <div class="card-block">
 
                   <h4><?php the_field('instChangeQues1', $acf_ref);?></h4>
@@ -532,13 +509,10 @@ div.acf-form-submit input {
             <div class="card" id="card_nine">
               <div class="card-header" role="tab" id="headingNine">
                 <h3 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
                     Logistics
-                  </a>
-                  <a class="add_cross pull-right">+</a>
                 </h3>
               </div>
-              <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine">
+              <div id="collapseNine" role="tabpanel" aria-labelledby="headingNine">
                 <div class="card-block">
 
                   <h4><?php the_field('logisticsQues1', $acf_ref);?></h4>

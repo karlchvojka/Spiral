@@ -116,9 +116,28 @@ if ( function_exists( 'bp_post_get_permalink' ) ) { // ugly ugly ugly hack to ch
 	<div class="container">
 	<div class="row">
     <div class="col-md-6">
-      <div class="video-responsive">
-  		<?php the_field('invTeamMemVideo1', $acf_ref); ?>
-    </div>
+  		<p><?php _e("Search for members to invite:", 'invite-anyone') ?></p>
+
+  		<ul class="first acfb-holder">
+  			<li>
+  				<input type="text" name="send-to-input" class="send-to-input" id="send-to-input" />
+  			</li>
+  		</ul>
+
+  		<?php wp_nonce_field( 'groups_invite_uninvite_user', '_wpnonce_invite_uninvite_user' ) ?>
+
+  		<?php// if ( ! invite_anyone_is_large_network( 'users' ) ) : ?>
+  			<p><?php _e( 'Select members from the directory:', 'invite-anyone' ) ?></p>
+
+  			<div id="invite-anyone-member-list">
+  				<ul>
+  					<?php bp_new_group_invite_member_list() ?>
+  				</ul>
+  			</div>
+  		<?php //endif ?>
+  	</div>
+    <div class="col-md-6">
+
   		<div id="message" class="info">
   			<p><?php _e('Select people to invite from your friends list.', 'invite-anyone'); ?></p>
   		</div>
@@ -153,27 +172,7 @@ if ( function_exists( 'bp_post_get_permalink' ) ) { // ugly ugly ugly hack to ch
 
   		<?php do_action( 'bp_after_group_send_invites_list' ) ?>
   	</div>
-	<div class="col-md-6">
-		<p><?php _e("Search for members to invite:", 'invite-anyone') ?></p>
 
-		<ul class="first acfb-holder">
-			<li>
-				<input type="text" name="send-to-input" class="send-to-input" id="send-to-input" />
-			</li>
-		</ul>
-
-		<?php wp_nonce_field( 'groups_invite_uninvite_user', '_wpnonce_invite_uninvite_user' ) ?>
-
-		<!-- <?php// if ( ! invite_anyone_is_large_network( 'users' ) ) : ?>
-			<p><?php _e( 'Select members from the directory:', 'invite-anyone' ) ?></p>
-
-			<div id="invite-anyone-member-list">
-				<ul>
-					<?php bp_new_group_invite_member_list() ?>
-				</ul>
-			</div>
-		<?php //endif ?>-->
-	</div>
 
 
 	</div>

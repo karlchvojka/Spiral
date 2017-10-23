@@ -14,15 +14,14 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/buddypress.min.css" />
 <link rel="stylesheet" type="text/css" media="print" href="<?php bloginfo('stylesheet_directory'); ?>/print.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="<?php bloginfo('template_url')?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="https://use.fontawesome.com/c674cc7c17.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/form.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
 
 <!-- FORM JS STUFFS -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <!--<script src="<?php bloginfo('template_url');?>/js/status.js"></script>-->
 <script src="<?php bloginfo('template_url');?>/js/bootstrap.min.js"></script>
