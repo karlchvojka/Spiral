@@ -8,7 +8,7 @@
 
 ?>
 
-<div id="buddypress">
+<div id="buddypress" class="container">
 
 	<?php
 
@@ -229,7 +229,8 @@
 							do_action( 'bp_custom_profile_edit_fields' ); ?>
 
 							</fieldset>
-						</div>
+
+						
 					</div>
 					<?php endwhile; ?>
 

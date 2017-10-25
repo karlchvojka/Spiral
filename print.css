@@ -10,10 +10,8 @@ html {
 body {
   margin: 10mm 15mm 10mm 15mm; /* margin you want for the content */
 }
-
-div#item-header-avatar, div#item-header-content, div#item-actions, div#item-nav {
+div#item-header {
   display:none;
-  border-bottom:none;
 }
 #buddypress #item-nav, .print_button, #header_admin {
   display:none;
@@ -42,5 +40,9 @@ div#accordion .card h3:hover {
 }
 
 .check_wrap {
+  display:none;
+}
+
+div#footer_wrap {
   display:none;
 }

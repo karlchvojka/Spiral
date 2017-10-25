@@ -91,7 +91,7 @@ do_action( 'bp_before_create_group_page' ); ?>
             <div class="video-responsive">
                     <?php the_field('teamSetupVideo1', $acf_ref); ?>
             </div>
-
+            <?php the_field('teamsetupVideoDesc1', $acf_ref); ?>
 
           </div>
           <div class="col-md-6">

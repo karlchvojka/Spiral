@@ -20,23 +20,23 @@ do_action( 'bp_before_profile_loop_content' ); ?>
 			/** This action is documented in bp-templates/bp-legacy/buddypress/members/single/profile/profile-wp.php */
 			do_action( 'bp_before_profile_field_content' ); ?>
 
-			<div class="bp-widget <?php bp_the_profile_group_slug(); ?>">
+			<div class="bp-widget <?php bp_the_profile_group_slug(); ?> container">
 
 				<h2><?php bp_the_profile_group_name(); ?></h2>
 
-				<table class="profile-fields">
+				<div class="profile-fields">
 
 					<?php while ( bp_profile_fields() ) : bp_the_profile_field(); ?>
 
 						<?php if ( bp_field_has_data() ) : ?>
 
-							<tr<?php bp_field_css_class(); ?>>
+							<div<?php bp_field_css_class(); ?> class="row">
 
-								<td class="label"><?php bp_the_profile_field_name(); ?></td>
+							<div class="label col-md-2"><p><?php bp_the_profile_field_name(); ?></p></div>
 
-								<td class="data"><?php bp_the_profile_field_value(); ?></td>
+								<div class="data col-md-10"><?php bp_the_profile_field_value(); ?></div>
 
-							</tr>
+							</div>
 
 						<?php endif; ?>
 
@@ -51,7 +51,7 @@ do_action( 'bp_before_profile_loop_content' ); ?>
 
 					<?php endwhile; ?>
 
-				</table>
+				</div>
 			</div>
 
 			<?php

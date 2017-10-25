@@ -13,9 +13,7 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/bootstrap-theme.css" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/buddypress.min.css" />
 <link rel="stylesheet" type="text/css" media="print" href="<?php bloginfo('stylesheet_directory'); ?>/print.css" />
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="<?php bloginfo('template_url')?>/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="https://use.fontawesome.com/c674cc7c17.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/form.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
@@ -41,8 +39,19 @@ $(document).ready(function() {
     $('#myCollapsible').collapse({
       toggle: true
     })
+    
 });
 
+  $(document).ready(function() {
+
+   var docHeight = $(window).height();
+   var footerHeight = $('#footer_wrap').height();
+   var footerTop = $('#footer_wrap').position().top + footerHeight;
+
+   if (footerTop < docHeight) {
+    $('#footer_wrap').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+   }
+  });
 
 
 function printreportbutton() {
@@ -65,6 +74,7 @@ function printreportbutton() {
 
 <!-- JQ INCLUDES -->
 <!-- END JQ INCLUDES -->
+<?php wp_head(); ?>
 
 </head>
 
@@ -83,9 +93,14 @@ function printreportbutton() {
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                  <img src="<?php bloginfo('template_url'); ?>/images/spiral-logo.png" />
+        <div class="navbar-brand">
+        <a href="<?php echo home_url(); ?>">
+                  <img style="width:150px; border-bottom:1px solid #ececec; margin-bottom:5px;padding-bottom:5px;" src="<?php bloginfo('template_url'); ?>/images/spiral-logo.png" />
               </a>
+      <a href="http://thelearningexchange.ca">
+                <img style="width:130px; margin:5px auto;" src="<?php bloginfo('template_url'); ?>/images/tlxlogo.png" />
+            </a>
+        </div>
       </div>
       <?php /* Primary navigation */
         wp_nav_menu( array(

@@ -56,7 +56,6 @@
 	</div><!-- #item-nav -->
 
 	<div id="item-body" class="container">
-
 		<?php
 
 		/**

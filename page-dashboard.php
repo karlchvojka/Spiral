@@ -28,7 +28,7 @@ get_header(); ?>
 				<?php get_sidebar('sidebar-1'); ?>
 			</div>
 		</div>
-
+</div>
 
 		<?php endwhile; ?>
 

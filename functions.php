@@ -1,4 +1,10 @@
 <?php
+
+function add_theme_scripts() {
+  wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+}
+add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 // POST THUMBNAIL SUPPORT
 add_theme_support( 'post-thumbnails', array( 'post' ) ); // Add it for posts
 set_post_thumbnail_size( 352, 462 ); // 50 pixels wide by 50 pixels tall, box resize mode
@@ -34,10 +40,8 @@ function theme_slug_widgets_init() {
 
 
 // DELETE ADMIN BAR!!!!!!!!!
-function my_function_admin_bar(){
-return false;
-}
-add_filter( 'show_admin_bar' , 'my_function_admin_bar');
+add_filter('show_admin_bar', '__return_false');
+
 
  // Register custom navigation walker
 require_once('wp_bootstrap_navwalker.php');
@@ -84,9 +88,4 @@ function template_change( $template ){
     return $template;
 }
 add_filter( 'single_template', 'template_change' ); //'template_include'/'single_template'
-
-
-
-
-
 ?>
